@@ -1,0 +1,20 @@
+{
+  "background": {
+    "brand":    { "$value": "#dfa7ab", "$type": "color", "$description": "Background/brand — Primary button bg" },
+    "inverse":  { "$value": "#181b1d", "$type": "color", "$description": "Background/inverse — Secondary button bg" },
+    "primary":  { "$value": "#f6f6f6", "$type": "color", "$description": "Background/primary — Tertiary button bg / page surface" }
+  },
+  "foreground": {
+    "on-brand":   { "$value": "#181b1d", "$type": "color", "$description": "Foreground/on-brand — text/icons on brand bg" },
+    "on-inverse": { "$value": "#f6f3f3", "$type": "color", "$description": "Foreground/on-inverse — text/icons on dark bg" },
+    "tertiary":   { "$value": "#3e4951", "$type": "color", "$description": "Foreground/tertiary — muted text/icons" }
+  },
+  "text": {
+    "on-brand":   { "$value": "#181b1d", "$type": "color", "$description": "Text/on-brand" },
+    "on-inverse": { "$value": "#f6f6f6", "$type": "color", "$description": "Text/on-inverse" },
+    "tertiary":   { "$value": "#5e7582", "$type": "color", "$description": "Text/tertiary" }
+  },
+  "border": {
+    "secondary": { "$value": "#a9b5bb", "$type": "color", "$description": "Border/secondary — Tertiary button border" }
+  }
+}

@@ -1,0 +1,32 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --ds-background-brand: #dfa7ab; /** Background/brand — Primary button bg */
+  --ds-background-inverse: #181b1d; /** Background/inverse — Secondary button bg */
+  --ds-background-primary: #f6f6f6; /** Background/primary — Tertiary button bg / page surface */
+  --ds-foreground-on-brand: #181b1d; /** Foreground/on-brand — text/icons on brand bg */
+  --ds-foreground-on-inverse: #f6f3f3; /** Foreground/on-inverse — text/icons on dark bg */
+  --ds-foreground-tertiary: #3e4951; /** Foreground/tertiary — muted text/icons */
+  --ds-text-on-brand: #181b1d; /** Text/on-brand */
+  --ds-text-on-inverse: #f6f6f6; /** Text/on-inverse */
+  --ds-text-tertiary: #5e7582; /** Text/tertiary */
+  --ds-text-button-large: 16px; /** text/button/large */
+  --ds-text-button-medium: 14px; /** text/button/medium */
+  --ds-text-button-small: 12px; /** text/button/small */
+  --ds-border-secondary: #a9b5bb; /** Border/secondary — Tertiary button border */
+  --ds-radius-md: 4px; /** radius/md */
+  --ds-button-gap-lg: 10px; /** button/gap/lg */
+  --ds-button-gap-md: 8px; /** button/gap/md */
+  --ds-button-gap-sm: 6px; /** button/gap/sm */
+  --ds-button-padding-horizontal-lg: 24px; /** button/padding/horizontal/lg */
+  --ds-button-padding-horizontal-md: 20px; /** button/padding/horizontal/md */
+  --ds-button-padding-horizontal-sm: 12px; /** button/padding/horizontal/sm */
+  --ds-button-padding-vertical-lg: 16px; /** button/padding/vertical/lg */
+  --ds-button-padding-vertical-md: 14px; /** button/padding/vertical/md */
+  --ds-button-padding-vertical-sm: 8px; /** button/padding/vertical/sm */
+  --ds-button-border-weight: 1px; /** button/border-weight */
+  --ds-font-family-display: "Neue Haas Grotesk Display Pro", system-ui, sans-serif; /** Font/family/display */
+  --ds-font-weight-medium: 500; /** Font/weight/medium */
+}

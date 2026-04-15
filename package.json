@@ -1,0 +1,53 @@
+{
+  "name": "borealis-poc",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "tokens": "node style-dictionary.config.mjs",
+    "tokens:watch": "node --watch style-dictionary.config.mjs",
+    "figma:connect": "figma connect publish",
+    "figma:connect:unpublish": "figma connect unpublish",
+    "figma:connect:parse": "figma connect",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@figma/code-connect": "^1.4.3",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "style-dictionary": "^5.4.0",
+    "tailwindcss": "^4.2.2",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.0",
+    "vite": "^8.0.4",
+    "storybook": "^10.3.5",
+    "@storybook/react-vite": "^10.3.5",
+    "@chromatic-com/storybook": "^5.1.2",
+    "@storybook/addon-vitest": "^10.3.5",
+    "@storybook/addon-a11y": "^10.3.5",
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-onboarding": "^10.3.5",
+    "eslint-plugin-storybook": "^10.3.5",
+    "vitest": "^4.1.4",
+    "playwright": "^1.59.1",
+    "@vitest/browser-playwright": "^4.1.4",
+    "@vitest/coverage-v8": "^4.1.4"
+  }
+}

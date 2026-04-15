@@ -1,0 +1,25 @@
+{
+  "radius": {
+    "md": { "$value": "4px", "$type": "dimension", "$description": "radius/md" }
+  },
+  "button": {
+    "gap": {
+      "lg": { "$value": "10px", "$type": "dimension", "$description": "button/gap/lg" },
+      "md": { "$value": "8px",  "$type": "dimension", "$description": "button/gap/md" },
+      "sm": { "$value": "6px",  "$type": "dimension", "$description": "button/gap/sm" }
+    },
+    "padding": {
+      "horizontal": {
+        "lg": { "$value": "24px", "$type": "dimension", "$description": "button/padding/horizontal/lg" },
+        "md": { "$value": "20px", "$type": "dimension", "$description": "button/padding/horizontal/md" },
+        "sm": { "$value": "12px", "$type": "dimension", "$description": "button/padding/horizontal/sm" }
+      },
+      "vertical": {
+        "lg": { "$value": "16px", "$type": "dimension", "$description": "button/padding/vertical/lg" },
+        "md": { "$value": "14px", "$type": "dimension", "$description": "button/padding/vertical/md" },
+        "sm": { "$value": "8px",  "$type": "dimension", "$description": "button/padding/vertical/sm" }
+      }
+    },
+    "border-weight": { "$value": "1px", "$type": "dimension", "$description": "button/border-weight" }
+  }
+}

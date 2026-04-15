@@ -1,0 +1,17 @@
+{
+  "font": {
+    "family": {
+      "display": { "$value": "\"Neue Haas Grotesk Display Pro\", system-ui, sans-serif", "$type": "fontFamily", "$description": "Font/family/display" }
+    },
+    "weight": {
+      "medium": { "$value": "500", "$type": "fontWeight", "$description": "Font/weight/medium" }
+    }
+  },
+  "text": {
+    "button": {
+      "large":  { "$value": "16px", "$type": "dimension", "$description": "text/button/large" },
+      "medium": { "$value": "14px", "$type": "dimension", "$description": "text/button/medium" },
+      "small":  { "$value": "12px", "$type": "dimension", "$description": "text/button/small" }
+    }
+  }
+}
