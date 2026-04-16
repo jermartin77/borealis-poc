@@ -1,20 +1,75 @@
 {
   "background": {
-    "brand":    { "$value": "#dfa7ab", "$type": "color", "$description": "Background/brand — Primary button bg" },
-    "inverse":  { "$value": "#181b1d", "$type": "color", "$description": "Background/inverse — Secondary button bg" },
-    "primary":  { "$value": "#f6f6f6", "$type": "color", "$description": "Background/primary — Tertiary button bg / page surface" }
-  },
-  "foreground": {
-    "on-brand":   { "$value": "#181b1d", "$type": "color", "$description": "Foreground/on-brand — text/icons on brand bg" },
-    "on-inverse": { "$value": "#f6f3f3", "$type": "color", "$description": "Foreground/on-inverse — text/icons on dark bg" },
-    "tertiary":   { "$value": "#3e4951", "$type": "color", "$description": "Foreground/tertiary — muted text/icons" }
+    "primary":         { "$value": "#f6f6f6", "$type": "color", "$description": "Background/primary — page surface" },
+    "secondary":       { "$value": "#dfe3e4", "$type": "color", "$description": "Background/secondary" },
+    "tertiary":        { "$value": "#c1c8cc", "$type": "color", "$description": "Background/tertiary" },
+    "disabled":        { "$value": "#dfe3e4", "$type": "color", "$description": "Background/disabled" },
+    "inverse":         { "$value": "#181b1d", "$type": "color", "$description": "Background/inverse" },
+    "inverse-hover":   { "$value": "#161515", "$type": "color", "$description": "Background/inverse-hover" },
+    "solid":           { "$value": "#ffffff", "$type": "color", "$description": "Background/solid — always pure white/black" },
+    "brand":           { "$value": "#dfa7ab", "$type": "color", "$description": "Background/brand — primary button" },
+    "brand-hover":     { "$value": "#dd9299", "$type": "color", "$description": "Background/brand-hover" },
+    "brand-subtle":    { "$value": "#e5bbbe", "$type": "color", "$description": "Background/brand-subtle" },
+    "success":         { "$value": "#26637f", "$type": "color", "$description": "Background/success" },
+    "success-subtle":  { "$value": "#ebeef0", "$type": "color", "$description": "Background/success-subtle" },
+    "warning":         { "$value": "#bb031e", "$type": "color", "$description": "Background/warning" },
+    "warning-subtle":  { "$value": "#efe5e4", "$type": "color", "$description": "Background/warning-subtle" },
+    "error":           { "$value": "#b32228", "$type": "color", "$description": "Background/error" },
+    "error-subtle":    { "$value": "#eee5e4", "$type": "color", "$description": "Background/error-subtle" },
+    "selection":       { "$value": "#efe3e4", "$type": "color", "$description": "Background/selection" }
   },
   "text": {
-    "on-brand":   { "$value": "#181b1d", "$type": "color", "$description": "Text/on-brand" },
-    "on-inverse": { "$value": "#f6f6f6", "$type": "color", "$description": "Text/on-inverse" },
-    "tertiary":   { "$value": "#5e7582", "$type": "color", "$description": "Text/tertiary" }
+    "primary":     { "$value": "#181b1d", "$type": "color", "$description": "Text/primary" },
+    "secondary":   { "$value": "#3e4951", "$type": "color", "$description": "Text/secondary" },
+    "tertiary":    { "$value": "#5e7582", "$type": "color", "$description": "Text/tertiary" },
+    "disabled":    { "$value": "#a9b5bb", "$type": "color", "$description": "Text/disabled" },
+    "placeholder": { "$value": "#5e7582", "$type": "color", "$description": "Text/placeholder" },
+    "on-inverse":  { "$value": "#f6f6f6", "$type": "color", "$description": "Text/on-inverse — text on dark surface" },
+    "on-brand":    { "$value": "#181b1d", "$type": "color", "$description": "Text/on-brand — text on brand surface" },
+    "inverse":     { "$value": "#161515", "$type": "color", "$description": "Text/inverse" },
+    "brand":       { "$value": "#8c545a", "$type": "color", "$description": "Text/brand" },
+    "link":        { "$value": "#8c545a", "$type": "color", "$description": "Text/link" },
+    "link-hover":  { "$value": "#513235", "$type": "color", "$description": "Text/link hover" },
+    "success":     { "$value": "#26637f", "$type": "color", "$description": "Text/success" },
+    "warning":     { "$value": "#bb031e", "$type": "color", "$description": "Text/warning" },
+    "error":       { "$value": "#b32228", "$type": "color", "$description": "Text/error" }
+  },
+  "foreground": {
+    "primary":      { "$value": "#181b1d", "$type": "color", "$description": "Foreground/primary — icons on surface" },
+    "secondary":    { "$value": "#2b3239", "$type": "color", "$description": "Foreground/secondary" },
+    "tertiary":     { "$value": "#3e4951", "$type": "color", "$description": "Foreground/tertiary" },
+    "quaternary":   { "$value": "#5e7582", "$type": "color", "$description": "Foreground/quaternary" },
+    "disabled":     { "$value": "#a9b5bb", "$type": "color", "$description": "Foreground/disabled" },
+    "on-inverse":   { "$value": "#f6f3f3", "$type": "color", "$description": "Foreground/on-inverse — icons on dark surface" },
+    "on-brand":     { "$value": "#181b1d", "$type": "color", "$description": "Foreground/on-brand — icons on brand surface" },
+    "brand":        { "$value": "#dfa7ab", "$type": "color", "$description": "Foreground/brand" },
+    "brand-subtle": { "$value": "#e5bbbe", "$type": "color", "$description": "Foreground/brand-subtle" },
+    "success":      { "$value": "#26637f", "$type": "color", "$description": "Foreground/success" },
+    "warning":      { "$value": "#bb031e", "$type": "color", "$description": "Foreground/warning" },
+    "error":        { "$value": "#b32228", "$type": "color", "$description": "Foreground/error" }
   },
   "border": {
-    "secondary": { "$value": "#a9b5bb", "$type": "color", "$description": "Border/secondary — Tertiary button border" }
+    "primary":      { "$value": "#5e7582", "$type": "color", "$description": "Border/primary" },
+    "secondary":    { "$value": "#a9b5bb", "$type": "color", "$description": "Border/secondary" },
+    "subtle":       { "$value": "#dfe3e4", "$type": "color", "$description": "Border/subtle" },
+    "disabled":     { "$value": "#a9b5bb", "$type": "color", "$description": "Border/disabled" },
+    "hard":         { "$value": "#181b1d", "$type": "color", "$description": "Border/hard" },
+    "interactive":  { "$value": "#2b3239", "$type": "color", "$description": "Border/interactive" },
+    "brand":        { "$value": "#8c545a", "$type": "color", "$description": "Border/brand" },
+    "brand-subtle": { "$value": "#e5bbbe", "$type": "color", "$description": "Border/brand-subtle" },
+    "success":      { "$value": "#4694b8", "$type": "color", "$description": "Border/success" },
+    "warning":      { "$value": "#bb031e", "$type": "color", "$description": "Border/warning" },
+    "error":        { "$value": "#b32228", "$type": "color", "$description": "Border/error" }
+  },
+  "specialized": {
+    "viz-1":            { "$value": "#dfa7ab", "$type": "color", "$description": "Specialized/viz-1" },
+    "viz-2":            { "$value": "#80919c", "$type": "color", "$description": "Specialized/viz-2" },
+    "viz-3":            { "$value": "#26637f", "$type": "color", "$description": "Specialized/viz-3" },
+    "viz-grid":         { "$value": "#dfe3e4", "$type": "color", "$description": "Specialized/viz-grid" },
+    "skeleton-base":    { "$value": "#dfe3e4", "$type": "color", "$description": "Specialized/skeleton-base" },
+    "skeleton-shimmer": { "$value": "#f6f6f6", "$type": "color", "$description": "Specialized/skeleton-shimmer" },
+    "focus-ring":       { "$value": "#dfa7ab", "$type": "color", "$description": "Specialized/focus-ring" },
+    "shadow-color":     { "$value": "#80919c", "$type": "color", "$description": "Specialized/shadow-color" },
+    "bg-overlay":       { "$value": "#80919c", "$type": "color", "$description": "Specialized/bg-overlay" }
   }
 }

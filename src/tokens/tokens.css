@@ -3,21 +3,74 @@
  */
 
 :root {
-  --ds-background-brand: #dfa7ab; /** Background/brand — Primary button bg */
-  --ds-background-inverse: #181b1d; /** Background/inverse — Secondary button bg */
-  --ds-background-primary: #f6f6f6; /** Background/primary — Tertiary button bg / page surface */
-  --ds-foreground-on-brand: #181b1d; /** Foreground/on-brand — text/icons on brand bg */
-  --ds-foreground-on-inverse: #f6f3f3; /** Foreground/on-inverse — text/icons on dark bg */
-  --ds-foreground-tertiary: #3e4951; /** Foreground/tertiary — muted text/icons */
-  --ds-text-on-brand: #181b1d; /** Text/on-brand */
-  --ds-text-on-inverse: #f6f6f6; /** Text/on-inverse */
+  --ds-background-primary: #f6f6f6; /** Background/primary — page surface */
+  --ds-background-secondary: #dfe3e4; /** Background/secondary */
+  --ds-background-tertiary: #c1c8cc; /** Background/tertiary */
+  --ds-background-disabled: #dfe3e4; /** Background/disabled */
+  --ds-background-inverse: #181b1d; /** Background/inverse */
+  --ds-background-inverse-hover: #161515; /** Background/inverse-hover */
+  --ds-background-solid: #ffffff; /** Background/solid — always pure white/black */
+  --ds-background-brand: #dfa7ab; /** Background/brand — primary button */
+  --ds-background-brand-hover: #dd9299; /** Background/brand-hover */
+  --ds-background-brand-subtle: #e5bbbe; /** Background/brand-subtle */
+  --ds-background-success: #26637f; /** Background/success */
+  --ds-background-success-subtle: #ebeef0; /** Background/success-subtle */
+  --ds-background-warning: #bb031e; /** Background/warning */
+  --ds-background-warning-subtle: #efe5e4; /** Background/warning-subtle */
+  --ds-background-error: #b32228; /** Background/error */
+  --ds-background-error-subtle: #eee5e4; /** Background/error-subtle */
+  --ds-background-selection: #efe3e4; /** Background/selection */
+  --ds-text-primary: #181b1d; /** Text/primary */
+  --ds-text-secondary: #3e4951; /** Text/secondary */
   --ds-text-tertiary: #5e7582; /** Text/tertiary */
+  --ds-text-disabled: #a9b5bb; /** Text/disabled */
+  --ds-text-placeholder: #5e7582; /** Text/placeholder */
+  --ds-text-on-inverse: #f6f6f6; /** Text/on-inverse — text on dark surface */
+  --ds-text-on-brand: #181b1d; /** Text/on-brand — text on brand surface */
+  --ds-text-inverse: #161515; /** Text/inverse */
+  --ds-text-brand: #8c545a; /** Text/brand */
+  --ds-text-link: #8c545a; /** Text/link */
+  --ds-text-link-hover: #513235; /** Text/link hover */
+  --ds-text-success: #26637f; /** Text/success */
+  --ds-text-warning: #bb031e; /** Text/warning */
+  --ds-text-error: #b32228; /** Text/error */
   --ds-text-button-large: 16px; /** text/button/large */
   --ds-text-button-medium: 14px; /** text/button/medium */
   --ds-text-button-small: 12px; /** text/button/small */
-  --ds-border-secondary: #a9b5bb; /** Border/secondary — Tertiary button border */
-  --ds-font-family-display: "Neue Haas Grotesk Display Pro", system-ui, sans-serif; /** Font/family/display */
-  --ds-font-family-text: "Neue Haas Grotesk Text Pro", system-ui, sans-serif; /** Font/family/text — body copy */
+  --ds-foreground-primary: #181b1d; /** Foreground/primary — icons on surface */
+  --ds-foreground-secondary: #2b3239; /** Foreground/secondary */
+  --ds-foreground-tertiary: #3e4951; /** Foreground/tertiary */
+  --ds-foreground-quaternary: #5e7582; /** Foreground/quaternary */
+  --ds-foreground-disabled: #a9b5bb; /** Foreground/disabled */
+  --ds-foreground-on-inverse: #f6f3f3; /** Foreground/on-inverse — icons on dark surface */
+  --ds-foreground-on-brand: #181b1d; /** Foreground/on-brand — icons on brand surface */
+  --ds-foreground-brand: #dfa7ab; /** Foreground/brand */
+  --ds-foreground-brand-subtle: #e5bbbe; /** Foreground/brand-subtle */
+  --ds-foreground-success: #26637f; /** Foreground/success */
+  --ds-foreground-warning: #bb031e; /** Foreground/warning */
+  --ds-foreground-error: #b32228; /** Foreground/error */
+  --ds-border-primary: #5e7582; /** Border/primary */
+  --ds-border-secondary: #a9b5bb; /** Border/secondary */
+  --ds-border-subtle: #dfe3e4; /** Border/subtle */
+  --ds-border-disabled: #a9b5bb; /** Border/disabled */
+  --ds-border-hard: #181b1d; /** Border/hard */
+  --ds-border-interactive: #2b3239; /** Border/interactive */
+  --ds-border-brand: #8c545a; /** Border/brand */
+  --ds-border-brand-subtle: #e5bbbe; /** Border/brand-subtle */
+  --ds-border-success: #4694b8; /** Border/success */
+  --ds-border-warning: #bb031e; /** Border/warning */
+  --ds-border-error: #b32228; /** Border/error */
+  --ds-specialized-viz-1: #dfa7ab; /** Specialized/viz-1 */
+  --ds-specialized-viz-2: #80919c; /** Specialized/viz-2 */
+  --ds-specialized-viz-3: #26637f; /** Specialized/viz-3 */
+  --ds-specialized-viz-grid: #dfe3e4; /** Specialized/viz-grid */
+  --ds-specialized-skeleton-base: #dfe3e4; /** Specialized/skeleton-base */
+  --ds-specialized-skeleton-shimmer: #f6f6f6; /** Specialized/skeleton-shimmer */
+  --ds-specialized-focus-ring: #dfa7ab; /** Specialized/focus-ring */
+  --ds-specialized-shadow-color: #80919c; /** Specialized/shadow-color */
+  --ds-specialized-bg-overlay: #80919c; /** Specialized/bg-overlay */
+  --ds-font-family-display: "neue-haas-grotesk-display", system-ui, sans-serif; /** Font/family/display */
+  --ds-font-family-text: "neue-haas-grotesk-text", system-ui, sans-serif; /** Font/family/text — body copy */
   --ds-font-weight-medium: 500; /** Font/weight/medium */
   --ds-radius-md: 4px; /** radius/md */
   --ds-button-gap-lg: 10px; /** button/gap/lg */

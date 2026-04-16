@@ -6,22 +6,83 @@
 /* Type style classes generated from Figma text styles */
 @import "./tokens/type-styles.css";
 
-/* ── Dark mode token overrides ─────────────────────────────────────────────── */
+/* ── Input focus tokens (rgba — not processable by Style Dictionary) ──────── */
+:root {
+  --ds-input-focus:       rgba(128, 145, 156, 0.3);
+  --ds-input-focus-error: rgba(179, 34, 40, 0.3);
+}
+
+/* ── Dark mode token overrides (Color Mode / Dark) ─────────────────────────── */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Surfaces flip */
-    --ds-background-primary:  #181b1d;
-    --ds-background-inverse:  #f6f3f3;
+    /* Background */
+    --ds-background-primary:        #181b1d;
+    --ds-background-secondary:      #2b3239;
+    --ds-background-tertiary:       #3e4951;
+    --ds-background-disabled:       #2b3239;
+    --ds-background-inverse:        #f6f6f6;
+    --ds-background-inverse-hover:  #dfe3e4;
+    --ds-background-solid:          #000000;
+    --ds-background-brand-hover:    #e5bbbe;
+    --ds-background-brand-subtle:   #513235;
+    --ds-background-success:        #4694b8;
+    --ds-background-success-subtle: #152831;
+    --ds-background-warning-subtle: #58040b;
+    --ds-background-error:          #d65854;
+    --ds-background-error-subtle:   #2f0d0c;
+    --ds-background-selection:      #8c545a;
 
-    /* Text flips */
-    --ds-text-on-brand:       #181b1d;
-    --ds-text-on-inverse:     #181b1d;
-    --ds-text-tertiary:       #a9b5bb;
+    /* Text */
+    --ds-text-primary:    #f6f6f6;
+    --ds-text-secondary:  #c1c8cc;
+    --ds-text-tertiary:   #a9b5bb;
+    --ds-text-disabled:   #5e7582;
+    --ds-text-placeholder: #80919c;
+    --ds-text-on-inverse: #181b1d;
+    --ds-text-inverse:    #ffffff;
+    --ds-text-brand:      #dfa7ab;
+    --ds-text-link:       #dfa7ab;
+    --ds-text-link-hover: #e5bbbe;
+    --ds-text-success:    #75acc9;
+    --ds-text-warning:    #d65854;
+    --ds-text-error:      #d65854;
 
-    /* Borders */
+    /* Foreground */
+    --ds-foreground-primary:    #f6f6f6;
+    --ds-foreground-secondary:  #dfe3e4;
+    --ds-foreground-tertiary:   #a9b5bb;
+    --ds-foreground-on-inverse: #181b1d;
+    --ds-foreground-on-brand:   #ffffff;
+    --ds-foreground-brand:      #e5bbbe;
+    --ds-foreground-success:    #75acc9;
+    --ds-foreground-warning:    #d65854;
+    --ds-foreground-error:      #d65854;
+
+    /* Border */
+    --ds-border-primary:      #3e4951;
     --ds-border-secondary:    #3e4951;
+    --ds-border-subtle:       #161515;
+    --ds-border-disabled:     #2b3239;
+    --ds-border-hard:         #f6f3f3;
+    --ds-border-interactive:  #a9b5bb;
+    --ds-border-brand:        #dfa7ab;
+    --ds-border-brand-subtle: #513235;
+    --ds-border-success:      #75acc9;
+    --ds-border-warning:      #d65854;
+    --ds-border-error:        #d65854;
 
-    /* Button tertiary bg */
-    --ds-color-button-tertiary-bg: #1e2326;
+    /* Specialized */
+    --ds-specialized-viz-1:            #513235;
+    --ds-specialized-viz-2:            #5e7582;
+    --ds-specialized-viz-3:            #75acc9;
+    --ds-specialized-viz-grid:         #181b1d;
+    --ds-specialized-skeleton-base:    #181b1d;
+    --ds-specialized-skeleton-shimmer: #2b3239;
+    --ds-specialized-focus-ring:       #e5bbbe;
+    --ds-specialized-shadow-color:     #000000;
+    --ds-specialized-bg-overlay:       #161515;
+
+    /* Input */
+    --ds-input-focus: rgba(62, 73, 81, 0.3);
   }
 }
