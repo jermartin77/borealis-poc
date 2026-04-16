@@ -31,8 +31,8 @@
     "link":        { "$value": "#8c545a", "$type": "color", "$description": "Text/link" },
     "link-hover":  { "$value": "#513235", "$type": "color", "$description": "Text/link hover" },
     "success":     { "$value": "#26637f", "$type": "color", "$description": "Text/success" },
-    "warning":     { "$value": "#bb031e", "$type": "color", "$description": "Text/warning" },
-    "error":       { "$value": "#b32228", "$type": "color", "$description": "Text/error" }
+    "warning":     { "$value": "#860006", "$type": "color", "$description": "Text/warning" },
+    "error":       { "$value": "#800211", "$type": "color", "$description": "Text/error" }
   },
   "foreground": {
     "primary":      { "$value": "#181b1d", "$type": "color", "$description": "Foreground/primary — icons on surface" },
