@@ -1,7 +1,12 @@
 import StyleDictionary from 'style-dictionary';
 
 const sd = new StyleDictionary({
-  source: ['tokens/source/**/*.json'],
+  // Exclude type-styles.json — handled by scripts/generate-type-styles.mjs
+  source: [
+    'tokens/source/color.json',
+    'tokens/source/typography.json',
+    'tokens/source/spacing.json',
+  ],
   platforms: {
     css: {
       transformGroup: 'css',
@@ -11,10 +16,7 @@ const sd = new StyleDictionary({
         {
           destination: 'tokens.css',
           format: 'css/variables',
-          options: {
-            selector: ':root',
-            outputReferences: true,
-          },
+          options: { selector: ':root', outputReferences: true },
         },
       ],
     },

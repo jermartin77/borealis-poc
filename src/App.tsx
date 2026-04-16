@@ -1,43 +1,79 @@
 import { Button } from './components/Button/Button';
 
+const typeScale = [
+  { slug: 'display-1',   label: 'Display/1',         sample: 'The quick brown fox' },
+  { slug: 'display-2',   label: 'Display/2',         sample: 'The quick brown fox' },
+  { slug: 'display-3',   label: 'Display/3',         sample: 'The quick brown fox' },
+  { slug: 'display-4',   label: 'Display/4',         sample: 'The quick brown fox' },
+  { slug: 'display-5',   label: 'Display/5',         sample: 'The quick brown fox' },
+  { slug: 'display-6',   label: 'Display/6',         sample: 'The quick brown fox' },
+  { slug: 'text-large-regular',  label: 'Text/Large/Regular',  sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'text-large-bold',     label: 'Text/Large/Bold',     sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'text-medium-regular', label: 'Text/Medium/Regular', sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'text-medium-bold',    label: 'Text/Medium/Bold',    sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'text-small-regular',  label: 'Text/Small/Regular',  sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'text-small-bold',     label: 'Text/Small/Bold',     sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'text-xsmall-regular', label: 'Text/XSmall/Regular', sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'text-xsmall-bold',    label: 'Text/XSmall/Bold',    sample: 'The quick brown fox jumps over the lazy dog' },
+  { slug: 'eyebrow-large',  label: 'Eyebrow/Large',  sample: 'Section label' },
+  { slug: 'eyebrow-medium', label: 'Eyebrow/Medium', sample: 'Section label' },
+  { slug: 'blockquote',     label: 'Block Quote',    sample: '"Design is intelligence made visible."' },
+  { slug: 'tag',            label: 'Tag',            sample: 'New arrival' },
+  { slug: 'tooltip',        label: 'Tooltip',        sample: 'Hover for more info' },
+  { slug: 'navigation-primary', label: 'Navigation/Primary', sample: 'Shop All' },
+  { slug: 'footer-link',    label: 'Footer/Link',    sample: 'Privacy Policy' },
+  { slug: 'footer-legal',   label: 'Footer/Legal',   sample: '© 2025 Borealis. All rights reserved.' },
+] as const;
+
 function App() {
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: 'var(--ds-background-primary)', padding: '40px' }}>
-      <div style={{ maxWidth: 800, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 40 }}>
+    <main style={{ minHeight: '100vh', backgroundColor: 'var(--ds-background-primary)', padding: '40px 48px' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 48 }}>
 
-        <h1 style={{
-          fontFamily: 'var(--ds-font-family-display)',
-          fontWeight: 'var(--ds-font-weight-medium)',
-          fontSize: 36,
-          color: 'var(--ds-background-inverse)',
-          margin: 0,
-        }}>
-          Borealis Design System
-        </h1>
+        {/* Header */}
+        <div>
+          <p className="ds-type-eyebrow-large" style={{ color: 'var(--ds-text-tertiary)', marginBottom: 8 }}>
+            Borealis
+          </p>
+          <h1 className="ds-type-display-2" style={{ color: 'var(--ds-background-inverse)', margin: 0 }}>
+            Design System
+          </h1>
+        </div>
 
-        {/* Variant × Size matrix — mirrors the Figma canvas */}
-        <section style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <h2 style={{
-            fontFamily: 'var(--ds-font-family-display)',
-            fontSize: 16,
-            fontWeight: 'var(--ds-font-weight-medium)',
-            color: 'var(--ds-text-tertiary)',
-            margin: 0,
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-          }}>
-            Buttons
-          </h2>
-
-          {(['primary', 'secondary', 'tertiary'] as const).map((variant) => (
-            <div key={variant} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <span style={{
-                fontFamily: 'var(--ds-font-family-display)',
-                fontSize: 12,
-                color: 'var(--ds-text-tertiary)',
-                width: 72,
-                textTransform: 'capitalize',
+        {/* Type scale */}
+        <section>
+          <p className="ds-type-eyebrow-large" style={{ color: 'var(--ds-text-tertiary)', marginBottom: 24, borderBottom: '1px solid var(--ds-border-secondary)', paddingBottom: 12 }}>
+            Type styles — {typeScale.length} styles
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            {typeScale.map(({ slug, label, sample }) => (
+              <div key={slug} style={{
+                display: 'grid',
+                gridTemplateColumns: '200px 1fr',
+                gap: 24,
+                padding: '16px 0',
+                borderBottom: '1px solid var(--ds-border-secondary)',
+                alignItems: 'baseline',
               }}>
+                <span style={{ fontFamily: 'var(--ds-font-family-text)', fontSize: 11, color: 'var(--ds-text-tertiary)', paddingTop: 4 }}>
+                  {label}
+                </span>
+                <span className={`ds-type-${slug}`} style={{ color: 'var(--ds-background-inverse)' }}>
+                  {sample}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Buttons */}
+        <section>
+          <p className="ds-type-eyebrow-large" style={{ color: 'var(--ds-text-tertiary)', marginBottom: 24, borderBottom: '1px solid var(--ds-border-secondary)', paddingBottom: 12 }}>
+            Buttons
+          </p>
+          {(['primary', 'secondary', 'tertiary'] as const).map((variant) => (
+            <div key={variant} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+              <span style={{ fontFamily: 'var(--ds-font-family-text)', fontSize: 11, color: 'var(--ds-text-tertiary)', width: 72, textTransform: 'capitalize' }}>
                 {variant}
               </span>
               <Button variant={variant} size="lg" label="Label" />
@@ -46,50 +82,6 @@ function App() {
               <Button variant={variant} size="md" label="Label" disabled />
             </div>
           ))}
-        </section>
-
-        {/* Token swatches */}
-        <section style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <h2 style={{
-            fontFamily: 'var(--ds-font-family-display)',
-            fontSize: 16,
-            fontWeight: 'var(--ds-font-weight-medium)',
-            color: 'var(--ds-text-tertiary)',
-            margin: 0,
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-          }}>
-            Tokens
-          </h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-            {[
-              { label: 'Background/brand',    color: 'var(--ds-background-brand)' },
-              { label: 'Background/inverse',  color: 'var(--ds-background-inverse)' },
-              { label: 'Background/primary',  color: 'var(--ds-background-primary)' },
-              { label: 'Foreground/on-brand', color: 'var(--ds-foreground-on-brand)' },
-              { label: 'Foreground/tertiary', color: 'var(--ds-foreground-tertiary)' },
-              { label: 'Border/secondary',    color: 'var(--ds-border-secondary)' },
-            ].map(({ label, color }) => (
-              <div key={label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-                <div style={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 'var(--ds-radius-md)',
-                  backgroundColor: color,
-                  border: '1px solid var(--ds-border-secondary)',
-                }} />
-                <span style={{
-                  fontFamily: 'var(--ds-font-family-display)',
-                  fontSize: 10,
-                  color: 'var(--ds-text-tertiary)',
-                  textAlign: 'center',
-                  maxWidth: 72,
-                }}>
-                  {label}
-                </span>
-              </div>
-            ))}
-          </div>
         </section>
 
       </div>

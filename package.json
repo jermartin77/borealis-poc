@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "tokens": "node style-dictionary.config.mjs",
+    "tokens": "node style-dictionary.config.mjs && node scripts/generate-type-styles.mjs",
     "tokens:watch": "node --watch style-dictionary.config.mjs",
     "figma:connect": "figma connect publish",
     "figma:connect:unpublish": "figma connect unpublish",

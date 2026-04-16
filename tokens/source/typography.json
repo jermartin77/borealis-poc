@@ -1,7 +1,8 @@
 {
   "font": {
     "family": {
-      "display": { "$value": "\"Neue Haas Grotesk Display Pro\", system-ui, sans-serif", "$type": "fontFamily", "$description": "Font/family/display" }
+      "display": { "$value": "\"Neue Haas Grotesk Display Pro\", system-ui, sans-serif", "$type": "fontFamily", "$description": "Font/family/display" },
+      "text":    { "$value": "\"Neue Haas Grotesk Text Pro\", system-ui, sans-serif",    "$type": "fontFamily", "$description": "Font/family/text — body copy" }
     },
     "weight": {
       "medium": { "$value": "500", "$type": "fontWeight", "$description": "Font/weight/medium" }

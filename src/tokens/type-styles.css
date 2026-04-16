@@ -1,0 +1,309 @@
+/**
+ * Do not edit directly — generated from tokens/source/type-styles.json
+ */
+
+.ds-type-display-1 {
+  font-family: var(--ds-font-family-display);
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ds-type-display-2 {
+  font-family: var(--ds-font-family-display);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ds-type-display-3 {
+  font-family: var(--ds-font-family-display);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ds-type-display-4 {
+  font-family: var(--ds-font-family-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ds-type-display-5 {
+  font-family: var(--ds-font-family-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ds-type-display-6 {
+  font-family: var(--ds-font-family-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ds-type-blockquote {
+  font-family: var(--ds-font-family-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ds-type-text-large-regular {
+  font-family: var(--ds-font-family-text);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  --type-paragraph-spacing: 24px;
+}
+
+.ds-type-text-large-bold {
+  font-family: var(--ds-font-family-text);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  --type-paragraph-spacing: 24px;
+}
+
+.ds-type-text-medium-regular {
+  font-family: var(--ds-font-family-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  --type-paragraph-spacing: 16px;
+}
+
+.ds-type-text-medium-bold {
+  font-family: var(--ds-font-family-text);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  --type-paragraph-spacing: 16px;
+}
+
+.ds-type-text-small-regular {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  --type-paragraph-spacing: 16px;
+}
+
+.ds-type-text-small-bold {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  --type-paragraph-spacing: 16px;
+}
+
+.ds-type-text-xsmall-regular {
+  font-family: var(--ds-font-family-text);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ds-type-text-xsmall-bold {
+  font-family: var(--ds-font-family-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ds-type-eyebrow-large {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ds-type-eyebrow-medium {
+  font-family: var(--ds-font-family-text);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ds-type-actions-small {
+  font-family: var(--ds-font-family-text);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.ds-type-actions-medium {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.ds-type-actions-large {
+  font-family: var(--ds-font-family-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.ds-type-tag {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.ds-type-tooltip {
+  font-family: var(--ds-font-family-text);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.ds-type-button-small {
+  font-family: var(--ds-font-family-display);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ds-type-button-medium {
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ds-type-button-large {
+  font-family: var(--ds-font-family-display);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ds-type-input-label {
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.ds-type-input-checkbox-label {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.ds-type-input-value-small {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.ds-type-input-value-medium {
+  font-family: var(--ds-font-family-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.ds-type-navigation-primary {
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ds-type-product-card-title {
+  font-family: var(--ds-font-family-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ds-type-product-card-description {
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ds-type-product-card-price {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.ds-type-product-card-price-slashed {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-decoration: line-through;
+}
+
+.ds-type-product-option {
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ds-type-product-badge {
+  font-family: var(--ds-font-family-text);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ds-type-alert-heading {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ds-type-alert-text {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ds-type-alert-action {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ds-type-footer-link {
+  font-family: var(--ds-font-family-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ds-type-footer-legal {
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ds-type-system-legend {
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
