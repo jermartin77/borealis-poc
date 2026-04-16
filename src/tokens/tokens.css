@@ -16,6 +16,9 @@
   --ds-text-button-medium: 14px; /** text/button/medium */
   --ds-text-button-small: 12px; /** text/button/small */
   --ds-border-secondary: #a9b5bb; /** Border/secondary — Tertiary button border */
+  --ds-font-family-display: "Neue Haas Grotesk Display Pro", system-ui, sans-serif; /** Font/family/display */
+  --ds-font-family-text: "Neue Haas Grotesk Text Pro", system-ui, sans-serif; /** Font/family/text — body copy */
+  --ds-font-weight-medium: 500; /** Font/weight/medium */
   --ds-radius-md: 4px; /** radius/md */
   --ds-button-gap-lg: 10px; /** button/gap/lg */
   --ds-button-gap-md: 8px; /** button/gap/md */
@@ -27,6 +30,4 @@
   --ds-button-padding-vertical-md: 14px; /** button/padding/vertical/md */
   --ds-button-padding-vertical-sm: 8px; /** button/padding/vertical/sm */
   --ds-button-border-weight: 1px; /** button/border-weight */
-  --ds-font-family-display: "Neue Haas Grotesk Display Pro", system-ui, sans-serif; /** Font/family/display */
-  --ds-font-weight-medium: 500; /** Font/weight/medium */
 }

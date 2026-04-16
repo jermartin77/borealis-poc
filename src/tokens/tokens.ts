@@ -15,6 +15,11 @@ export const TextButtonLarge = "16px"; // text/button/large
 export const TextButtonMedium = "14px"; // text/button/medium
 export const TextButtonSmall = "12px"; // text/button/small
 export const BorderSecondary = "#a9b5bb"; // Border/secondary — Tertiary button border
+export const FontFamilyDisplay =
+  '"Neue Haas Grotesk Display Pro", system-ui, sans-serif'; // Font/family/display
+export const FontFamilyText =
+  '"Neue Haas Grotesk Text Pro", system-ui, sans-serif'; // Font/family/text — body copy
+export const FontWeightMedium = "500"; // Font/weight/medium
 export const RadiusMd = "4px"; // radius/md
 export const ButtonGapLg = "10px"; // button/gap/lg
 export const ButtonGapMd = "8px"; // button/gap/md
@@ -26,6 +31,3 @@ export const ButtonPaddingVerticalLg = "16px"; // button/padding/vertical/lg
 export const ButtonPaddingVerticalMd = "14px"; // button/padding/vertical/md
 export const ButtonPaddingVerticalSm = "8px"; // button/padding/vertical/sm
 export const ButtonBorderWeight = "1px"; // button/border-weight
-export const FontFamilyDisplay =
-  '"Neue Haas Grotesk Display Pro", system-ui, sans-serif'; // Font/family/display
-export const FontWeightMedium = "500"; // Font/weight/medium

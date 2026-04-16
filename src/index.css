@@ -5,3 +5,23 @@
 
 /* Type style classes generated from Figma text styles */
 @import "./tokens/type-styles.css";
+
+/* ── Dark mode token overrides ─────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surfaces flip */
+    --ds-background-primary:  #181b1d;
+    --ds-background-inverse:  #f6f3f3;
+
+    /* Text flips */
+    --ds-text-on-brand:       #181b1d;
+    --ds-text-on-inverse:     #181b1d;
+    --ds-text-tertiary:       #a9b5bb;
+
+    /* Borders */
+    --ds-border-secondary:    #3e4951;
+
+    /* Button tertiary bg */
+    --ds-color-button-tertiary-bg: #1e2326;
+  }
+}

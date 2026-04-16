@@ -1,4 +1,5 @@
 import { Button } from './components/Button/Button';
+import { Logo } from './components/Logo/Logo';
 
 const typeScale = [
   { slug: 'display-1',   label: 'Display/1',         sample: 'The quick brown fox' },
@@ -31,14 +32,34 @@ function App() {
       <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 48 }}>
 
         {/* Header */}
-        <div>
-          <p className="ds-type-eyebrow-large" style={{ color: 'var(--ds-text-tertiary)', marginBottom: 8 }}>
-            Borealis
-          </p>
-          <h1 className="ds-type-display-2" style={{ color: 'var(--ds-background-inverse)', margin: 0 }}>
-            Design System
-          </h1>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <Logo variant="full-logo" height={32} />
+          <div>
+            <p className="ds-type-eyebrow-large" style={{ color: 'var(--ds-text-tertiary)', marginBottom: 8 }}>
+              Component Library
+            </p>
+            <h1 className="ds-type-display-2" style={{ color: 'var(--ds-background-inverse)', margin: 0 }}>
+              Design System
+            </h1>
+          </div>
         </div>
+
+        {/* Logo */}
+        <section>
+          <p className="ds-type-eyebrow-large" style={{ color: 'var(--ds-text-tertiary)', marginBottom: 24, borderBottom: '1px solid var(--ds-border-secondary)', paddingBottom: 12 }}>
+            Logo
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-start' }}>
+              <Logo variant="full-logo" height={32} />
+              <span style={{ fontFamily: 'var(--ds-font-family-text)', fontSize: 11, color: 'var(--ds-text-tertiary)' }}>Full Logo</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-start' }}>
+              <Logo variant="brand-mark" height={32} />
+              <span style={{ fontFamily: 'var(--ds-font-family-text)', fontSize: 11, color: 'var(--ds-text-tertiary)' }}>Brand Mark</span>
+            </div>
+          </div>
+        </section>
 
         {/* Type scale */}
         <section>
