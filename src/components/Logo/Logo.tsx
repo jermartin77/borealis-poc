@@ -1,7 +1,7 @@
 /**
  * Logo — Brand Mark and Full Logo variants.
  *
- * Color is driven by `--ds-background-inverse` (Figma: Background/inverse).
+ * Color is driven by `--ds-foreground-primary` (Figma: Foreground/primary).
  * Switching to dark mode automatically flips the token to a light value,
  * so the logo always contrasts with its background without any extra props.
  */
@@ -39,7 +39,7 @@ export function Logo({
       aria-label={ariaLabel}
       role="img"
       className={className}
-      style={{ color: 'var(--ds-background-inverse)', ...style }}
+      style={{ color: 'var(--ds-foreground-primary)', ...style }}
     >
       {variant === 'brand-mark' ? <BrandMark /> : <FullLogo />}
     </svg>

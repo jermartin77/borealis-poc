@@ -1,5 +1,52 @@
+import { useState } from 'react';
 import { Button } from './components/Button/Button';
 import { Logo } from './components/Logo/Logo';
+
+// ─── Theme toggle ─────────────────────────────────────────────────────────────
+
+type ThemeChoice = 'light' | 'dark';
+
+function getSystemTheme(): ThemeChoice {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function ThemeToggle() {
+  const [theme, setTheme] = useState<ThemeChoice | null>(null);
+
+  function toggle() {
+    const current = theme ?? getSystemTheme();
+    const next: ThemeChoice = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    setTheme(next);
+  }
+
+  const effectiveTheme = theme ?? getSystemTheme();
+
+  return (
+    <button
+      onClick={toggle}
+      aria-label={`Switch to ${effectiveTheme === 'dark' ? 'light' : 'dark'} mode`}
+      style={{
+        background: 'none',
+        border: '1px solid var(--ds-border-secondary)',
+        borderRadius: 'var(--ds-radius-md)',
+        padding: '8px 12px',
+        cursor: 'pointer',
+        color: 'var(--ds-text-secondary)',
+        fontFamily: 'var(--ds-font-family-text)',
+        fontSize: 12,
+        lineHeight: 1,
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 6,
+      }}
+    >
+      {effectiveTheme === 'dark' ? '☀ Light' : '☾ Dark'}
+    </button>
+  );
+}
+
+// ─── Type scale data ──────────────────────────────────────────────────────────
 
 const typeScale = [
   { slug: 'display-1',   label: 'Display/1',         sample: 'The quick brown fox' },
@@ -26,6 +73,8 @@ const typeScale = [
   { slug: 'footer-legal',   label: 'Footer/Legal',   sample: '© 2025 Borealis. All rights reserved.' },
 ] as const;
 
+// ─── App ──────────────────────────────────────────────────────────────────────
+
 function App() {
   return (
     <main style={{ minHeight: '100vh', backgroundColor: 'var(--ds-background-primary)', padding: '40px 48px' }}>
@@ -33,12 +82,15 @@ function App() {
 
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-          <Logo variant="full-logo" height={32} />
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Logo variant="full-logo" height={32} />
+            <ThemeToggle />
+          </div>
           <div>
             <p className="ds-type-eyebrow-large" style={{ color: 'var(--ds-text-tertiary)', marginBottom: 8 }}>
               Component Library
             </p>
-            <h1 className="ds-type-display-2" style={{ color: 'var(--ds-background-inverse)', margin: 0 }}>
+            <h1 className="ds-type-display-2" style={{ color: 'var(--ds-text-primary)', margin: 0 }}>
               Design System
             </h1>
           </div>
@@ -79,7 +131,7 @@ function App() {
                 <span style={{ fontFamily: 'var(--ds-font-family-text)', fontSize: 11, color: 'var(--ds-text-tertiary)', paddingTop: 4 }}>
                   {label}
                 </span>
-                <span className={`ds-type-${slug}`} style={{ color: 'var(--ds-background-inverse)' }}>
+                <span className={`ds-type-${slug}`} style={{ color: 'var(--ds-text-primary)' }}>
                   {sample}
                 </span>
               </div>

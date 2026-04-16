@@ -11,7 +11,7 @@ const meta: Meta<typeof Logo> = {
       description: {
         component:
           'Logo component wired to Figma design tokens. ' +
-          'Uses `Background/inverse` (`--ds-background-inverse`) for fill color — ' +
+          'Uses `Foreground/primary` (`--ds-foreground-primary`) for fill color — ' +
           'automatically adapts to light and dark mode without extra props. ' +
           '[Figma component ↗](https://www.figma.com/design/I6QFi7hLxmg1bRuA9VXAJv/Design-System-AI-POC?node-id=1559-23841)',
       },
