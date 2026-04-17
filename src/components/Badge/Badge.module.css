@@ -1,0 +1,61 @@
+/* ── Badge base ──────────────────────────────────────────────────────────── */
+
+.base {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-badge-gap);
+  padding-inline: var(--ds-badge-padding-horizontal);
+  padding-block: var(--ds-badge-padding-vertical);
+  border-radius: var(--ds-radius-lg);
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+/* ── Color variants ──────────────────────────────────────────────────────── */
+
+.primary {
+  background-color: var(--ds-background-brand-subtle);
+  color: var(--ds-text-brand);
+}
+
+.neutral {
+  background-color: var(--ds-background-secondary);
+  color: var(--ds-text-secondary);
+}
+
+.stroked {
+  background-color: transparent;
+  color: var(--ds-text-secondary);
+  border: var(--ds-border-weight) solid var(--ds-border-secondary);
+}
+
+/* ── Icon + close slots ──────────────────────────────────────────────────── */
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.close {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  line-height: 0;
+}
+
+.close:hover {
+  opacity: 1;
+}

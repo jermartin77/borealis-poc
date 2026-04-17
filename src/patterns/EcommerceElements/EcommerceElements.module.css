@@ -1,0 +1,102 @@
+/* ── Option Button ─────────────────────────────────────────────────────────── */
+
+.optionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: var(--ds-border-weight) solid var(--ds-border-primary);
+  border-radius: var(--ds-radius-sm);
+  background: transparent;
+  color: var(--ds-foreground-primary);
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: var(--ds-font-weight-medium);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.optionBtn:hover:not(:disabled) {
+  border-color: var(--ds-border-interactive);
+  background: var(--ds-background-secondary);
+}
+
+.optionBtn:focus-visible {
+  outline: 2px solid var(--ds-specialized-focus-ring, var(--ds-border-brand));
+  outline-offset: 2px;
+}
+
+.optionSelected {
+  border-color: var(--ds-border-hard);
+  background: var(--ds-background-inverse);
+  color: var(--ds-foreground-on-inverse);
+}
+
+.optionSelected:hover:not(:disabled) {
+  background: var(--ds-background-inverse-hover);
+}
+
+.optionDisabled,
+.optionBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Option Group ──────────────────────────────────────────────────────────── */
+
+.optionGroup,
+.swatchGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.optionLabel {
+  margin: 0;
+  color: var(--ds-foreground-secondary);
+}
+
+.optionList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Color Swatch ──────────────────────────────────────────────────────────── */
+
+.swatchList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--swatch-color, #ccc);
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+
+.swatch:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.swatch:focus-visible {
+  box-shadow: 0 0 0 2px var(--ds-background-solid), 0 0 0 4px var(--ds-specialized-focus-ring, var(--ds-border-brand));
+}
+
+.swatchSelected {
+  box-shadow: 0 0 0 2px var(--ds-background-solid), 0 0 0 4px var(--ds-border-hard);
+}
+
+.swatchDisabled,
+.swatch:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

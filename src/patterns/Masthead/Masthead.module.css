@@ -1,0 +1,134 @@
+.root {
+  position: relative;
+  background: var(--ds-background-solid);
+  border-bottom: var(--ds-border-weight) solid var(--ds-border-subtle);
+  color: var(--ds-foreground-primary);
+  z-index: 100;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-grid-horizontal-spacing-md);
+  padding: 0 var(--ds-container-padding);
+  height: 64px;
+}
+
+.logoWrap {
+  flex: 0 0 auto;
+}
+
+.desktopNav {
+  display: none;
+  flex: 1 1 auto;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  gap: var(--ds-grid-horizontal-spacing-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--ds-foreground-primary);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.navLink:hover {
+  color: var(--ds-foreground-brand);
+  border-bottom-color: var(--ds-border-brand);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--ds-specialized-focus-ring, var(--ds-border-brand));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+/* Hamburger — visible only below 1024px */
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ds-foreground-primary);
+  padding: 4px;
+  border-radius: var(--ds-radius-sm);
+  transition: color 0.15s ease;
+}
+
+.hamburger:hover {
+  color: var(--ds-foreground-brand);
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--ds-specialized-focus-ring, var(--ds-border-brand));
+  outline-offset: 2px;
+}
+
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Mobile drawer */
+.mobileNav {
+  background: var(--ds-background-solid);
+  border-top: var(--ds-border-weight) solid var(--ds-border-subtle);
+  padding: 16px var(--ds-container-padding) 24px;
+}
+
+@media (min-width: 1024px) {
+  .mobileNav {
+    display: none;
+  }
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLink {
+  display: block;
+  text-decoration: none;
+  color: var(--ds-foreground-primary);
+  padding: 14px 0;
+  border-bottom: var(--ds-border-weight) solid var(--ds-border-subtle);
+  transition: color 0.15s ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--ds-foreground-brand);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}

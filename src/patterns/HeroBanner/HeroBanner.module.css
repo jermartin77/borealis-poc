@@ -1,0 +1,116 @@
+.root {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    min-height: 680px;
+  }
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-md);
+  padding: var(--ds-container-padding);
+  color: #ffffff;
+  max-width: 680px;
+}
+
+/* ── Alignment variants ───────────────────────────────────── */
+
+/* Horizontal */
+.leftTop,
+.leftMiddle,
+.leftBottom {
+  justify-content: flex-start;
+}
+
+.centerMiddle {
+  justify-content: center;
+}
+
+.rightTop,
+.rightMiddle,
+.rightBottom {
+  justify-content: flex-end;
+}
+
+/* Vertical */
+.leftTop,
+.rightTop {
+  align-items: flex-start;
+}
+
+.leftMiddle,
+.centerMiddle,
+.rightMiddle {
+  align-items: center;
+}
+
+.leftBottom,
+.rightBottom {
+  align-items: flex-end;
+}
+
+.centerMiddle .content {
+  text-align: center;
+  align-items: center;
+}
+
+.rightTop .content,
+.rightMiddle .content,
+.rightBottom .content {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+.headline {
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subheadline {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-grid-horizontal-spacing-sm);
+  margin-top: var(--ds-text-spacing-xs);
+}

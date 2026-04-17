@@ -1,0 +1,89 @@
+/* ── Button base ─────────────────────────────────────────────────────────── */
+
+.base {
+  font-family: var(--ds-font-family-display);
+  font-weight: var(--ds-font-weight-medium);
+  border-radius: var(--ds-radius-md);
+  line-height: 1;
+  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.base:focus-visible {
+  outline: 2px solid var(--ds-specialized-focus-ring);
+  outline-offset: 2px;
+}
+
+.base:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Variants ────────────────────────────────────────────────────────────── */
+
+.primary {
+  background-color: var(--ds-background-brand);
+  color: var(--ds-foreground-on-brand);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--ds-background-brand-hover);
+}
+
+.secondary {
+  background-color: var(--ds-background-inverse);
+  color: var(--ds-foreground-on-inverse);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--ds-background-inverse-hover);
+}
+
+.tertiary {
+  background-color: var(--ds-background-primary);
+  color: var(--ds-foreground-tertiary);
+  border: var(--ds-button-border-weight) solid var(--ds-border-secondary);
+}
+
+.tertiary:hover:not(:disabled) {
+  background-color: var(--ds-background-secondary);
+}
+
+/* ── Sizes ───────────────────────────────────────────────────────────────── */
+
+.lg {
+  padding-inline: var(--ds-button-padding-horizontal-lg);
+  padding-block: var(--ds-button-padding-vertical-lg);
+  gap: var(--ds-button-gap-lg);
+  font-size: var(--ds-text-button-large);
+}
+
+.md {
+  padding-inline: var(--ds-button-padding-horizontal-md);
+  padding-block: var(--ds-button-padding-vertical-md);
+  gap: var(--ds-button-gap-md);
+  font-size: var(--ds-text-button-medium);
+}
+
+.sm {
+  padding-inline: var(--ds-button-padding-horizontal-sm);
+  padding-block: var(--ds-button-padding-vertical-sm);
+  gap: var(--ds-button-gap-sm);
+  font-size: var(--ds-text-button-small);
+}
+
+/* ── Icon slots ──────────────────────────────────────────────────────────── */
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+}

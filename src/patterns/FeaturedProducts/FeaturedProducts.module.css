@@ -1,0 +1,42 @@
+.root {
+  padding: var(--ds-stacked-component-md) var(--ds-container-padding);
+}
+
+.blurb {
+  margin-bottom: var(--ds-grid-vertical-spacing-lg);
+}
+
+/* Grid layout — responsive columns */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ds-grid-horizontal-spacing-md);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ds-grid-horizontal-spacing-lg);
+  }
+}
+
+/* Overflow / horizontal scroll layout */
+.overflow {
+  display: flex;
+  gap: var(--ds-grid-horizontal-spacing-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.overflow > * {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .overflow > * {
+    flex: 0 0 320px;
+  }
+}

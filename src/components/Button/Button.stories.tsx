@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './Button';
+import { Icon } from '../Icon/Icon';
 
 const meta: Meta<typeof Button> = {
   title: 'Design System/Button',
@@ -71,6 +72,28 @@ export const Medium: Story = {
 
 export const Small: Story = {
   args: { variant: 'primary', size: 'sm', label: 'Label' },
+};
+
+// ─── Icon stories ─────────────────────────────────────────────────────────────
+
+export const IconBefore: Story = {
+  name: 'Icon Before',
+  args: {
+    variant: 'primary',
+    size: 'md',
+    label: 'Next',
+    leftIcon: <Icon name="Arrow Left" size={16} />,
+  },
+};
+
+export const IconAfter: Story = {
+  name: 'Icon After',
+  args: {
+    variant: 'primary',
+    size: 'md',
+    label: 'Back',
+    rightIcon: <Icon name="Arrow Right" size={16} />,
+  },
 };
 
 // ─── Full matrix — mirrors the Figma canvas ──────────────────────────────────

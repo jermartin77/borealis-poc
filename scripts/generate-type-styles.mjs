@@ -18,6 +18,28 @@ const familyVars = {
   text:    'var(--ds-font-family-text)',
 };
 
+// Slugs whose font-size differs between screen-sm and screen-lg in Figma.
+// The generator emits a CSS custom property reference instead of a literal px value
+// so the size responds to the @media override in src/tokens/responsive.css.
+const responsiveSizeMap = {
+  'display-1':              'var(--ds-text-heading-1)',
+  'display-2':              'var(--ds-text-heading-2)',
+  'display-3':              'var(--ds-text-heading-3)',
+  'display-4':              'var(--ds-text-heading-4)',
+  'display-5':              'var(--ds-text-heading-5)',
+  'display-6':              'var(--ds-text-heading-6)',
+  'text-large-regular':     'var(--ds-text-paragraph-large)',
+  'text-large-bold':        'var(--ds-text-paragraph-large)',
+  'text-medium-regular':    'var(--ds-text-paragraph-medium)',
+  'text-medium-bold':       'var(--ds-text-paragraph-medium)',
+  'eyebrow-large':          'var(--ds-text-eyebrow-large)',
+  'eyebrow-medium':         'var(--ds-text-eyebrow-small)',
+  'product-card-title':     'var(--ds-text-product-card-title)',
+  'product-card-description':'var(--ds-text-product-card-description)',
+  'product-card-price':     'var(--ds-text-product-card-price)',
+  'product-card-price-slashed':'var(--ds-text-product-card-price)',
+};
+
 // ─── CSS ──────────────────────────────────────────────────────────────────────
 const cssLines = [
   '/**',
@@ -30,9 +52,11 @@ for (const [slug, token] of Object.entries(styles)) {
   const v = token['$value'];
   if (!v || typeof v !== 'object') continue;
 
+  const fontSize = responsiveSizeMap[slug] ?? v.fontSize;
+
   cssLines.push(`.ds-type-${slug} {`);
   cssLines.push(`  font-family: ${familyVars[v.fontFamily] ?? `"${v.fontFamily}"`};`);
-  cssLines.push(`  font-size: ${v.fontSize};`);
+  cssLines.push(`  font-size: ${fontSize};`);
   cssLines.push(`  font-weight: ${v.fontWeight};`);
   cssLines.push(`  line-height: ${v.lineHeight};`);
   if (v.letterSpacing && v.letterSpacing !== '0') {
@@ -73,9 +97,11 @@ for (const [slug, token] of Object.entries(styles)) {
   const v = token['$value'];
   if (!v || typeof v !== 'object') continue;
 
+  const fontSize = responsiveSizeMap[slug] ?? v.fontSize;
+
   tsLines.push(`  '${slug}': {`);
   tsLines.push(`    fontFamily: '${familyVars[v.fontFamily] ?? v.fontFamily}',`);
-  tsLines.push(`    fontSize: '${v.fontSize}',`);
+  tsLines.push(`    fontSize: '${fontSize}',`);
   tsLines.push(`    fontWeight: ${v.fontWeight},`);
   tsLines.push(`    lineHeight: ${typeof v.lineHeight === 'number' ? v.lineHeight : `'${v.lineHeight}'`},`);
   if (v.letterSpacing && v.letterSpacing !== '0') {

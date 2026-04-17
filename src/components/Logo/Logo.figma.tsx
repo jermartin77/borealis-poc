@@ -18,7 +18,7 @@ figma.connect(
   'https://www.figma.com/design/I6QFi7hLxmg1bRuA9VXAJv/Design-System-AI-POC?node-id=1559-23841',
   {
     props: {
-      variant: figma.enum('Variant', {
+      variant: figma.enum('Type', {
         'Brand Mark': 'brand-mark',
         'Full Logo': 'full-logo',
       }),

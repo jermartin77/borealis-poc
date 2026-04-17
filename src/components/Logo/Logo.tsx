@@ -4,36 +4,37 @@
  * Color is driven by `--ds-foreground-primary` (Figma: Foreground/primary).
  * Switching to dark mode automatically flips the token to a light value,
  * so the logo always contrasts with its background without any extra props.
+ *
+ * Intrinsic sizes (from Figma): Brand Mark 43×32, Full Logo 156×32.
  */
 
 export type LogoVariant = 'brand-mark' | 'full-logo';
 
 export interface LogoProps {
   variant?: LogoVariant;
-  /** Override height in px — width scales proportionally. Default: 32 */
-  height?: number;
   className?: string;
   style?: React.CSSProperties;
   'aria-label'?: string;
 }
 
-/** Aspect ratios from Figma: Brand Mark 43×32, Full Logo 156×32 */
-const ASPECT = { 'brand-mark': 43 / 32, 'full-logo': 156 / 32 };
+const VIEWBOX = {
+  'brand-mark': { viewBox: '0 0 43 32', width: 43, height: 32 },
+  'full-logo':  { viewBox: '0 0 156 32', width: 156, height: 32 },
+};
 
 export function Logo({
   variant = 'brand-mark',
-  height = 32,
   className,
   style,
   'aria-label': ariaLabel = 'Datmos logo',
 }: LogoProps) {
-  const width = Math.round(height * ASPECT[variant]);
+  const { viewBox, width, height } = VIEWBOX[variant];
 
   return (
     <svg
       width={width}
       height={height}
-      viewBox={variant === 'brand-mark' ? '0 0 43 32' : '0 0 156 32'}
+      viewBox={viewBox}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label={ariaLabel}

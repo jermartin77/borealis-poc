@@ -1,0 +1,92 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background: var(--ds-background-solid);
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  color: var(--ds-foreground-primary);
+}
+
+.link {
+  display: contents;
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:focus-visible .imageWrap {
+  outline: 2px solid var(--ds-specialized-focus-ring, var(--ds-border-brand));
+  outline-offset: 2px;
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--ds-background-secondary);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.root:hover .image {
+  transform: scale(1.03);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-xxs);
+  padding: 12px 0 0;
+}
+
+.title {
+  margin: 0;
+  color: var(--ds-foreground-primary);
+}
+
+.description {
+  margin: 0;
+  color: var(--ds-foreground-secondary);
+}
+
+.pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: var(--ds-text-spacing-xxs);
+}
+
+.slashed {
+  color: var(--ds-foreground-quaternary);
+  text-decoration: line-through;
+}
+
+.addToCart {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--ds-background-brand);
+  color: var(--ds-foreground-on-brand);
+  border: none;
+  border-radius: var(--ds-radius-sm);
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: var(--ds-font-weight-medium);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.addToCart:hover {
+  background: var(--ds-background-brand-hover);
+}

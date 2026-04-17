@@ -1,0 +1,110 @@
+/* ── Tooltip wrapper ─────────────────────────────────────────────────────── */
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* ── Tooltip bubble ──────────────────────────────────────────────────────── */
+
+.tooltip {
+  position: absolute;
+  z-index: 100;
+  background-color: var(--ds-background-inverse);
+  color: var(--ds-text-on-inverse);
+  font-family: var(--ds-font-family-text);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: var(--ds-tooltip-padding-vertical) var(--ds-tooltip-padding-horizontal);
+  border-radius: var(--ds-radius-md);
+  white-space: nowrap;
+  pointer-events: none;
+  max-width: 240px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* ── Arrow ───────────────────────────────────────────────────────────────── */
+
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--ds-background-inverse);
+  transform: rotate(45deg);
+}
+
+/* ── Vertical placements ─────────────────────────────────────────────────── */
+
+/* Arrow on top → tooltip below trigger */
+.arrowTop {
+  top: calc(100% + 6px);
+}
+.arrowTop .arrow {
+  top: -4px;
+}
+
+/* Arrow on bottom → tooltip above trigger */
+.arrowBottom {
+  bottom: calc(100% + 6px);
+}
+.arrowBottom .arrow {
+  bottom: -4px;
+}
+
+/* Arrow on right side → tooltip to the left */
+.arrowRightSide {
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.arrowRightSide .arrow {
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Arrow on left side → tooltip to the right */
+.arrowLeftSide {
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.arrowLeftSide .arrow {
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* ── Horizontal arrow alignment ──────────────────────────────────────────── */
+
+.hLeft   { left: 12px; }
+.hMiddle { left: 50%; transform: translateX(-50%); }
+.hRight  { right: 12px; }
+
+/* Arrow within top/bottom placements */
+.arrowTop.hLeft,
+.arrowTop.hMiddle,
+.arrowTop.hRight,
+.arrowBottom.hLeft,
+.arrowBottom.hMiddle,
+.arrowBottom.hRight {
+  /* translate to align with trigger based on horizontal */
+}
+
+.arrowTop.hLeft   { left: 0; }
+.arrowTop.hMiddle { left: 50%; transform: translateX(-50%); }
+.arrowTop.hRight  { right: 0; left: auto; }
+
+.arrowBottom.hLeft   { left: 0; }
+.arrowBottom.hMiddle { left: 50%; transform: translateX(-50%); }
+.arrowBottom.hRight  { right: 0; left: auto; }
+
+/* Arrow horizontal position within bubble */
+.arrowTop .hLeft,
+.arrowBottom .hLeft   { left: 12px; }
+.arrowTop .hMiddle,
+.arrowBottom .hMiddle { left: 50%; transform: translateX(-50%) rotate(45deg); }
+.arrowTop .hRight,
+.arrowBottom .hRight  { right: 12px; left: auto; }

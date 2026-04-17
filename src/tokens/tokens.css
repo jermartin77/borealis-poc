@@ -73,6 +73,8 @@
   --ds-font-family-text: "neue-haas-grotesk-text", system-ui, sans-serif; /** Font/family/text — body copy */
   --ds-font-weight-medium: 500; /** Font/weight/medium */
   --ds-radius-md: 4px; /** radius/md */
+  --ds-radius-sm: 2px; /** radius/sm */
+  --ds-radius-lg: 8px; /** radius/lg */
   --ds-button-gap-lg: 10px; /** button/gap/lg */
   --ds-button-gap-md: 8px; /** button/gap/md */
   --ds-button-gap-sm: 6px; /** button/gap/sm */
@@ -83,4 +85,26 @@
   --ds-button-padding-vertical-md: 14px; /** button/padding/vertical/md */
   --ds-button-padding-vertical-sm: 8px; /** button/padding/vertical/sm */
   --ds-button-border-weight: 1px; /** button/border-weight */
+  --ds-input-padding-vertical-sm: 7px; /** input/padding/vertical/sm */
+  --ds-input-padding-vertical-md: 14px; /** input/padding/vertical/md */
+  --ds-input-padding-horizontal-sm: 10px; /** input/padding/horizontal/sm */
+  --ds-input-padding-horizontal-md: 16px; /** input/padding/horizontal/md */
+  --ds-input-gap-sm: 6px; /** input/gap/sm */
+  --ds-input-gap-md: 10px; /** input/gap/md */
+  --ds-input-border-weight: 1px; /** input/border-weight */
+  --ds-input-focus-spread: 3px; /** input/focus spread */
+  --ds-alert-gap: 16px; /** alert/gap */
+  --ds-alert-padding-horizontal: 16px; /** alert/padding/horizontal */
+  --ds-alert-padding-vertical: 16px; /** alert/padding/vertical */
+  --ds-badge-gap: 8px; /** badge/gap */
+  --ds-badge-padding-horizontal: 12px; /** badge/padding/horizontal */
+  --ds-badge-padding-vertical: 6px; /** badge/padding/vertical */
+  --ds-border-weight: 1px; /** global border weight */
+  --ds-container-width-xs: 420px; /** container-width/xs */
+  --ds-container-width-sm: 720px; /** container-width/sm */
+  --ds-container-width-md: 1280px; /** container-width/md */
+  --ds-container-width-lg: 1440px; /** container-width/lg */
+  --ds-container-width-xl: 1680px; /** container-width/xl */
+  --ds-tooltip-padding-vertical: 6px; /** tooltip/padding/vertical */
+  --ds-tooltip-padding-horizontal: 8px; /** tooltip/padding/horizontal */
 }

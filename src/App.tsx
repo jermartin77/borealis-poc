@@ -83,7 +83,7 @@ function App() {
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Logo variant="full-logo" height={32} />
+            <Logo variant="full-logo" />
             <ThemeToggle />
           </div>
           <div>
@@ -103,11 +103,11 @@ function App() {
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-start' }}>
-              <Logo variant="full-logo" height={32} />
+              <Logo variant="full-logo" />
               <span style={{ fontFamily: 'var(--ds-font-family-text)', fontSize: 11, color: 'var(--ds-text-tertiary)' }}>Full Logo</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-start' }}>
-              <Logo variant="brand-mark" height={32} />
+              <Logo variant="brand-mark" />
               <span style={{ fontFamily: 'var(--ds-font-family-text)', fontSize: 11, color: 'var(--ds-text-tertiary)' }}>Brand Mark</span>
             </div>
           </div>

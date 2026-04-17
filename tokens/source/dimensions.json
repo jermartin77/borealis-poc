@@ -1,0 +1,52 @@
+{
+  "input": {
+    "padding": {
+      "vertical": {
+        "sm": { "$value": "7px",  "$type": "dimension", "$description": "input/padding/vertical/sm" },
+        "md": { "$value": "14px", "$type": "dimension", "$description": "input/padding/vertical/md" }
+      },
+      "horizontal": {
+        "sm": { "$value": "10px", "$type": "dimension", "$description": "input/padding/horizontal/sm" },
+        "md": { "$value": "16px", "$type": "dimension", "$description": "input/padding/horizontal/md" }
+      }
+    },
+    "gap": {
+      "sm": { "$value": "6px",  "$type": "dimension", "$description": "input/gap/sm" },
+      "md": { "$value": "10px", "$type": "dimension", "$description": "input/gap/md" }
+    },
+    "border-weight": { "$value": "1px", "$type": "dimension", "$description": "input/border-weight" },
+    "focus-spread":  { "$value": "3px", "$type": "dimension", "$description": "input/focus spread" }
+  },
+  "alert": {
+    "gap": { "$value": "16px", "$type": "dimension", "$description": "alert/gap" },
+    "padding": {
+      "horizontal": { "$value": "16px", "$type": "dimension", "$description": "alert/padding/horizontal" },
+      "vertical":   { "$value": "16px", "$type": "dimension", "$description": "alert/padding/vertical" }
+    }
+  },
+  "badge": {
+    "gap": { "$value": "8px", "$type": "dimension", "$description": "badge/gap" },
+    "padding": {
+      "horizontal": { "$value": "12px", "$type": "dimension", "$description": "badge/padding/horizontal" },
+      "vertical":   { "$value": "6px",  "$type": "dimension", "$description": "badge/padding/vertical" }
+    }
+  },
+  "border-weight": { "$value": "1px", "$type": "dimension", "$description": "global border weight" },
+  "radius": {
+    "sm": { "$value": "2px", "$type": "dimension", "$description": "radius/sm" },
+    "lg": { "$value": "8px", "$type": "dimension", "$description": "radius/lg" }
+  },
+  "container-width": {
+    "xs": { "$value": "420px",  "$type": "dimension", "$description": "container-width/xs" },
+    "sm": { "$value": "720px",  "$type": "dimension", "$description": "container-width/sm" },
+    "md": { "$value": "1280px", "$type": "dimension", "$description": "container-width/md" },
+    "lg": { "$value": "1440px", "$type": "dimension", "$description": "container-width/lg" },
+    "xl": { "$value": "1680px", "$type": "dimension", "$description": "container-width/xl" }
+  },
+  "tooltip": {
+    "padding": {
+      "vertical":   { "$value": "6px", "$type": "dimension", "$description": "tooltip/padding/vertical" },
+      "horizontal": { "$value": "8px", "$type": "dimension", "$description": "tooltip/padding/horizontal" }
+    }
+  }
+}

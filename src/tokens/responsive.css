@@ -1,0 +1,116 @@
+/* ── Responsive tokens ───────────────────────────────────────────────────────
+ * Mobile-first defaults (screen-sm values from Figma "Responsive Dimensions"
+ * and "Text Sizes" variable collections).
+ * At 1024px (screen-lg) the overrides kick in.
+ * Components reference these tokens directly — no breakpoint props needed.
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Responsive Dimensions ─────────────────────────────────────────────── */
+
+  /* Container */
+  --ds-container-padding: 16px;
+
+  /* Grid spacing */
+  --ds-grid-vertical-spacing-sm:   8px;
+  --ds-grid-vertical-spacing-md:  16px;
+  --ds-grid-vertical-spacing-lg:  32px;
+  --ds-grid-horizontal-spacing-sm:  8px;
+  --ds-grid-horizontal-spacing-md: 16px;
+  --ds-grid-horizontal-spacing-lg: 32px;
+
+  /* Text spacing (between text blocks) */
+  --ds-text-spacing-xxs:  8px;
+  --ds-text-spacing-xs:  10px;
+  --ds-text-spacing-sm:  12px;
+  --ds-text-spacing-md:  16px;
+  --ds-text-spacing-lg:  24px;
+  --ds-text-spacing-xl:  32px;
+
+  /* Stacked component section gaps */
+  --ds-stacked-component-sm: 32px;
+  --ds-stacked-component-md: 48px;
+  --ds-stacked-component-lg: 56px;
+
+  /* Elements */
+  --ds-element-play-button: 56px;
+
+  /* ── Responsive Text Sizes ─────────────────────────────────────────────── */
+
+  /* Headings */
+  --ds-text-heading-responsive: 40px;
+  --ds-text-heading-1:          40px;
+  --ds-text-heading-2:          32px;
+  --ds-text-heading-3:          24px;
+  --ds-text-heading-4:          20px;
+  --ds-text-heading-5:          16px;
+  --ds-text-heading-6:          14px;
+
+  /* Paragraph */
+  --ds-text-paragraph-large:   18px;
+  --ds-text-paragraph-medium:  14px;
+
+  /* Eyebrow */
+  --ds-text-eyebrow-large:  12px;
+  --ds-text-eyebrow-small:  10px;
+
+  /* Product card */
+  --ds-text-product-card-title:       14px;
+  --ds-text-product-card-description: 12px;
+  --ds-text-product-card-price:       12px;
+}
+
+/* ── Screen-lg overrides (min-width: 1024px) ─────────────────────────────── */
+
+@media (min-width: 1024px) {
+  :root {
+    /* Container */
+    --ds-container-padding: 84px;
+
+    /* Grid spacing */
+    --ds-grid-vertical-spacing-sm:   16px;
+    --ds-grid-vertical-spacing-md:   24px;
+    --ds-grid-vertical-spacing-lg:   64px;
+    --ds-grid-horizontal-spacing-sm:  16px;
+    --ds-grid-horizontal-spacing-md:  24px;
+    --ds-grid-horizontal-spacing-lg:  64px;
+
+    /* Text spacing */
+    --ds-text-spacing-xxs:  8px;
+    --ds-text-spacing-xs:  12px;
+    --ds-text-spacing-sm:  16px;
+    --ds-text-spacing-md:  24px;
+    --ds-text-spacing-lg:  32px;
+    --ds-text-spacing-xl:  48px;
+
+    /* Stacked component section gaps */
+    --ds-stacked-component-sm:  64px;
+    --ds-stacked-component-md:  96px;
+    --ds-stacked-component-lg: 112px;
+
+    /* Elements */
+    --ds-element-play-button: 80px;
+
+    /* Headings */
+    --ds-text-heading-responsive: 72px;
+    --ds-text-heading-1:          72px;
+    --ds-text-heading-2:          56px;
+    --ds-text-heading-3:          32px;
+    --ds-text-heading-4:          24px;
+    --ds-text-heading-5:          18px;
+    --ds-text-heading-6:          16px;
+
+    /* Paragraph */
+    --ds-text-paragraph-large:  20px;
+    --ds-text-paragraph-medium: 16px;
+
+    /* Eyebrow */
+    --ds-text-eyebrow-large: 14px;
+    --ds-text-eyebrow-small: 12px;
+
+    /* Product card */
+    --ds-text-product-card-title:       16px;
+    --ds-text-product-card-description: 14px;
+    --ds-text-product-card-price:       14px;
+  }
+}

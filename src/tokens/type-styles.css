@@ -4,42 +4,42 @@
 
 .ds-type-display-1 {
   font-family: var(--ds-font-family-display);
-  font-size: 72px;
+  font-size: var(--ds-text-heading-1);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .ds-type-display-2 {
   font-family: var(--ds-font-family-display);
-  font-size: 56px;
+  font-size: var(--ds-text-heading-2);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .ds-type-display-3 {
   font-family: var(--ds-font-family-display);
-  font-size: 32px;
+  font-size: var(--ds-text-heading-3);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .ds-type-display-4 {
   font-family: var(--ds-font-family-display);
-  font-size: 24px;
+  font-size: var(--ds-text-heading-4);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .ds-type-display-5 {
   font-family: var(--ds-font-family-display);
-  font-size: 18px;
+  font-size: var(--ds-text-heading-5);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .ds-type-display-6 {
   font-family: var(--ds-font-family-display);
-  font-size: 16px;
+  font-size: var(--ds-text-heading-6);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -53,7 +53,7 @@
 
 .ds-type-text-large-regular {
   font-family: var(--ds-font-family-text);
-  font-size: 20px;
+  font-size: var(--ds-text-paragraph-large);
   font-weight: 400;
   line-height: 1.5;
   --type-paragraph-spacing: 24px;
@@ -61,7 +61,7 @@
 
 .ds-type-text-large-bold {
   font-family: var(--ds-font-family-text);
-  font-size: 20px;
+  font-size: var(--ds-text-paragraph-large);
   font-weight: 700;
   line-height: 1.5;
   --type-paragraph-spacing: 24px;
@@ -69,7 +69,7 @@
 
 .ds-type-text-medium-regular {
   font-family: var(--ds-font-family-text);
-  font-size: 16px;
+  font-size: var(--ds-text-paragraph-medium);
   font-weight: 400;
   line-height: 1.5;
   --type-paragraph-spacing: 16px;
@@ -77,7 +77,7 @@
 
 .ds-type-text-medium-bold {
   font-family: var(--ds-font-family-text);
-  font-size: 16px;
+  font-size: var(--ds-text-paragraph-medium);
   font-weight: 700;
   line-height: 1.5;
   --type-paragraph-spacing: 16px;
@@ -115,7 +115,7 @@
 
 .ds-type-eyebrow-large {
   font-family: var(--ds-font-family-text);
-  font-size: 14px;
+  font-size: var(--ds-text-eyebrow-large);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.04em;
@@ -124,7 +124,7 @@
 
 .ds-type-eyebrow-medium {
   font-family: var(--ds-font-family-text);
-  font-size: 12px;
+  font-size: var(--ds-text-eyebrow-small);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.04em;
@@ -224,28 +224,28 @@
 
 .ds-type-product-card-title {
   font-family: var(--ds-font-family-display);
-  font-size: 16px;
+  font-size: var(--ds-text-product-card-title);
   font-weight: 700;
   line-height: 1.5;
 }
 
 .ds-type-product-card-description {
   font-family: var(--ds-font-family-display);
-  font-size: 14px;
+  font-size: var(--ds-text-product-card-description);
   font-weight: 400;
   line-height: 1.5;
 }
 
 .ds-type-product-card-price {
   font-family: var(--ds-font-family-text);
-  font-size: 14px;
+  font-size: var(--ds-text-product-card-price);
   font-weight: 400;
   line-height: 1.2;
 }
 
 .ds-type-product-card-price-slashed {
   font-family: var(--ds-font-family-text);
-  font-size: 14px;
+  font-size: var(--ds-text-product-card-price);
   font-weight: 400;
   line-height: 1.2;
   text-decoration: line-through;

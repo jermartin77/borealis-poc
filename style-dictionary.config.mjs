@@ -6,6 +6,7 @@ const sd = new StyleDictionary({
     'tokens/source/color.json',
     'tokens/source/typography.json',
     'tokens/source/spacing.json',
+    'tokens/source/dimensions.json',
   ],
   platforms: {
     css: {
