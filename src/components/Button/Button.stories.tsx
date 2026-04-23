@@ -82,7 +82,7 @@ export const IconBefore: Story = {
     variant: 'primary',
     size: 'md',
     label: 'Next',
-    leftIcon: <Icon name="Arrow Right" size={16} />,
+    leftIcon: <Icon name="arrow-right" size={16} />,
   },
 };
 
@@ -92,7 +92,7 @@ export const IconAfter: Story = {
     variant: 'primary',
     size: 'md',
     label: 'Back',
-    rightIcon: <Icon name="Arrow Left" size={16} />,
+    rightIcon: <Icon name="arrow-left" size={16} />,
   },
 };
 

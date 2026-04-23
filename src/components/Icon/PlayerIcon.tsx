@@ -7,20 +7,20 @@ export type PlayerIconStyle = 'stroked' | 'solid';
 
 export interface PlayerIconProps extends Omit<LucideProps, 'ref'> {
   name?: PlayerIconName;
-  style?: PlayerIconStyle;
+  iconStyle?: PlayerIconStyle;
   size?: number;
   'aria-label'?: string;
 }
 
 export function PlayerIcon({
   name = 'play',
-  style = 'stroked',
+  iconStyle = 'stroked',
   size = 32,
   className,
   'aria-label': ariaLabel,
   ...props
 }: PlayerIconProps) {
-  const isSolid = style === 'solid';
+  const isSolid = iconStyle === 'solid';
 
   const shared = {
     size,

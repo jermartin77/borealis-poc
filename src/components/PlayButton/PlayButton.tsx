@@ -17,7 +17,7 @@ export function PlayButton({
       aria-label={ariaLabel}
       {...props}
     >
-      <PlayerIcon name="play" style="solid" size={32} />
+      <PlayerIcon name="play" iconStyle="solid" size={32} />
     </button>
   );
 }

@@ -18,7 +18,7 @@ const meta: Meta<typeof PlayerIcon> = {
   },
   argTypes: {
     name: { control: 'select', options: ['play', 'pause'] },
-    style: { control: 'select', options: ['stroked', 'solid'] },
+    iconStyle: { control: 'select', options: ['stroked', 'solid'] },
     size: { control: { type: 'range', min: 16, max: 64, step: 4 } },
   },
 };
@@ -27,7 +27,7 @@ export default meta;
 type Story = StoryObj<typeof PlayerIcon>;
 
 export const Default: Story = {
-  args: { name: 'play', style: 'stroked', size: 32 },
+  args: { name: 'play', iconStyle: 'stroked', size: 32 },
 };
 
 export const AllVariants: Story = {
@@ -44,8 +44,8 @@ export const AllVariants: Story = {
           }}>
             {style}
           </span>
-          <PlayerIcon name="play" style={style} size={32} />
-          <PlayerIcon name="pause" style={style} size={32} />
+          <PlayerIcon name="play" iconStyle={style} size={32} />
+          <PlayerIcon name="pause" iconStyle={style} size={32} />
         </div>
       ))}
     </div>
@@ -57,7 +57,7 @@ export const Sizes: Story = {
   render: () => (
     <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
       {[20, 24, 32, 40, 48].map((s) => (
-        <PlayerIcon key={s} name="play" style="solid" size={s} />
+        <PlayerIcon key={s} name="play" iconStyle="solid" size={s} />
       ))}
     </div>
   ),
@@ -67,9 +67,9 @@ export const Tinted: Story = {
   name: 'Tinted via currentColor',
   render: () => (
     <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-      <span style={{ color: 'var(--ds-text-primary)' }}><PlayerIcon name="play" style="solid" size={32} /></span>
-      <span style={{ color: 'var(--ds-background-brand)' }}><PlayerIcon name="play" style="solid" size={32} /></span>
-      <span style={{ color: 'var(--ds-text-secondary)' }}><PlayerIcon name="pause" style="stroked" size={32} /></span>
+      <span style={{ color: 'var(--ds-text-primary)' }}><PlayerIcon name="play" iconStyle="solid" size={32} /></span>
+      <span style={{ color: 'var(--ds-background-brand)' }}><PlayerIcon name="play" iconStyle="solid" size={32} /></span>
+      <span style={{ color: 'var(--ds-text-secondary)' }}><PlayerIcon name="pause" iconStyle="stroked" size={32} /></span>
     </div>
   ),
 };

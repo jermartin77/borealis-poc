@@ -29,7 +29,7 @@ figma.connect(
       }),
     },
     example: ({ name, style }) => (
-      <PlayerIcon name={name} style={style} />
+      <PlayerIcon name={name} iconStyle={style} />
     ),
   },
 );
