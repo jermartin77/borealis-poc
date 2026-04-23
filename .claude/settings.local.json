@@ -30,7 +30,9 @@
       "Bash(git add *)",
       "Bash(git reset *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(xargs sed *)",
+      "Bash(xargs -0 sed -i '' \"s/title: 'Design System\\\\//title: 'Components\\\\//g\")"
     ]
   }
 }
