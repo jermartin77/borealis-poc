@@ -1,5 +1,6 @@
-import { type InputHTMLAttributes, type SelectHTMLAttributes, forwardRef } from 'react';
-import styles from './Input.module.css';
+import { type InputHTMLAttributes, forwardRef } from 'react';
+import { FormField, fieldStyles } from '../FormField/FormField';
+import inputStyles from './Input.module.css';
 
 // ─── Text Input ───────────────────────────────────────────────────────────────
 
@@ -28,116 +29,35 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   ref
 ) {
   const inputId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined);
-  const isAlert = Boolean(alertMessage);
 
-  const wrapCls = [isAlert ? styles.alert : null, className].filter(Boolean).join(' ');
   const inputCls = [
-    styles.input,
-    iconLeft  ? styles.hasIconLeft  : null,
-    iconRight ? styles.hasIconRight : null,
+    fieldStyles.input,
+    iconLeft  ? inputStyles.hasIconLeft  : null,
+    iconRight ? inputStyles.hasIconRight : null,
   ].filter(Boolean).join(' ');
 
   return (
-    <div className={[styles.field, wrapCls].filter(Boolean).join(' ')}>
-      {showLabel && label && (
-        <label htmlFor={inputId} className={styles.label}>
-          {label}
-          {required && <span className={styles.required} aria-hidden>*</span>}
-        </label>
-      )}
-      <div className={styles.inputWrap}>
-        {iconLeft && <span className={styles.iconLeft}>{iconLeft}</span>}
-        <input
-          ref={ref}
-          id={inputId}
-          disabled={disabled}
-          required={required}
-          aria-invalid={isAlert || undefined}
-          aria-describedby={isAlert && inputId ? `${inputId}-error` : undefined}
-          className={inputCls}
-          {...props}
-        />
-        {iconRight && <span className={styles.iconRight}>{iconRight}</span>}
-      </div>
-      {isAlert && alertMessage && (
-        <span id={inputId ? `${inputId}-error` : undefined} className={styles.alertMessage} role="alert">
-          {alertMessage}
-        </span>
-      )}
-    </div>
-  );
-});
-
-// ─── Select ───────────────────────────────────────────────────────────────────
-
-export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  label?: string;
-  showLabel?: boolean;
-  required?: boolean;
-  icon?: React.ReactNode;
-  alertMessage?: string;
-  options: { value: string; label: string }[];
-  placeholder?: string;
-}
-
-export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
-  {
-    label,
-    showLabel = true,
-    required,
-    icon,
-    alertMessage,
-    options,
-    placeholder,
-    className,
-    id,
-    disabled,
-    ...props
-  },
-  ref
-) {
-  const selectId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined);
-  const isAlert = Boolean(alertMessage);
-
-  const wrapCls = [isAlert ? styles.alert : null, className].filter(Boolean).join(' ');
-  const selectCls = [styles.input, styles.select, styles.hasIconRight].filter(Boolean).join(' ');
-
-  return (
-    <div className={[styles.field, wrapCls].filter(Boolean).join(' ')}>
-      {showLabel && label && (
-        <label htmlFor={selectId} className={styles.label}>
-          {label}
-          {required && <span className={styles.required} aria-hidden>*</span>}
-        </label>
-      )}
-      <div className={styles.inputWrap}>
-        {icon && <span className={styles.iconLeft}>{icon}</span>}
-        <select
-          ref={ref}
-          id={selectId}
-          disabled={disabled}
-          required={required}
-          aria-invalid={isAlert || undefined}
-          className={[selectCls, icon ? styles.hasIconLeft : null].filter(Boolean).join(' ')}
-          {...props}
-        >
-          {placeholder && <option value="">{placeholder}</option>}
-          {options.map(o => (
-            <option key={o.value} value={o.value}>{o.label}</option>
-          ))}
-        </select>
-        <span className={styles.selectArrow}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-            <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-      </div>
-      {isAlert && alertMessage && (
-        <span id={selectId ? `${selectId}-error` : undefined} className={styles.alertMessage} role="alert">
-          {alertMessage}
-        </span>
-      )}
-    </div>
+    <FormField
+      label={label}
+      showLabel={showLabel}
+      required={required}
+      alertMessage={alertMessage}
+      inputId={inputId}
+      className={className}
+    >
+      {iconLeft && <span className={fieldStyles.iconLeft}>{iconLeft}</span>}
+      <input
+        ref={ref}
+        id={inputId}
+        disabled={disabled}
+        required={required}
+        aria-invalid={Boolean(alertMessage) || undefined}
+        aria-describedby={alertMessage && inputId ? `${inputId}-error` : undefined}
+        className={inputCls}
+        {...props}
+      />
+      {iconRight && <span className={fieldStyles.iconRight}>{iconRight}</span>}
+    </FormField>
   );
 });
 

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Input, Select, SearchInput } from './Input';
+import { Input, SearchInput } from './Input';
 
 const meta: Meta<typeof Input> = {
   title: 'Design System/Input',
@@ -48,23 +48,6 @@ export const WithIcons: Story = {
             <path d="M10.5 10.5L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
         }
-      />
-    </div>
-  ),
-};
-
-export const SelectStory: StoryObj<typeof Select> = {
-  name: 'Select',
-  render: () => (
-    <div style={{ maxWidth: 360 }}>
-      <Select
-        label="Country"
-        placeholder="Select a country"
-        options={[
-          { value: 'us', label: 'United States' },
-          { value: 'ca', label: 'Canada' },
-          { value: 'uk', label: 'United Kingdom' },
-        ]}
       />
     </div>
   ),

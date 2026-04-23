@@ -1,0 +1,9 @@
+/* ── Textarea-specific overrides ─────────────────────────────────────────── */
+
+.textarea {
+  resize: vertical;
+  min-height: 96px;
+  line-height: 1.5;
+  /* Override the single-line align-items:center from inputWrap */
+  align-self: stretch;
+}

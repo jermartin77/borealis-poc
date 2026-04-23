@@ -1,0 +1,107 @@
+/* ── Field wrapper ───────────────────────────────────────────────────────── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-xxs);
+  box-sizing: border-box;
+}
+
+.label {
+  font-family: var(--ds-font-family-display);
+  font-size: var(--ds-text-input-label);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ds-text-primary);
+}
+
+.required {
+  color: var(--ds-text-error);
+  margin-left: 2px;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.iconLeft,
+.iconRight {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--ds-foreground-quaternary);
+}
+
+.iconLeft  { left: var(--ds-input-padding-horizontal-sm); }
+.iconRight { right: var(--ds-input-padding-horizontal-sm); }
+
+/* ── Base control element ─────────────────────────────────────────────────── */
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--ds-font-family-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ds-text-primary);
+  background-color: var(--ds-background-primary);
+  border: var(--ds-input-border-weight) solid var(--ds-border-secondary);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-input-padding-vertical-md) var(--ds-input-padding-horizontal-md);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  appearance: none;
+}
+
+.input::placeholder {
+  color: var(--ds-text-placeholder);
+}
+
+/* ── States ──────────────────────────────────────────────────────────────── */
+
+.input:hover:not(:disabled) {
+  border-color: var(--ds-border-primary);
+}
+
+.input:focus {
+  border-color: var(--ds-border-interactive);
+  box-shadow: 0 0 0 var(--ds-input-focus-spread) var(--ds-input-focus);
+}
+
+.input:disabled {
+  background-color: var(--ds-background-disabled);
+  color: var(--ds-text-disabled);
+  border-color: var(--ds-border-disabled);
+  cursor: not-allowed;
+}
+
+.input:disabled::placeholder {
+  color: var(--ds-text-disabled);
+}
+
+/* ── Alert (validation error) state ──────────────────────────────────────── */
+
+.alert .input,
+.alert .input:hover:not(:disabled),
+.alert .input:focus {
+  border-color: var(--ds-border-error);
+}
+
+.alert .input:focus {
+  box-shadow: 0 0 0 var(--ds-input-focus-spread) var(--ds-input-focus-error);
+}
+
+.alertMessage {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ds-text-error);
+}

@@ -1,0 +1,20 @@
+/* ── Select-specific overrides ───────────────────────────────────────────── */
+
+.select {
+  cursor: pointer;
+}
+
+/* Make room for the built-in chevron on the right, and optional icon on left */
+.hasIconRight { padding-right: calc(var(--ds-input-padding-horizontal-md) + 20px + var(--ds-input-gap-md)); }
+.hasIconLeft  { padding-left:  calc(var(--ds-input-padding-horizontal-md) + 20px + var(--ds-input-gap-md)); }
+
+/* ── Chevron arrow ───────────────────────────────────────────────────────── */
+
+.selectArrow {
+  position: absolute;
+  right: var(--ds-input-padding-horizontal-md);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--ds-foreground-quaternary);
+}

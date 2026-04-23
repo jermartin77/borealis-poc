@@ -6,7 +6,7 @@
   gap: var(--ds-badge-gap);
   padding-inline: var(--ds-badge-padding-horizontal);
   padding-block: var(--ds-badge-padding-vertical);
-  border-radius: var(--ds-radius-lg);
+  border-radius: var(--ds-radius-md);
   font-family: var(--ds-font-family-text);
   font-size: 14px;
   font-weight: 500;
@@ -19,17 +19,17 @@
 /* ── Color variants ──────────────────────────────────────────────────────── */
 
 .primary {
-  background-color: var(--ds-background-brand-subtle);
-  color: var(--ds-text-brand);
+  background-color: var(--ds-background-brand);
+  color: var(--ds-text-primary);
 }
 
 .neutral {
-  background-color: var(--ds-background-secondary);
-  color: var(--ds-text-secondary);
+  background-color: var(--ds-background-inverse);
+  color: var(--ds-text-on-inverse);
 }
 
 .stroked {
-  background-color: transparent;
+  background-color: var(--ds-background-primary);
   color: var(--ds-text-secondary);
   border: var(--ds-border-weight) solid var(--ds-border-secondary);
 }
