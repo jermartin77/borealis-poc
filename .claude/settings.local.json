@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(mv borealis-temp/* borealis-temp/.* .)",
+      "Bash(rm -rf borealis-temp)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "mcp__plugin_figma_figma__get_metadata",
+      "mcp__plugin_figma_figma__get_variable_defs",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_code_connect_suggestions",
+      "mcp__plugin_figma_figma__send_code_connect_mappings",
+      "Bash(FIGMA_ACCESS_TOKEN=yfigd_OwikFh5dZmjw2uoGWcXe5Uh-bCC-T5pVAlIEAtqy npm run figma:connect)",
+      "Bash(FIGMA_ACCESS_TOKEN=yfigd_OwikFh5dZmjw2uoGWcXe5Uh-bCC-T5pVAlIEAtqy npx figma connect publish --token yfigd_OwikFh5dZmjw2uoGWcXe5Uh-bCC-T5pVAlIEAtqy)",
+      "Bash(FIGMA_ACCESS_TOKEN=figd_KLjDIav-vbcn76xQwlSBHQcCBNor9j9JZH1_LV8t npx figma connect publish)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(npx storybook@latest init --yes)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:6006)",
+      "Bash(pkill -f \"skills\")",
+      "Bash(npx skills *)",
+      "Bash(npx vercel *)",
+      "Bash(gh auth *)",
+      "mcp__plugin_figma_figma__use_figma",
+      "Bash(node -e ' *)",
+      "Bash(curl -s \"https://use.typekit.net/lwh4jcp.css\")",
+      "mcp__plugin_figma_figma__get_context_for_code_connect",
+      "Bash(FIGMA_ACCESS_TOKEN=figd_KLjDIav-vbcn76xQwlSBHQcCBNor9j9JZH1_LV8t npx figma connect publish --include \"src/components/Logo/Logo.figma.tsx\")",
+      "Bash(FIGMA_ACCESS_TOKEN=figd_KLjDIav-vbcn76xQwlSBHQcCBNor9j9JZH1_LV8t npm run figma:connect)",
+      "Bash(node -e \"const l = require\\('./node_modules/lucide-react/dist/cjs/lucide-react.js'\\); const names = Object.keys\\(l\\).filter\\(k => ['Funnel','Handbag','SquareArrowOutUpRight','ShoppingBag','Filter','ExternalLink','Sparkles','CircleAlert','CircleCheck','TriangleAlert','Settings2','Trash2','ZoomIn','ZoomOut','BookmarkIcon'].includes\\(k\\)\\); console.log\\(names\\);\")",
+      "Bash(node -e \"const l = require\\('./node_modules/lucide-react/dist/cjs/lucide-react.js'\\); const check = ['Bookmark','User','ArrowDown','ArrowUp','ArrowLeft','ArrowRight','Calendar','Check','ChevronDown','ChevronLeft','ChevronRight','ChevronUp','Circle','Download','Info','Mail','MapPin','Menu','Minus','Plus','Send','Settings','ShoppingCart','Tag','X','Search']; console.log\\(check.filter\\(k => !!l[k]\\)\\);\")",
+      "Bash(npx tsc *)",
+      "Bash(cat vite.config.ts)",
+      "Bash(cat tsconfig.json)",
+      "Bash(git add *)",
+      "Bash(git reset *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}
