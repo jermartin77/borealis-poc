@@ -9,7 +9,7 @@ const COUNTRY_OPTIONS = [
 ];
 
 const meta: Meta<typeof Select> = {
-  title: 'Design System/Select',
+  title: 'Components/Select',
   component: Select,
   tags: ['autodocs'],
   parameters: { layout: 'padded' },

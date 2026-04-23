@@ -22,10 +22,10 @@ export function Loader({ size = 'md', label = 'Loading…', className, ...props 
         fill="none"
         aria-hidden
       >
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeOpacity="0.2" strokeWidth="2.5"/>
+        <circle cx="12" cy="12" r="10" stroke="var(--ds-border-subtle)" strokeWidth="2.5"/>
         <path
           d="M12 2a10 10 0 0 1 10 10"
-          stroke="currentColor"
+          stroke="var(--ds-foreground-primary)"
           strokeWidth="2.5"
           strokeLinecap="round"
         />

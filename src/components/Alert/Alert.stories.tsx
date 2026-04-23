@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Alert, AlertBanner } from './Alert';
 
 const meta: Meta<typeof Alert> = {
-  title: 'Design System/Alert',
+  title: 'Components/Alert',
   component: Alert,
   tags: ['autodocs'],
   parameters: { layout: 'padded' },

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PlayerIcon } from './PlayerIcon';
 
 const meta: Meta<typeof PlayerIcon> = {
-  title: 'Design System/Icon/Player',
+  title: 'Components/Icon/Player',
   component: PlayerIcon,
   tags: ['autodocs'],
   parameters: {

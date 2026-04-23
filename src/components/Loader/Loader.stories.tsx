@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Loader } from './Loader';
 
 const meta: Meta<typeof Loader> = {
-  title: 'Design System/Loader',
+  title: 'Components/Loader',
   component: Loader,
   tags: ['autodocs'],
   parameters: { layout: 'centered' },

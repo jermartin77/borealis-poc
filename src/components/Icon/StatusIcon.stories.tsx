@@ -4,7 +4,7 @@ import { StatusIcon, type StatusIconName } from './StatusIcon';
 const ALL_STATUS: StatusIconName[] = ['alert', 'check-circle', 'info', 'warning'];
 
 const meta: Meta<typeof StatusIcon> = {
-  title: 'Design System/Icon/Status',
+  title: 'Components/Icon/Status',
   component: StatusIcon,
   tags: ['autodocs'],
   parameters: {

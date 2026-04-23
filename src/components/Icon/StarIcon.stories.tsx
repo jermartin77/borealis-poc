@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { StarIcon } from './StarIcon';
 
 const meta: Meta<typeof StarIcon> = {
-  title: 'Design System/Icon/Review Stars',
+  title: 'Components/Icon/Review Stars',
   component: StarIcon,
   tags: ['autodocs'],
   parameters: {

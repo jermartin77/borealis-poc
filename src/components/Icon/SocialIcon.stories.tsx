@@ -7,7 +7,7 @@ const ALL_SOCIAL: SocialIconName[] = [
 ];
 
 const meta: Meta<typeof SocialIcon> = {
-  title: 'Design System/Icon/Social',
+  title: 'Components/Icon/Social',
   component: SocialIcon,
   tags: ['autodocs'],
   parameters: {

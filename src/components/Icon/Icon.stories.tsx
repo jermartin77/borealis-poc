@@ -15,7 +15,7 @@ const ALL_ICONS: IconName[] = [
 ];
 
 const meta: Meta<typeof Icon> = {
-  title: 'Design System/Icon',
+  title: 'Components/Icon',
   component: Icon,
   tags: ['autodocs'],
   parameters: {
