@@ -54,7 +54,7 @@ export function Tooltip({
     >
       {children}
       {visible && (
-        <span className={tooltipCls} role="tooltip">
+        <span className={`${tooltipCls} ds-type-tooltip`} role="tooltip">
           {content}
           <span className={arrowCls} />
         </span>

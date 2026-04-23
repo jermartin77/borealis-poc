@@ -1,9 +1,7 @@
 /* ── Accordion ───────────────────────────────────────────────────────────── */
 
 .root {
-  border: var(--ds-border-weight) solid var(--ds-border-subtle);
-  border-radius: var(--ds-radius-md);
-  overflow: hidden;
+  border-top: var(--ds-border-weight) solid var(--ds-border-primary);
   box-sizing: border-box;
 }
 
@@ -13,62 +11,45 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px;
+  padding: 16px 0;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  font-family: var(--ds-font-family-display);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.4;
   color: var(--ds-text-primary);
-  background-color: var(--ds-background-primary);
-  transition: background-color 0.15s ease;
+  transition: opacity 0.15s ease;
   box-sizing: border-box;
-}
-
-.trigger:hover {
-  background-color: var(--ds-background-secondary);
 }
 
 .trigger:focus-visible {
   outline: 2px solid var(--ds-specialized-focus-ring);
-  outline-offset: -2px;
+  outline-offset: 2px;
+}
+
+.label {
+  color: var(--ds-text-primary);
 }
 
 .icon {
   display: flex;
   flex-shrink: 0;
-  color: var(--ds-foreground-tertiary);
-  transition: transform 0.2s ease;
-}
-
-.open .icon {
-  transform: rotate(180deg);
+  color: var(--ds-text-primary);
 }
 
 .panel {
-  display: none;
-  padding: 0 16px 16px;
-  font-family: var(--ds-font-family-text);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--ds-text-secondary);
-  background-color: var(--ds-background-primary);
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.panelInner {
+  padding-bottom: 24px;
+  color: var(--ds-text-primary);
   box-sizing: border-box;
 }
 
-.open .panel {
-  display: block;
-}
+/* ── Accordion Group ─────────────────────────────────────────────────────── */
 
-.divider {
-  height: var(--ds-border-weight);
-  background-color: var(--ds-border-subtle);
-}
-
-.open .divider {
-  display: block;
+.group {
+  border-bottom: var(--ds-border-weight) solid var(--ds-border-primary);
+  box-sizing: border-box;
 }

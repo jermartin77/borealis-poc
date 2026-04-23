@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Accordion } from './Accordion';
+import { Accordion, AccordionGroup } from './Accordion';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Design System/Accordion',
@@ -26,19 +26,21 @@ export const Open: Story = {
   },
 };
 
-export const StackedGroup: Story = {
-  name: 'Stacked group',
+export const Group: Story = {
+  name: 'Accordion Group',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 560 }}>
-      <Accordion header="What is your return policy?">
-        We offer a 30-day return policy on all unused items in original packaging.
-      </Accordion>
-      <Accordion header="How long does shipping take?" defaultOpen>
-        Standard shipping takes 5–7 business days. Express options are available at checkout.
-      </Accordion>
-      <Accordion header="Do you offer international shipping?">
-        Yes, we ship to over 50 countries. International shipping rates and times vary by destination.
-      </Accordion>
+    <div style={{ maxWidth: 480 }}>
+      <AccordionGroup defaultOpenIndex={1}>
+        <Accordion header="Materials">
+          Cotton 80%, Polyester 20%. Machine wash cold, tumble dry low.
+        </Accordion>
+        <Accordion header="Shipping + Returns">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </Accordion>
+        <Accordion header="Care Instructions">
+          Hand wash recommended. Do not bleach. Iron on low heat.
+        </Accordion>
+      </AccordionGroup>
     </div>
   ),
 };

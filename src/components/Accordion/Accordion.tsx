@@ -1,4 +1,5 @@
-import { useState, type HTMLAttributes } from 'react';
+import { useState, useRef, useEffect, type HTMLAttributes } from 'react';
+import { Icon } from '../Icon/Icon';
 import styles from './Accordion.module.css';
 
 export interface AccordionProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onToggle'> {
@@ -20,6 +21,7 @@ export function Accordion({
 }: AccordionProps) {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
   const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const panelRef = useRef<HTMLDivElement>(null);
 
   function toggle() {
     const next = !isOpen;
@@ -27,7 +29,20 @@ export function Accordion({
     onToggle?.(next);
   }
 
-  const rootCls = [styles.root, isOpen ? styles.open : null, className].filter(Boolean).join(' ');
+  useEffect(() => {
+    const el = panelRef.current;
+    if (!el) return;
+    if (isOpen) {
+      el.style.height = el.scrollHeight + 'px';
+    } else {
+      el.style.height = el.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        el.style.height = '0px';
+      });
+    }
+  }, [isOpen]);
+
+  const rootCls = [styles.root, className].filter(Boolean).join(' ');
 
   return (
     <div className={rootCls} {...props}>
@@ -37,17 +52,53 @@ export function Accordion({
         onClick={toggle}
         aria-expanded={isOpen}
       >
-        <span>{header}</span>
+        <span className={`${styles.label} ds-type-display-5`}>{header}</span>
         <span className={styles.icon} aria-hidden>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <Icon name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} />
         </span>
       </button>
-      {isOpen && <div className={styles.divider} />}
-      <div className={styles.panel} role="region" hidden={!isOpen}>
-        {children}
+      <div
+        ref={panelRef}
+        className={styles.panel}
+        style={{ height: defaultOpen ? undefined : '0px' }}
+        aria-hidden={!isOpen}
+      >
+        <div className={`${styles.panelInner} ds-type-text-medium-regular`}>
+          {children}
+        </div>
       </div>
+    </div>
+  );
+}
+
+export interface AccordionGroupProps extends HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+  defaultOpenIndex?: number;
+}
+
+export function AccordionGroup({
+  children,
+  defaultOpenIndex,
+  className,
+  ...props
+}: AccordionGroupProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex ?? null);
+
+  const items = Array.isArray(children) ? children : [children];
+
+  return (
+    <div className={[styles.group, className].filter(Boolean).join(' ')} {...props}>
+      {items.map((child, i) => {
+        if (!child) return null;
+        return (
+          <Accordion
+            key={i}
+            {...(child as React.ReactElement<AccordionProps>).props}
+            open={openIndex === i}
+            onToggle={(next) => setOpenIndex(next ? i : null)}
+          />
+        );
+      })}
     </div>
   );
 }
