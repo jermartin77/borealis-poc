@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--ds-element-play-button);
+  height: var(--ds-element-play-button);
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  transition:
+    background-color var(--ds-transition),
+    backdrop-filter var(--ds-transition);
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(9px);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--ds-specialized-focus-ring);
+  outline-offset: 2px;
+}
