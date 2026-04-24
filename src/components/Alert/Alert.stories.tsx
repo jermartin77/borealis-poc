@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Alert, AlertBanner } from './Alert';
+import { Alert } from './Alert';
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Alert',
@@ -31,7 +31,6 @@ export const WithCaption: Story = {
     style: 'default',
     headline: 'Heads up',
     caption: 'This action cannot be undone once confirmed.',
-    showCaption: true,
   },
 };
 
@@ -40,7 +39,6 @@ export const WithButton: Story = {
     style: 'error',
     headline: 'Payment failed.',
     caption: 'Please update your payment method.',
-    showCaption: true,
     showButton: true,
     buttonLabel: 'Update payment',
   },
@@ -66,17 +64,3 @@ export const AllStyles: Story = {
   ),
 };
 
-export const BannerDefault: Story = {
-  name: 'Banner — Default',
-  render: () => <AlertBanner type="default" message="Free shipping on orders over $75." showAction buttonLabel="Shop now" onButtonClick={() => {}} />,
-};
-
-export const BannerError: Story = {
-  name: 'Banner — Error',
-  render: () => <AlertBanner type="error" message="Your session has expired. Please sign in again." showAction buttonLabel="Sign in" />,
-};
-
-export const BannerSuccess: Story = {
-  name: 'Banner — Success',
-  render: () => <AlertBanner type="success" message="Your order has been confirmed." />,
-};

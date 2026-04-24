@@ -32,7 +32,13 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(xargs sed *)",
-      "Bash(xargs -0 sed -i '' \"s/title: 'Design System\\\\//title: 'Components\\\\//g\")"
+      "Bash(xargs -0 sed -i '' \"s/title: 'Design System\\\\//title: 'Components\\\\//g\")",
+      "Bash(git commit --allow-empty -m ' *)",
+      "Bash(node -e \"require\\('@storybook/theming'\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(list\\(d.get\\('exports',{}\\).keys\\(\\)\\)[:30]\\)\")",
+      "Bash(git worktree *)",
+      "Bash(git branch *)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC/.claude/worktrees/zen-elion-b9f9cc\" status)"
     ]
   }
 }

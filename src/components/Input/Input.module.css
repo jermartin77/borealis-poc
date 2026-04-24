@@ -2,3 +2,31 @@
 
 .hasIconLeft  { padding-left:  calc(var(--ds-input-padding-horizontal-md) + 20px + var(--ds-input-gap-md)); }
 .hasIconRight { padding-right: calc(var(--ds-input-padding-horizontal-md) + 20px + var(--ds-input-gap-md)); }
+
+/* ── Search Input ─────────────────────────────────────────────────────────── */
+
+.hasSearchClear {
+  padding-right: calc(var(--ds-input-padding-horizontal-md) + 20px + var(--ds-input-gap-md) + 20px + var(--ds-input-gap-md));
+}
+
+.searchRight {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-input-gap-md);
+}
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  border: none;
+  background-color: var(--ds-background-tertiary);
+  color: var(--ds-text-primary);
+  cursor: pointer;
+  padding: 0;
+  pointer-events: auto;
+}

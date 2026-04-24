@@ -1,5 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import styles from './Alert.module.css';
+import { StatusIcon } from '../Icon/StatusIcon';
 
 export type AlertStyle = 'default' | 'error' | 'success';
 
@@ -11,7 +12,6 @@ export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'style'
   caption?: string;
   showIcon?: boolean;
   showClose?: boolean;
-  showCaption?: boolean;
   showButton?: boolean;
   buttonLabel?: string;
   onClose?: () => void;
@@ -20,24 +20,9 @@ export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'style'
 }
 
 const defaultIcons: Record<AlertStyle, React.ReactNode> = {
-  default: (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-      <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
-      <path d="M8 5v3.5M8 11h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
-  ),
-  error: (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-      <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
-      <path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
-  ),
-  success: (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-      <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
-      <path d="M5 8l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  ),
+  default: <StatusIcon name="info" />,
+  error:   <StatusIcon name="alert" />,
+  success: <StatusIcon name="check-circle" />,
 };
 
 export function Alert({
@@ -46,7 +31,6 @@ export function Alert({
   caption,
   showIcon = true,
   showClose = false,
-  showCaption = false,
   showButton = false,
   buttonLabel = 'Learn more',
   onClose,
@@ -65,7 +49,7 @@ export function Alert({
         )}
         <div className={styles.content}>
           <p className={styles.headline}>{headline}</p>
-          {showCaption && caption && (
+          {caption && (
             <p className={styles.caption}>{caption}</p>
           )}
           {showButton && (
@@ -91,44 +75,3 @@ export function Alert({
   );
 }
 
-// ─── AlertBanner ──────────────────────────────────────────────────────────────
-
-export type AlertBannerType = 'default' | 'error' | 'success';
-
-export interface AlertBannerProps extends HTMLAttributes<HTMLDivElement> {
-  type?: AlertBannerType;
-  message: string;
-  showIcon?: boolean;
-  showAction?: boolean;
-  buttonLabel?: string;
-  onButtonClick?: () => void;
-  icon?: React.ReactNode;
-}
-
-export function AlertBanner({
-  type = 'default',
-  message,
-  showIcon = true,
-  showAction = false,
-  buttonLabel = 'Learn more',
-  onButtonClick,
-  icon,
-  className,
-  ...props
-}: AlertBannerProps) {
-  const cls = [styles.banner, styles[type], className].filter(Boolean).join(' ');
-
-  return (
-    <div role="alert" className={cls} {...props}>
-      {showIcon && (
-        <span className={styles.icon}>{icon ?? defaultIcons[type]}</span>
-      )}
-      <p className={styles.bannerMessage}>{message}</p>
-      {showAction && (
-        <button type="button" className={styles.bannerAction} onClick={onButtonClick}>
-          {buttonLabel}
-        </button>
-      )}
-    </div>
-  );
-}

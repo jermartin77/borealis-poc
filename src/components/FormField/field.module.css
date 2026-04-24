@@ -61,6 +61,10 @@
   color: var(--ds-text-placeholder);
 }
 
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
 /* ── States ──────────────────────────────────────────────────────────────── */
 
 .input:hover:not(:disabled) {

@@ -5,15 +5,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev             # Vite dev server
-npm run build           # tsc -b && vite build
-npm run storybook       # Storybook dev at :6006
-npm run build-storybook # Build Storybook static site
-npm run tokens          # Regenerate tokens.css + type-styles.css from source JSON
-npm run tokens:watch    # Watch mode for token regeneration during active token work
-npm run figma:connect   # Publish Code Connect mappings to Figma
-npx vitest              # Run Storybook-integrated browser tests (Playwright/Chromium) — requires Storybook running
-npx tsc --noEmit        # Type-check without building
+npm run dev                    # Vite dev server
+npm run build                  # tsc -b && vite build
+npm run lint                   # ESLint
+npm run storybook              # Storybook dev at :6006
+npm run build-storybook        # Build Storybook static site
+npm run tokens                 # Regenerate tokens.css + type-styles.css from source JSON
+npm run tokens:watch           # Watch mode for token regeneration during active token work
+npm run figma:connect          # Publish Code Connect mappings to Figma
+npm run figma:connect:parse    # Parse and validate Code Connect files without publishing
+npm run figma:connect:unpublish # Remove published Code Connect mappings from Figma
+npx vitest                     # Run Storybook-integrated browser tests (Playwright/Chromium) — requires Storybook running
+npx tsc --noEmit               # Type-check without building
 ```
 
 Tests are Storybook stories executed via `@storybook/addon-vitest` in a headless Chromium browser. There are no separate unit test files. Run `npm run storybook` in one terminal before running `npx vitest` in another.
@@ -34,7 +37,11 @@ src/tokens/type-styles.css    ← auto-generated from scripts/generate-type-styl
 
 Style Dictionary processes `color.json`, `typography.json`, `spacing.json`, `dimensions.json` with the `ds` prefix. `type-styles.json` is excluded from SD and handled by a separate script. `responsive.css` is NOT generated — it must be edited manually when responsive token values change.
 
+`src/index.css` also has two manually maintained blocks that Style Dictionary cannot generate: the `--ds-input-focus` / `--ds-input-focus-error` rgba tokens and the full `[data-theme="dark"]` + `@media (prefers-color-scheme: dark)` color override blocks. Edit these by hand when those token values change.
+
 All component CSS must reference `--ds-*` tokens. No hardcoded color, spacing, or font values.
+
+Tailwind v4 is active via `@tailwindcss/vite` — there is no `tailwind.config.js`. Utility classes are available but design tokens (`--ds-*`) are the source of truth for colors, spacing, and typography.
 
 ### Component vs Pattern split
 
@@ -52,6 +59,9 @@ import { HeroBanner } from 'src/patterns';
 `src/index.css` defines `[data-theme="dark"]` overrides for all color tokens. Wrapping any element with `data-theme="dark"` flips the entire token set for that subtree — this is how pattern components implement per-section dark mode without JavaScript.
 
 OS-level dark mode is handled by `@media (prefers-color-scheme: dark)` on `:root`.
+
+### Button variants
+`Button` is the standard labeled button. `ActionButton` (same folder, shares `Button.module.css`) is a square icon-only variant — requires `icon` and `aria-label`, no `label` prop. Both support `primary`/`secondary` variants; `Button` also has `tertiary` and `sm`/`md`/`lg` sizes.
 
 ### Form components
 `FormField` is a layout wrapper that composes a label, helper text, and error message around `Input`, `Select`, or `Textarea`. It does not manage state — the consumer controls value and error props. Import directly, no barrel file.
@@ -79,4 +89,4 @@ Components with `.figma.tsx` files map Figma variant props to React props via `f
 
 ## Current status
 
-Pattern layer is complete (13 patterns in `src/patterns/`). Remaining atomic components: NumberSpinner, RangeSlider. Token responsive infrastructure is ongoing — `responsive.css` requires manual updates when breakpoint token values change.
+Pattern layer is complete (14 patterns in `src/patterns/`). Remaining atomic components: NumberSpinner, RangeSlider. Token responsive infrastructure is ongoing — `responsive.css` requires manual updates when breakpoint token values change.

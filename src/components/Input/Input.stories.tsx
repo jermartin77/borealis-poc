@@ -56,8 +56,10 @@ export const WithIcons: Story = {
 export const SearchStory: StoryObj<typeof SearchInput> = {
   name: 'Search Input',
   render: () => (
-    <div style={{ maxWidth: 360 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 360 }}>
       <SearchInput placeholder="Search products…" />
+      <SearchInput defaultValue="jacket" />
+      <SearchInput placeholder="Search products…" disabled />
     </div>
   ),
 };
