@@ -38,7 +38,12 @@
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(list\\(d.get\\('exports',{}\\).keys\\(\\)\\)[:30]\\)\")",
       "Bash(git worktree *)",
       "Bash(git branch *)",
-      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC/.claude/worktrees/zen-elion-b9f9cc\" status)"
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC/.claude/worktrees/zen-elion-b9f9cc\" status)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" status)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" diff)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" log --oneline -5)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" add .claude/settings.local.json)",
+      "Bash(git -C '/Users/jeremiah/Sites/Borealis POC' commit -m ' *)"
     ]
   }
 }
