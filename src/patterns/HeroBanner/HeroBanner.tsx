@@ -1,6 +1,7 @@
-import { type HTMLAttributes } from 'react';
+import { useRef, useState, type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
 import { Button } from '../../components/Button/Button';
+import { VideoControls } from '../../components/VideoControls/VideoControls';
 import styles from './HeroBanner.module.css';
 
 export type HeroAlign =
@@ -13,8 +14,10 @@ export type HeroAlign =
   | 'right-bottom';
 
 export interface HeroBannerProps extends HTMLAttributes<HTMLElement>, ThemeProps {
-  image: string;
+  image?: string;
   imageAlt?: string;
+  video?: string;
+  showVideoControls?: boolean;
   align?: HeroAlign;
   eyebrow?: string;
   headline: string;
@@ -42,6 +45,8 @@ const alignMap: Record<HeroAlign, string> = {
 export function HeroBanner({
   image,
   imageAlt = '',
+  video,
+  showVideoControls = true,
   align = 'left-middle',
   eyebrow,
   headline,
@@ -54,15 +59,41 @@ export function HeroBanner({
   showSecondaryCta = false,
   onCtaClick,
   onSecondaryCtaClick,
-  theme,
+  theme = 'dark',
   className,
   ...props
 }: HeroBannerProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  function handleVideoToggle() {
+    const el = videoRef.current;
+    if (!el) return;
+    if (isPlaying) {
+      el.pause();
+    } else {
+      el.play();
+    }
+    setIsPlaying(!isPlaying);
+  }
+
   const cls = [styles.root, alignMap[align], className].filter(Boolean).join(' ');
 
   return (
     <section className={cls} data-theme={theme} {...props}>
-      <img src={image} alt={imageAlt} className={styles.image} />
+      {video ? (
+        <video
+          ref={videoRef}
+          src={video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className={styles.media}
+        />
+      ) : image ? (
+        <img src={image} alt={imageAlt} className={styles.media} />
+      ) : null}
       <div className={styles.overlay} />
       <div className={styles.content}>
         {showEyebrow && eyebrow && (
@@ -83,6 +114,14 @@ export function HeroBanner({
           </div>
         )}
       </div>
+      {video && showVideoControls && (
+        <div className={styles.videoControls}>
+          <VideoControls
+            state={isPlaying ? 'playing' : 'paused'}
+            onToggle={handleVideoToggle}
+          />
+        </div>
+      )}
     </section>
   );
 }

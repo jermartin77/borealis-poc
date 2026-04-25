@@ -1,0 +1,212 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-lg);
+  padding: var(--ds-stacked-component-md) var(--ds-container-padding);
+  overflow: hidden;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-sm);
+}
+
+@media (min-width: 1024px) {
+  .headerText {
+    flex: 1 0 0;
+    max-width: 720px;
+  }
+}
+
+.title {
+  font-family: var(--ds-font-family-display);
+  font-size: var(--ds-text-heading-2);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ds-text-primary);
+  margin: 0;
+}
+
+.description {
+  font-family: var(--ds-font-family-body);
+  font-size: var(--ds-text-paragraph-large);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ds-text-secondary);
+  margin: 0;
+  text-wrap-style: balance;
+}
+
+.cta {
+  text-decoration: none;
+}
+
+/* Mobile: CTA stacks below description inside headerText */
+.ctaMobile {
+  display: flex;
+}
+
+.ctaDesktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .ctaMobile {
+    display: none;
+  }
+
+  .ctaDesktop {
+    display: flex;
+    flex-shrink: 0;
+  }
+}
+
+/* ── Content wrapper ─────────────────────────────────────────────────────── */
+
+.contentWrap {
+  position: relative;
+}
+
+/* ── Scroll track ────────────────────────────────────────────────────────── */
+
+.track {
+  display: flex;
+  gap: var(--ds-grid-vertical-spacing-md) var(--ds-grid-horizontal-spacing-md);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ds-background-inverse) var(--ds-background-secondary);
+  padding-bottom: var(--ds-text-spacing-lg);
+  margin-inline: calc(-1 * var(--ds-container-padding));
+  padding-inline: var(--ds-container-padding);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-inline: var(--ds-container-padding);
+  -webkit-overflow-scrolling: touch;
+  /* scrollbar-width: thin; */
+}
+
+.track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.track::-webkit-scrollbar-track {
+  background: var(--ds-background-secondary);
+  border-radius: var(--ds-radius-md);
+  margin: 0 var(--ds-container-padding);
+}
+
+.track::-webkit-scrollbar-thumb {
+  background: var(--ds-background-inverse);
+  border-radius: var(--ds-radius-md);
+}
+
+/* Small card scroll widths — ~2 visible at mobile, ~4 at desktop */
+.track.small > * {
+  flex: 0 0 160px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .track.small > * {
+    flex: 0 0 340px;
+  }
+}
+
+/* Large card scroll widths — ~1 visible at mobile, ~3 at desktop */
+.track.large > * {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .track.large > * {
+    flex: 0 0 488px;
+  }
+}
+
+/* ── Grid ────────────────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  gap: var(--ds-grid-vertical-spacing-md) var(--ds-grid-horizontal-spacing-md);
+}
+
+.grid.small {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid.large {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .grid.small {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ds-grid-vertical-spacing-md) var(--ds-grid-horizontal-spacing-md);
+  }
+
+  .grid.large {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--ds-grid-vertical-spacing-md) var(--ds-grid-horizontal-spacing-md);
+  }
+}
+
+/* ── Prev / Next arrow buttons ───────────────────────────────────────────── */
+
+.prevBtn,
+.nextBtn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  pointer-events: auto;
+}
+
+.prevBtn {
+  left: -24px;
+}
+
+.nextBtn {
+  right: -24px;
+}
+
+.prevBtn.hidden {
+  opacity: 0;
+  transform: translateY(-50%) translateX(-10%);
+  pointer-events: none;
+}
+
+.nextBtn.hidden {
+  opacity: 0;
+  transform: translateY(-50%) translateX(10%);
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .prevBtn,
+  .nextBtn {
+    display: flex;
+  }
+}

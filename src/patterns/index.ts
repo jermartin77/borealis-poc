@@ -4,20 +4,14 @@ export type { BlurbProps } from './Blurb/Blurb';
 export { ProductCard } from './ProductCard/ProductCard';
 export type { ProductCardProps } from './ProductCard/ProductCard';
 
-export { FeaturedProducts } from './FeaturedProducts/FeaturedProducts';
-export type { FeaturedProductsProps } from './FeaturedProducts/FeaturedProducts';
+export { Collection } from './Collection/Collection';
+export type { CollectionProps } from './Collection/Collection';
 
 export { CollectionCard } from './CollectionCard/CollectionCard';
 export type { CollectionCardProps } from './CollectionCard/CollectionCard';
 
-export { FeaturedCollection } from './FeaturedCollection/FeaturedCollection';
-export type { FeaturedCollectionProps } from './FeaturedCollection/FeaturedCollection';
-
 export { BlogCard } from './BlogCard/BlogCard';
 export type { BlogCardProps } from './BlogCard/BlogCard';
-
-export { FeaturedBlogPosts } from './FeaturedBlogPosts/FeaturedBlogPosts';
-export type { FeaturedBlogPostsProps } from './FeaturedBlogPosts/FeaturedBlogPosts';
 
 export { ImageWithText } from './ImageWithText/ImageWithText';
 export type { ImageWithTextProps } from './ImageWithText/ImageWithText';

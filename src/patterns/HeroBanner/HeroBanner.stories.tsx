@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { HeroBanner } from './HeroBanner';
+import heroImage from '../../assets/images/marketing/hero-banner.png';
+import heroVideo from '../../assets/video/hero-banner-animated.mp4';
 
 const meta: Meta<typeof HeroBanner> = {
   title: 'Patterns/HeroBanner',
@@ -18,31 +20,39 @@ const meta: Meta<typeof HeroBanner> = {
 export default meta;
 type Story = StoryObj<typeof HeroBanner>;
 
-const heroImage = 'https://placehold.co/1920x960/2b3239/f6f3f3?text=Hero+Image';
-
-const args = {
-  image: heroImage,
+const sharedArgs = {
   eyebrow: 'New season',
-  headline: 'Beautifully made, thoughtfully designed',
-  subheadline: 'Explore our latest collection of home essentials.',
+  headline: 'Built for the Distance',
+  subheadline: 'Performance apparel engineered for riders who go further.',
   showEyebrow: true,
   showSubheadline: true,
   showCta: true,
   showSecondaryCta: true,
+  ctaLabel: 'Shop Now',
+  ctaSecondaryLabel: 'Learn More',
+};
+
+export const WithVideo: Story = {
+  name: 'Video — Left Middle',
+  args: {
+    ...sharedArgs,
+    video: heroVideo,
+    align: 'left-middle',
+  },
 };
 
 export const LeftMiddle: Story = {
-  args: { ...args, align: 'left-middle' },
+  args: { ...sharedArgs, image: heroImage, align: 'left-middle' },
 };
 
 export const CenterMiddle: Story = {
-  args: { ...args, align: 'center-middle' },
+  args: { ...sharedArgs, image: heroImage, align: 'center-middle' },
 };
 
 export const LeftBottom: Story = {
-  args: { ...args, align: 'left-bottom' },
+  args: { ...sharedArgs, image: heroImage, align: 'left-bottom' },
 };
 
 export const RightMiddle: Story = {
-  args: { ...args, align: 'right-middle' },
+  args: { ...sharedArgs, image: heroImage, align: 'right-middle' },
 };

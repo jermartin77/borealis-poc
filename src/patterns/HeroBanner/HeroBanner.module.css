@@ -1,18 +1,18 @@
 .root {
   position: relative;
   width: 100%;
-  min-height: 480px;
+  aspect-ratio: 9 / 16;
   display: flex;
   overflow: hidden;
 }
 
 @media (min-width: 1024px) {
   .root {
-    min-height: 680px;
+    aspect-ratio: 16 / 9;
   }
 }
 
-.image {
+.media {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -39,7 +39,7 @@
   flex-direction: column;
   gap: var(--ds-text-spacing-md);
   padding: var(--ds-container-padding);
-  color: #ffffff;
+  color: var(--ds-text-primary);
   max-width: 680px;
 }
 
@@ -113,4 +113,20 @@
   flex-wrap: wrap;
   gap: var(--ds-grid-horizontal-spacing-sm);
   margin-top: var(--ds-text-spacing-xs);
+}
+
+/* ── Video controls ───────────────────────────────────────── */
+
+.videoControls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .videoControls {
+    bottom: 24px;
+    right: 24px;
+  }
 }
