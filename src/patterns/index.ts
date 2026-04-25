@@ -39,3 +39,6 @@ export type { MastheadProps, NavItem } from './Masthead/Masthead';
 
 export { Footer } from './Footer/Footer';
 export type { FooterProps, FooterColumn, FooterLinkItem } from './Footer/Footer';
+
+export { StackedComponent } from './StackedComponent/StackedComponent';
+export type { StackedComponentProps, StackedSize } from './StackedComponent/StackedComponent';

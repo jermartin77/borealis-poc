@@ -1,0 +1,23 @@
+.root {
+  --_pad: var(--ds-stacked-component-md);
+  padding-inline: var(--ds-container-padding);
+  padding-block: var(--_pad);
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--ds-background-primary);
+}
+
+.sm { --_pad: var(--ds-stacked-component-sm); }
+.md { --_pad: var(--ds-stacked-component-md); }
+.lg { --_pad: var(--ds-stacked-component-lg); }
+
+/* Same-theme adjacency: collapse top padding of second element */
+:global([data-stacked] + [data-stacked]) {
+  padding-block-start: 0;
+}
+
+/* Restore top padding when theme changes between adjacent sections */
+:global([data-stacked][data-theme="dark"] + [data-stacked]:not([data-theme="dark"])),
+:global([data-stacked]:not([data-theme="dark"]) + [data-stacked][data-theme="dark"]) {
+  padding-block-start: var(--_pad);
+}

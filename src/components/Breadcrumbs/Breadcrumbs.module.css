@@ -16,12 +16,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-  color: var(--ds-text-link);
+  color: var(--ds-text-primary);
   text-decoration: none;
-  transition: color 0.15s ease;
 }
 
-.link:hover { color: var(--ds-text-link-hover); text-decoration: underline; }
+.link:hover { text-decoration: underline; }
 .link:focus-visible { outline: 2px solid var(--ds-specialized-focus-ring); outline-offset: 2px; border-radius: 2px; }
 
 .current {
@@ -29,11 +28,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-  color: var(--ds-text-tertiary);
+  color: var(--ds-text-secondary);
 }
 
 .separator {
   display: flex;
   align-items: center;
-  color: var(--ds-foreground-disabled);
+  color: var(--ds-foreground-tertiary);
 }

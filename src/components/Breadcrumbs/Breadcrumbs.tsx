@@ -1,5 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import styles from './Breadcrumbs.module.css';
+import { Icon } from '../Icon/Icon';
 
 export interface BreadcrumbItem {
   label: string;
@@ -9,12 +10,6 @@ export interface BreadcrumbItem {
 export interface BreadcrumbsProps extends HTMLAttributes<HTMLElement> {
   items: BreadcrumbItem[];
 }
-
-const ChevronRight = () => (
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
-    <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
 
 export function Breadcrumbs({ items, className, ...props }: BreadcrumbsProps) {
   return (
@@ -26,7 +21,7 @@ export function Breadcrumbs({ items, className, ...props }: BreadcrumbsProps) {
             <li key={i} className={styles.item}>
               {i > 0 && (
                 <span className={styles.separator}>
-                  <ChevronRight />
+                  <Icon name="chevron-right" size={12} />
                 </span>
               )}
               {isLast || !item.href ? (

@@ -1,52 +1,40 @@
 .root {
   display: flex;
   flex-direction: column;
-  gap: var(--ds-text-spacing-md);
-  color: var(--ds-foreground-primary);
+  color: var(--ds-text-primary);
 }
+
+.default { gap: var(--ds-text-spacing-lg); }
+.small   { gap: var(--ds-text-spacing-md); }
 
 /* Alignment */
-.left {
-  align-items: flex-start;
-  text-align: left;
+.left   { align-items: flex-start; text-align: left; }
+.center { align-items: center; text-align: center; }
+
+/* Copy block (eyebrow + heading + body) */
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-sm);
+  width: 100%;
 }
 
-.center {
-  align-items: center;
-  text-align: center;
-}
+.eyebrow { margin: 0; }
+.heading { margin: 0; }
+.body    { margin: 0; }
 
-/* Size */
-.default .heading {
-  max-width: 720px;
-}
+.default .heading { max-width: 720px; }
+.small   .heading { max-width: 480px; }
+.default .body    { max-width: 640px; }
 
-.small .heading {
-  max-width: 480px;
-}
+.center .heading,
+.center .body { margin-inline: auto; }
 
-.eyebrow {
-  color: var(--ds-foreground-brand);
-  margin: 0;
-}
-
-.heading {
-  margin: 0;
-}
-
-.body {
-  margin: 0;
-  color: var(--ds-foreground-secondary);
-  max-width: 640px;
-}
-
+/* Actions */
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--ds-grid-horizontal-spacing-sm);
-  margin-top: var(--ds-text-spacing-xs);
+  gap: 16px;
 }
 
-.center .actions {
-  justify-content: center;
-}
+.center .actions { justify-content: center; }

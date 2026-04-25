@@ -1,6 +1,7 @@
 import { type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
 import { Button } from '../../components/Button/Button';
+import { Icon } from '../../components/Icon/Icon';
 import styles from './Blurb.module.css';
 
 export interface BlurbProps extends HTMLAttributes<HTMLDivElement>, ThemeProps {
@@ -12,7 +13,7 @@ export interface BlurbProps extends HTMLAttributes<HTMLDivElement>, ThemeProps {
   primaryButtonLabel?: string;
   secondaryButtonLabel?: string;
   showEyebrow?: boolean;
-  showButtons?: boolean;
+  showPrimaryButton?: boolean;
   showSecondaryButton?: boolean;
   onPrimaryClick?: () => void;
   onSecondaryClick?: () => void;
@@ -27,7 +28,7 @@ export function Blurb({
   primaryButtonLabel = 'Learn more',
   secondaryButtonLabel = 'View all',
   showEyebrow = false,
-  showButtons = false,
+  showPrimaryButton = false,
   showSecondaryButton = false,
   onPrimaryClick,
   onSecondaryClick,
@@ -35,6 +36,8 @@ export function Blurb({
   className,
   ...props
 }: BlurbProps) {
+  const isDefault = size === 'default';
+
   const cls = [
     styles.root,
     styles[alignment],
@@ -42,22 +45,43 @@ export function Blurb({
     className,
   ].filter(Boolean).join(' ');
 
+  const showArrow = alignment === 'left' && isDefault;
+
   return (
     <div className={cls} data-theme={theme} {...props}>
-      {showEyebrow && eyebrow && (
-        <p className={`ds-type-eyebrow-large ${styles.eyebrow}`}>{eyebrow}</p>
-      )}
-      <h2 className={`${size === 'small' ? 'ds-type-display-4' : 'ds-type-display-3'} ${styles.heading}`}>
-        {heading}
-      </h2>
-      {body && (
-        <p className={`ds-type-text-large-regular ${styles.body}`}>{body}</p>
-      )}
-      {showButtons && (
+      <div className={styles.copy}>
+        {showEyebrow && eyebrow && (
+          <p className={`${isDefault ? 'ds-type-eyebrow-large' : 'ds-type-eyebrow-medium'} ${styles.eyebrow}`}>
+            {eyebrow}
+          </p>
+        )}
+        <h2 className={`${isDefault ? 'ds-type-display-2' : 'ds-type-display-4'} ${styles.heading}`}>
+          {heading}
+        </h2>
+        {body && (
+          <p className={`${isDefault ? 'ds-type-text-large-regular' : 'ds-type-text-medium-regular'} ${styles.body}`}>
+            {body}
+          </p>
+        )}
+      </div>
+      {(showPrimaryButton || showSecondaryButton) && (
         <div className={styles.actions}>
-          <Button variant="primary" size="md" label={primaryButtonLabel} onClick={onPrimaryClick} />
+          {showPrimaryButton && (
+            <Button
+              variant="primary"
+              size={isDefault ? 'lg' : 'md'}
+              label={primaryButtonLabel}
+              rightIcon={showArrow ? <Icon name="arrow-right" /> : undefined}
+              onClick={onPrimaryClick}
+            />
+          )}
           {showSecondaryButton && (
-            <Button variant="secondary" size="md" label={secondaryButtonLabel} onClick={onSecondaryClick} />
+            <Button
+              variant="tertiary"
+              size={isDefault ? 'lg' : 'md'}
+              label={secondaryButtonLabel}
+                onClick={onSecondaryClick}
+            />
           )}
         </div>
       )}

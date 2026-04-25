@@ -22,7 +22,7 @@ export const Default: Story = {
     body: 'Explore handpicked pieces designed for modern living. Each item is crafted with care and built to last.',
     showEyebrow: true,
     eyebrow: 'New arrivals',
-    showButtons: true,
+    showPrimaryButton: true,
     showSecondaryButton: true,
     alignment: 'left',
     size: 'default',
@@ -42,7 +42,7 @@ export const Small: Story = {
     body: 'Handpicked for you.',
     showEyebrow: true,
     eyebrow: 'Collection',
-    showButtons: true,
+    showPrimaryButton: true,
     size: 'small',
   },
 };

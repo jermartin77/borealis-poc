@@ -1,7 +1,13 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 16px;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .page,
@@ -9,27 +15,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
-  height: 36px;
-  padding-inline: 8px;
-  border-radius: var(--ds-radius-md);
-  border: var(--ds-border-weight) solid transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  border: none;
   background: none;
   cursor: pointer;
   font-family: var(--ds-font-family-text);
   font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--ds-text-secondary);
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ds-text-primary);
+  transition: background-color 0.15s ease;
   box-sizing: border-box;
 }
 
 .page:hover:not(.active):not(:disabled),
 .arrow:hover:not(:disabled) {
   background-color: var(--ds-background-secondary);
-  color: var(--ds-text-primary);
 }
 
 .page:focus-visible,
@@ -39,9 +42,7 @@
 }
 
 .active {
-  background-color: var(--ds-background-inverse);
-  color: var(--ds-text-on-inverse);
-  font-weight: 500;
+  background-color: var(--ds-background-brand-subtle);
   cursor: default;
 }
 
@@ -54,9 +55,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   font-family: var(--ds-font-family-text);
   font-size: 14px;
-  color: var(--ds-text-tertiary);
+  font-weight: 700;
+  color: var(--ds-text-primary);
 }

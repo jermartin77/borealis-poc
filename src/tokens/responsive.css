@@ -12,11 +12,11 @@
   /* ── Responsive Dimensions ─────────────────────────────────────────────── */
 
   /* Container */
-  --ds-container-padding: 16px;
+  --ds-container-padding: max(16px, 5vw);
 
   /* Grid spacing */
   --ds-grid-vertical-spacing-sm:   8px;
-  --ds-grid-vertical-spacing-md:  16px;
+  --ds-grid-vertical-spacing-md:  32px;
   --ds-grid-vertical-spacing-lg:  32px;
   --ds-grid-horizontal-spacing-sm:  8px;
   --ds-grid-horizontal-spacing-md: 16px;
@@ -67,12 +67,9 @@
 
 @media (min-width: 1024px) {
   :root {
-    /* Container */
-    --ds-container-padding: 84px;
-
     /* Grid spacing */
     --ds-grid-vertical-spacing-sm:   16px;
-    --ds-grid-vertical-spacing-md:   24px;
+    --ds-grid-vertical-spacing-md:   40px;
     --ds-grid-vertical-spacing-lg:   64px;
     --ds-grid-horizontal-spacing-sm:  16px;
     --ds-grid-horizontal-spacing-md:  24px;

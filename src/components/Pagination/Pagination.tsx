@@ -1,5 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import styles from './Pagination.module.css';
+import { Icon } from '../Icon/Icon';
 
 export interface PaginationProps extends Omit<HTMLAttributes<HTMLElement>, 'onChange'> {
   total: number;
@@ -14,18 +15,6 @@ function getPages(current: number, total: number): (number | '…')[] {
   return [1, '…', current - 1, current, current + 1, '…', total];
 }
 
-const ChevronLeft = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-    <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const ChevronRight = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-    <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
 export function Pagination({ total, current, onChange, className, ...props }: PaginationProps) {
   const pages = getPages(current, total);
 
@@ -38,25 +27,27 @@ export function Pagination({ total, current, onChange, className, ...props }: Pa
         disabled={current === 1}
         aria-label="Previous page"
       >
-        <ChevronLeft />
+        <Icon name="arrow-left" size={16} />
       </button>
 
-      {pages.map((p, i) =>
-        p === '…' ? (
-          <span key={`ellipsis-${i}`} className={styles.ellipsis}>…</span>
-        ) : (
-          <button
-            key={p}
-            type="button"
-            className={[styles.page, p === current ? styles.active : null].filter(Boolean).join(' ')}
-            onClick={() => p !== current && onChange(p)}
-            aria-label={`Page ${p}`}
-            aria-current={p === current ? 'page' : undefined}
-          >
-            {p}
-          </button>
-        )
-      )}
+      <div className={styles.pages}>
+        {pages.map((p, i) =>
+          p === '…' ? (
+            <span key={`ellipsis-${i}`} className={styles.ellipsis}>…</span>
+          ) : (
+            <button
+              key={p}
+              type="button"
+              className={[styles.page, p === current ? styles.active : null].filter(Boolean).join(' ')}
+              onClick={() => p !== current && onChange(p)}
+              aria-label={`Page ${p}`}
+              aria-current={p === current ? 'page' : undefined}
+            >
+              {p}
+            </button>
+          )
+        )}
+      </div>
 
       <button
         type="button"
@@ -65,7 +56,7 @@ export function Pagination({ total, current, onChange, className, ...props }: Pa
         disabled={current === total}
         aria-label="Next page"
       >
-        <ChevronRight />
+        <Icon name="arrow-right" size={16} />
       </button>
     </nav>
   );
