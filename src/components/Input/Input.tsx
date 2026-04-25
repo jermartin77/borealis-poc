@@ -43,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   const renderRightIcon = () => {
     if (!iconRight) return null;
     if (typeof iconRight === 'string') {
-      return <Icon name={iconRight} />;
+      return <Icon name={iconRight as IconName} />;
     }
     return iconRight;
   };
