@@ -42,12 +42,17 @@ export const WithIcons: Story = {
       <Input
         label="Search"
         placeholder="Search products…"
-        iconLeft={
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.5"/>
-            <path d="M10.5 10.5L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-          </svg>
-        }
+        iconLeft="search"
+      />
+      <Input
+        label="Email"
+        placeholder="you@example.com"
+        iconLeft="mail"
+      />
+      <Input
+        label="Location"
+        placeholder="Enter location"
+        iconRight="map-pin"
       />
     </div>
   ),

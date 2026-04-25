@@ -1,5 +1,6 @@
 import { type ChangeEvent, type InputHTMLAttributes, forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import { FormField, fieldStyles } from '../FormField/FormField';
+import { Icon, type IconName } from '../Icon/Icon';
 import inputStyles from './Input.module.css';
 
 // ─── Text Input ───────────────────────────────────────────────────────────────
@@ -8,8 +9,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   showLabel?: boolean;
   required?: boolean;
-  iconLeft?: React.ReactNode;
-  iconRight?: React.ReactNode;
+  iconLeft?: IconName | '';
+  iconRight?: IconName | '' | React.ReactNode;
   alertMessage?: string;
   inputClassName?: string;
 }
@@ -39,6 +40,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     inputClassName ?? null,
   ].filter(Boolean).join(' ');
 
+  const renderRightIcon = () => {
+    if (!iconRight) return null;
+    if (typeof iconRight === 'string') {
+      return <Icon name={iconRight} />;
+    }
+    return iconRight;
+  };
+
   return (
     <FormField
       label={label}
@@ -48,7 +57,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       inputId={inputId}
       className={className}
     >
-      {iconLeft && <span className={fieldStyles.iconLeft}>{iconLeft}</span>}
+      {iconLeft && <span className={fieldStyles.iconLeft}><Icon name={iconLeft} /></span>}
       <input
         ref={ref}
         id={inputId}
@@ -59,7 +68,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         className={inputCls}
         {...props}
       />
-      {iconRight && <span className={fieldStyles.iconRight}>{iconRight}</span>}
+      {iconRight && <span className={fieldStyles.iconRight}>{renderRightIcon()}</span>}
     </FormField>
   );
 });

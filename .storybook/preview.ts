@@ -10,22 +10,32 @@ const THEMES = [
 
 type ThemeValue = typeof THEMES[number]['value'];
 
-// Must stay in sync with tokens.css (:root) and the dark overrides in index.css
-const BACKGROUND: Record<ThemeValue, string> = {
-  light: '#f6f6f6',
-  dark:  '#181b1d',
-};
+// ─── Docs page styles ─────────────────────────────────────────────────────────
+
+// Inject once — makes the docs page chrome (wrapper, story blocks) respond to
+// data-theme on <html> via the same --ds-* token cascade as components.
+const DOCS_STYLE_ID = 'ds-docs-theme';
+if (!document.getElementById(DOCS_STYLE_ID)) {
+  const style = document.createElement('style');
+  style.id = DOCS_STYLE_ID;
+  style.textContent = `
+    .docs-story {
+      background: var(--ds-background-primary) !important;
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 // ─── Theme decorator ──────────────────────────────────────────────────────────
 
 const withTheme: Decorator = (Story, context) => {
   const theme = (context.globals['theme'] as ThemeValue | undefined) ?? 'light';
 
-  // Apply data-theme to the story iframe's <html> element — triggers CSS var overrides
+  // Apply data-theme to <html> — triggers CSS var overrides for the entire token set
   document.documentElement.dataset.theme = theme;
 
-  // Sync canvas background to the token-driven page surface color
-  document.documentElement.style.backgroundColor = BACKGROUND[theme];
+  // Set background via the token directly so it tracks dark/light without hardcoded hex
+  document.documentElement.style.background = 'var(--ds-background-primary)';
 
   return Story();
 };

@@ -2,15 +2,14 @@
 
 .wrapper {
   display: inline-flex;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  gap: var(--ds-input-gap-md);
   cursor: pointer;
   user-select: none;
 }
 
 .wrapper.disabled {
   cursor: not-allowed;
-  opacity: 0.5;
 }
 
 /* ── Checkbox control ────────────────────────────────────────────────────── */
@@ -18,9 +17,8 @@
 .control {
   position: relative;
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  margin-top: 1px;
+  width: 24px;
+  height: 24px;
 }
 
 .input {
@@ -36,10 +34,10 @@
 .box {
   position: absolute;
   inset: 0;
-  border: var(--ds-border-weight) solid var(--ds-border-primary);
-  border-radius: var(--ds-radius-sm);
+  border: var(--ds-input-border-weight) solid var(--ds-border-secondary);
+  border-radius: var(--ds-radius-md);
   background-color: var(--ds-background-primary);
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,20 +50,20 @@
 
 /* Focus */
 .input:focus-visible ~ .box {
-  outline: 2px solid var(--ds-specialized-focus-ring);
-  outline-offset: 2px;
+  box-shadow: 0 0 0 var(--ds-input-focus-spread) var(--ds-input-focus);
+  border-color: var(--ds-border-interactive);
 }
 
 /* Checked */
 .input:checked ~ .box {
-  background-color: var(--ds-background-inverse);
-  border-color: var(--ds-background-inverse);
+  background-color: var(--ds-background-brand);
+  border-color: var(--ds-background-brand);
 }
 
 /* Mixed (indeterminate) */
 .input:indeterminate ~ .box {
-  background-color: var(--ds-background-inverse);
-  border-color: var(--ds-background-inverse);
+  background-color: var(--ds-background-brand);
+  border-color: var(--ds-background-brand);
 }
 
 /* Alert */
@@ -73,34 +71,57 @@
   border-color: var(--ds-border-error);
 }
 
+/* Disabled — default */
+.disabled .box {
+  background-color: var(--ds-background-disabled);
+  border-color: var(--ds-border-disabled);
+}
+
+/* Disabled — checked */
+.disabled .input:checked ~ .box,
+.disabled .input:indeterminate ~ .box {
+  background-color: var(--ds-background-disabled);
+  border-color: var(--ds-border-disabled);
+}
+
 /* ── Check mark icon ─────────────────────────────────────────────────────── */
 
 .check {
   display: none;
-  color: var(--ds-foreground-on-inverse);
+  color: var(--ds-foreground-on-brand);
   pointer-events: none;
 }
 
 .input:checked ~ .box .check { display: flex; }
 
+.disabled .input:checked ~ .box .check {
+  color: var(--ds-text-disabled);
+}
+
+/* ── Mixed / indeterminate bar ───────────────────────────────────────────── */
+
 .mixed {
   display: none;
-  width: 8px;
+  width: 10px;
   height: 2px;
-  background-color: var(--ds-foreground-on-inverse);
+  background-color: var(--ds-foreground-on-brand);
   border-radius: 1px;
 }
 
 .input:indeterminate ~ .box .mixed { display: block; }
 
+.disabled .input:indeterminate ~ .box .mixed {
+  background-color: var(--ds-text-disabled);
+}
+
 /* ── Label text ──────────────────────────────────────────────────────────── */
 
 .label {
   font-family: var(--ds-font-family-text);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.4;
-  color: var(--ds-text-primary);
+  line-height: 1.2;
+  color: var(--ds-text-secondary);
 }
 
 .wrapper.disabled .label {
