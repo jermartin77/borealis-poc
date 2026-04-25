@@ -43,7 +43,12 @@
       "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" diff)",
       "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" log --oneline -5)",
       "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" add .claude/settings.local.json)",
-      "Bash(git -C '/Users/jeremiah/Sites/Borealis POC' commit -m ' *)"
+      "Bash(git -C '/Users/jeremiah/Sites/Borealis POC' commit -m ' *)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" push)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" push --no-thin)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" remote -v)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" config http.postBuffer 524288000)",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" diff --stat)"
     ]
   }
 }
