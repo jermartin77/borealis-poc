@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from './components/Button/Button';
 import { Logo } from './components/Logo/Logo';
+import { Footer } from './patterns/Footer/Footer';
 
 // ─── Theme toggle ─────────────────────────────────────────────────────────────
 
@@ -75,8 +76,42 @@ const typeScale = [
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 
+const footerColumns = [
+  {
+    heading: 'Support',
+    links: [
+      { label: 'My Account', href: '#' },
+      { label: 'Shipping Info', href: '#' },
+      { label: 'Return Policy', href: '#' },
+      { label: 'FAQs', href: '#' },
+      { label: 'Warranty', href: '#' },
+      { label: 'Contact Us', href: '#' },
+    ],
+  },
+  {
+    heading: 'About',
+    links: [
+      { label: 'Our Story', href: '#' },
+      { label: 'Blog', href: '#' },
+      { label: 'Dealer Locator', href: '#' },
+      { label: 'Partnerships', href: '#' },
+      { label: 'Careers', href: '#' },
+    ],
+  },
+  {
+    heading: 'Programs',
+    links: [
+      { label: 'Rewards', href: '#' },
+      { label: 'Wholesale Login', href: '#' },
+      { label: 'Pro Program', href: '#' },
+      { label: 'Partnerships', href: '#' },
+    ],
+  },
+];
+
 function App() {
   return (
+    <>
     <main style={{ minHeight: '100vh', backgroundColor: 'var(--ds-background-primary)', padding: '40px 48px' }}>
       <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 48 }}>
 
@@ -159,6 +194,23 @@ function App() {
 
       </div>
     </main>
+    <Footer
+      logo={<Logo variant="full-logo" />}
+      columns={footerColumns}
+      socialLinks={[
+        { name: 'Instagram', href: '#' },
+        { name: 'Facebook', href: '#' },
+        { name: 'X Twitter', href: '#' },
+        { name: 'Youtube', href: '#' },
+      ]}
+      legalText="©2025 The ZaneRay Group"
+      legalLinks={[
+        { label: 'Terms of Service', href: '#' },
+        { label: 'Privacy Policy', href: '#' },
+        { label: 'Accessibility', href: '#' },
+      ]}
+    />
+    </>
   );
 }
 

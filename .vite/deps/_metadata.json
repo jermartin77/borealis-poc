@@ -1,31 +1,37 @@
 {
-  "hash": "72b0ce26",
+  "hash": "a6867648",
   "configHash": "f6dff371",
-  "lockfileHash": "f2b28c37",
-  "browserHash": "26539088",
+  "lockfileHash": "d5345e44",
+  "browserHash": "4aa228d9",
   "optimized": {
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "4b6b00da",
+      "needsInterop": false
+    },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "973c4d4f",
+      "fileHash": "3df7d9ad",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "10e983fa",
+      "fileHash": "713c6de2",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "85c50e98",
+      "fileHash": "9dc429c3",
       "needsInterop": true
     }
   },
   "chunks": {
-    "react-FLDBkK74": {
-      "file": "react-FLDBkK74.js",
+    "react-DccYd3Hg": {
+      "file": "react-DccYd3Hg.js",
       "isDynamicEntry": false
     }
   }

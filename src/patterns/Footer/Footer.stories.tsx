@@ -16,61 +16,77 @@ type Story = StoryObj<typeof Footer>;
 
 const Logo = () => (
   <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-    <span style={{ fontFamily: 'var(--ds-font-family-display)', fontWeight: 600, fontSize: 20, color: 'var(--ds-foreground-primary)' }}>
-      Borealis
+    <span style={{ fontFamily: 'var(--ds-font-family-display)', fontWeight: 700, fontSize: 24, color: 'var(--ds-text-primary)' }}>
+      datmos
     </span>
   </a>
 );
 
 const columns = [
   {
-    heading: 'Shop',
+    heading: 'Support',
     links: [
-      { label: 'All products', href: '#' },
-      { label: 'New arrivals', href: '#' },
-      { label: 'Best sellers', href: '#' },
-      { label: 'Sale', href: '#' },
+      { label: 'My Account', href: '#' },
+      { label: 'Shipping Info', href: '#' },
+      { label: 'Return Policy', href: '#' },
+      { label: 'FAQs', href: '#' },
+      { label: 'Warranty', href: '#' },
+      { label: 'Contact Us', href: '#' },
     ],
   },
   {
-    heading: 'Company',
+    heading: 'About',
     links: [
-      { label: 'About us', href: '#' },
-      { label: 'Sustainability', href: '#' },
+      { label: 'Our Story', href: '#' },
+      { label: 'Blog', href: '#' },
+      { label: 'Dealer Locator', href: '#' },
+      { label: 'Partnerships', href: '#' },
       { label: 'Careers', href: '#' },
-      { label: 'Press', href: '#' },
     ],
   },
   {
-    heading: 'Help',
+    heading: 'Programs',
     links: [
-      { label: 'FAQ', href: '#' },
-      { label: 'Shipping & returns', href: '#' },
-      { label: 'Contact us', href: '#' },
-      { label: 'Privacy policy', href: '#' },
+      { label: 'Rewards', href: '#' },
+      { label: 'Wholesale Login', href: '#' },
+      { label: 'Pro Program', href: '#' },
+      { label: 'Partnerships', href: '#' },
     ],
   },
 ];
 
+const socialLinks = [
+  { name: 'Instagram' as const, href: '#' },
+  { name: 'Facebook' as const, href: '#' },
+  { name: 'X Twitter' as const, href: '#' },
+  { name: 'Youtube' as const, href: '#' },
+];
+
+const legalLinks = [
+  { label: 'Terms of Service', href: '#' },
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Accessibility', href: '#' },
+];
+
+const sharedArgs = {
+  logo: <Logo />,
+  columns,
+  socialLinks,
+  legalText: '©2025 The ZaneRay Group',
+  legalLinks,
+};
+
 export const Default: Story = {
+  name: 'Dark (Default)',
   args: {
-    logo: <Logo />,
-    columns,
-    legalText: '© 2025 Borealis. All rights reserved.',
-    socialLinks: [
-      { label: 'Instagram', href: '#' },
-      { label: 'Pinterest', href: '#' },
-      { label: 'Twitter', href: '#' },
-    ],
+    ...sharedArgs,
+    theme: 'dark',
   },
 };
 
-export const Dark: Story = {
+export const Light: Story = {
   args: {
-    ...Default.args,
-    theme: 'dark',
-  },
-  parameters: {
-    backgrounds: { default: 'dark' },
+    ...sharedArgs,
+    theme: 'light',
   },
 };
