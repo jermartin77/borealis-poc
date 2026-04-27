@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
 import { NavItem } from '../../components/NavItem/NavItem';
 import { Icon } from '../../components/Icon/Icon';
-import { Input } from '../../components/Input/Input';
+import { SearchInput } from '../../components/Input/Input';
 import styles from './Masthead.module.css';
 
 export interface MastheadNavItem {
@@ -102,7 +102,7 @@ export function Masthead({
       <div className={styles.navContainer} aria-hidden={!open}>
 
         <div className={styles.drawerSearch} style={{ animationDelay: '0.1s' }}>
-          <Input placeholder="Search" type="search" />
+          <SearchInput />
         </div>
 
         <ul className={styles.navListMobile}>

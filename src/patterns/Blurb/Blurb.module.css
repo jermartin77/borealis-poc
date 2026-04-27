@@ -27,6 +27,7 @@
 .small   .heading { max-width: 480px; }
 .default .body    { max-width: 640px; }
 
+
 .center .heading,
 .center .body { margin-inline: auto; }
 
