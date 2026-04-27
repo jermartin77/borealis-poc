@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Button } from './components/Button/Button';
 import { Logo } from './components/Logo/Logo';
 import { Footer } from './patterns/Footer/Footer';
+import { HeroBanner } from './patterns/HeroBanner/HeroBanner';
+import heroVideo from './assets/video/hero-banner-animated.mp4';
 
 // ─── Theme toggle ─────────────────────────────────────────────────────────────
 
@@ -112,6 +114,18 @@ const footerColumns = [
 function App() {
   return (
     <>
+    <HeroBanner
+      headline="Built for the Distance"
+      eyebrow="New Season"
+      subheadline="Performance apparel engineered for riders who go further."
+      video={heroVideo}
+      showEyebrow
+      showSubheadline
+      showCta
+      showSecondaryCta
+      ctaLabel="Shop Now"
+      ctaSecondaryLabel="Learn More"
+    />
     <main style={{ minHeight: '100vh', backgroundColor: 'var(--ds-background-primary)', padding: '40px 48px' }}>
       <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 48 }}>
 

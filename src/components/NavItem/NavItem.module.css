@@ -1,0 +1,38 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: var(--ds-radius-md);
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ds-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+
+  /* Fade-in background via pseudo-element so opacity doesn't affect text */
+  --nav-item-bg-opacity: 0;
+  transition: --nav-item-bg-opacity 0.3s ease-out;
+}
+
+.root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  opacity: var(--nav-item-bg-opacity);
+  transition: opacity 0.3s ease-out;
+}
+
+.root:hover::before {
+  opacity: 1;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--ds-border-brand);
+  outline-offset: 2px;
+}

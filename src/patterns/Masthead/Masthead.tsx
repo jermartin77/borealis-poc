@@ -1,5 +1,6 @@
 import { useState, type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
+import { NavItem } from '../../components/NavItem/NavItem';
 import styles from './Masthead.module.css';
 
 export interface NavItem {
@@ -47,9 +48,7 @@ export function Masthead({
           <ul className={styles.navList}>
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className={`ds-type-navigation-primary ${styles.navLink}`}>
-                  {item.label}
-                </a>
+                <NavItem href={item.href} label={item.label} />
               </li>
             ))}
           </ul>

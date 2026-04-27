@@ -54,16 +54,16 @@
   margin: 0;
   font-family: var(--ds-font-family-display);
   font-size: var(--ds-text-heading-3);
-  font-weight: var(--ds-font-weight-bold);
+  font-weight: 700;
   line-height: 1.2;
   color: var(--ds-text-primary);
 }
 
 .newsletterDesc {
   margin: 0;
-  font-family: var(--ds-font-family-body);
-  font-size: var(--ds-text-paragraph-small);
-  font-weight: var(--ds-font-weight-regular);
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--ds-text-secondary);
 }
@@ -122,7 +122,7 @@
   margin: 0;
   font-family: var(--ds-font-family-display);
   font-size: var(--ds-text-heading-5);
-  font-weight: var(--ds-font-weight-bold);
+  font-weight: 700;
   line-height: 1.2;
   color: var(--ds-text-primary);
 }
@@ -137,7 +137,7 @@
 }
 
 .link {
-  font-family: var(--ds-font-family-body);
+  font-family: var(--ds-font-family-text);
   font-size: var(--ds-text-paragraph-medium);
   font-weight: var(--ds-font-weight-medium);
   line-height: 1.5;
@@ -180,8 +180,8 @@
 .legalText,
 .legalLink {
   margin: 0;
-  font-family: var(--ds-font-family-body);
-  font-size: var(--ds-text-paragraph-small);
+  font-family: var(--ds-font-family-text);
+  font-size: 14px;
   font-weight: var(--ds-font-weight-medium);
   line-height: 1.5;
   color: var(--ds-text-secondary);
