@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
-import { Button } from '../../components/Button/Button';
+import { Blurb } from '../Blurb/Blurb';
 import styles from './ImageWithText.module.css';
 
 export interface ImageWithTextProps extends HTMLAttributes<HTMLElement>, ThemeProps {
@@ -9,12 +9,14 @@ export interface ImageWithTextProps extends HTMLAttributes<HTMLElement>, ThemePr
   imageAlt?: string;
   eyebrow?: string;
   headline: string;
-  body: string;
-  ctaLabel?: string;
-  ctaHref?: string;
+  body?: string;
+  primaryButtonLabel?: string;
+  secondaryButtonLabel?: string;
   showEyebrow?: boolean;
-  showCta?: boolean;
-  onCtaClick?: () => void;
+  showPrimaryButton?: boolean;
+  showSecondaryButton?: boolean;
+  onPrimaryClick?: () => void;
+  onSecondaryClick?: () => void;
 }
 
 export function ImageWithText({
@@ -24,36 +26,51 @@ export function ImageWithText({
   eyebrow,
   headline,
   body,
-  ctaLabel = 'Learn more',
-  ctaHref,
+  primaryButtonLabel = 'Learn More',
+  secondaryButtonLabel = 'Learn More',
   showEyebrow = false,
-  showCta = false,
-  onCtaClick,
+  showPrimaryButton = true,
+  showSecondaryButton = true,
+  onPrimaryClick,
+  onSecondaryClick,
   theme,
   className,
   ...props
 }: ImageWithTextProps) {
-  const cls = [styles.root, styles[alignment], className].filter(Boolean).join(' ');
+  const cls = [styles.root, className].filter(Boolean).join(' ');
+
+  const imageEl = (
+    <div className={styles.imageWrap}>
+      <img src={image} alt={imageAlt} className={styles.image} />
+    </div>
+  );
+
+  const textEl = (
+    <div className={styles.textSide}>
+      <Blurb
+        alignment="left"
+        size="small"
+        eyebrow={eyebrow}
+        heading={headline}
+        body={body}
+        showEyebrow={showEyebrow}
+        showPrimaryButton={showPrimaryButton}
+        showSecondaryButton={showSecondaryButton}
+        primaryButtonLabel={primaryButtonLabel}
+        secondaryButtonLabel={secondaryButtonLabel}
+        onPrimaryClick={onPrimaryClick}
+        onSecondaryClick={onSecondaryClick}
+      />
+    </div>
+  );
 
   return (
     <section className={cls} data-theme={theme} {...props}>
-      <div className={styles.imageWrap}>
-        <img src={image} alt={imageAlt} className={styles.image} />
-      </div>
-      <div className={styles.content}>
-        {showEyebrow && eyebrow && (
-          <p className={`ds-type-eyebrow-large ${styles.eyebrow}`}>{eyebrow}</p>
-        )}
-        <h2 className={`ds-type-display-3 ${styles.headline}`}>{headline}</h2>
-        <p className={`ds-type-text-large-regular ${styles.body}`}>{body}</p>
-        {showCta && (
-          <Button
-            variant="primary"
-            size="md"
-            label={ctaLabel}
-            onClick={onCtaClick}
-            {...(ctaHref ? { as: 'a', href: ctaHref } as any : {})}
-          />
+      <div className={styles.container}>
+        {alignment === 'left' ? (
+          <>{imageEl}{textEl}</>
+        ) : (
+          <>{textEl}{imageEl}</>
         )}
       </div>
     </section>

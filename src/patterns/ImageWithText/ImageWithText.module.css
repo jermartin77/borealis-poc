@@ -1,38 +1,30 @@
+/* ── Outer section ─────────────────────────────────────────── */
+
 .root {
+  background: var(--ds-background-primary);
+  padding: var(--ds-stacked-component-md) var(--ds-container-padding);
+}
+
+/* ── Inner max-width container ─────────────────────────────── */
+
+.container {
   display: flex;
   flex-direction: column;
-  gap: var(--ds-grid-vertical-spacing-lg);
-  padding: var(--ds-stacked-component-md) var(--ds-container-padding);
-  color: var(--ds-foreground-primary);
+  gap: var(--ds-grid-horizontal-spacing-lg);
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
 }
 
-/* At 768px: side-by-side layout */
-@media (min-width: 768px) {
-  .root {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--ds-grid-horizontal-spacing-lg);
-  }
-
-  .imageWrap,
-  .content {
-    flex: 1 1 50%;
-  }
-
-  /* Image on right when alignment = right */
-  .right .imageWrap {
-    order: 2;
-  }
-
-  .right .content {
-    order: 1;
-  }
-}
+/* ── Image ─────────────────────────────────────────────────── */
 
 .imageWrap {
-  overflow: hidden;
+  width: 100%;
+  flex-shrink: 0;
+  aspect-ratio: 720 / 480;
   border-radius: var(--ds-radius-lg);
-  aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
 
 .image {
@@ -40,26 +32,33 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-text-spacing-md);
+.imageWrap:hover .image {
+  transform: scale(1.05);
 }
 
-.eyebrow {
-  margin: 0;
-  color: var(--ds-foreground-brand);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+/* ── Text side ─────────────────────────────────────────────── */
+
+.textSide {
+  width: 100%;
 }
 
-.headline {
-  margin: 0;
-}
+/* ── Desktop ≥ 1024px: side-by-side ───────────────────────── */
 
-.body {
-  margin: 0;
-  color: var(--ds-foreground-secondary);
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .imageWrap {
+    flex: 1 0 0;
+    width: auto;
+  }
+
+  .textSide {
+    flex: 1 0 0;
+    padding: 0 var(--ds-grid-horizontal-spacing-lg);
+  }
 }

@@ -1,14 +1,15 @@
 import { type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
-import { Button } from '../../components/Button/Button';
+import { Blurb } from '../Blurb/Blurb';
 import styles from './SplitCallout.module.css';
 
 export interface SplitCalloutProps extends HTMLAttributes<HTMLElement>, ThemeProps {
   alignment?: 'left' | 'right';
-  media: React.ReactNode;
+  image: string;
+  imageAlt?: string;
   eyebrow?: string;
   headline: string;
-  body: string;
+  body?: string;
   primaryButtonLabel?: string;
   secondaryButtonLabel?: string;
   showEyebrow?: boolean;
@@ -20,15 +21,16 @@ export interface SplitCalloutProps extends HTMLAttributes<HTMLElement>, ThemePro
 
 export function SplitCallout({
   alignment = 'left',
-  media,
+  image,
+  imageAlt = '',
   eyebrow,
   headline,
   body,
-  primaryButtonLabel = 'Shop now',
-  secondaryButtonLabel = 'Learn more',
+  primaryButtonLabel = 'Learn More',
+  secondaryButtonLabel = 'Learn More',
   showEyebrow = false,
-  showPrimaryButton = false,
-  showSecondaryButton = false,
+  showPrimaryButton = true,
+  showSecondaryButton = true,
   onPrimaryClick,
   onSecondaryClick,
   theme,
@@ -39,23 +41,24 @@ export function SplitCallout({
 
   return (
     <section className={cls} data-theme={theme} {...props}>
-      <div className={styles.mediaWrap}>{media}</div>
+      <div className={styles.mediaWrap}>
+        <img src={image} alt={imageAlt} className={styles.image} />
+      </div>
       <div className={styles.content}>
-        {showEyebrow && eyebrow && (
-          <p className={`ds-type-eyebrow-large ${styles.eyebrow}`}>{eyebrow}</p>
-        )}
-        <h2 className={`ds-type-display-2 ${styles.headline}`}>{headline}</h2>
-        <p className={`ds-type-text-large-regular ${styles.body}`}>{body}</p>
-        {(showPrimaryButton || showSecondaryButton) && (
-          <div className={styles.actions}>
-            {showPrimaryButton && (
-              <Button variant="primary" size="md" label={primaryButtonLabel} onClick={onPrimaryClick} />
-            )}
-            {showSecondaryButton && (
-              <Button variant="secondary" size="md" label={secondaryButtonLabel} onClick={onSecondaryClick} />
-            )}
-          </div>
-        )}
+        <Blurb
+          alignment="center"
+          size="small"
+          eyebrow={eyebrow}
+          heading={headline}
+          body={body}
+          showEyebrow={showEyebrow}
+          showPrimaryButton={showPrimaryButton}
+          showSecondaryButton={showSecondaryButton}
+          primaryButtonLabel={primaryButtonLabel}
+          secondaryButtonLabel={secondaryButtonLabel}
+          onPrimaryClick={onPrimaryClick}
+          onSecondaryClick={onSecondaryClick}
+        />
       </div>
     </section>
   );

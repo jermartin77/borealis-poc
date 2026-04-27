@@ -15,25 +15,32 @@ const meta: Meta<typeof ImageWithText> = {
 export default meta;
 type Story = StoryObj<typeof ImageWithText>;
 
-const args = {
-  image: 'https://placehold.co/800x600/c1c8cc/3e4951?text=Image',
-  eyebrow: 'Our story',
-  headline: 'Crafted with intention',
-  body: 'Every piece in our collection is chosen for its quality, craftsmanship, and ability to elevate everyday living. We partner with makers who share our values.',
+import heroImage from '../../assets/images/marketing/hero-banner.png';
+
+const sharedArgs = {
+  image: heroImage,
+  eyebrow: 'Eyebrow',
+  headline: 'This is a headline',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
   showEyebrow: true,
-  showCta: true,
-  ctaLabel: 'Learn more',
+  showPrimaryButton: true,
+  showSecondaryButton: true,
+  primaryButtonLabel: 'Learn More',
+  secondaryButtonLabel: 'Learn More',
 };
 
 export const ImageLeft: Story = {
-  args: { ...args, alignment: 'left' },
+  name: 'Image Left',
+  args: { ...sharedArgs, alignment: 'left' },
 };
 
 export const ImageRight: Story = {
-  args: { ...args, alignment: 'right' },
+  name: 'Image Right',
+  args: { ...sharedArgs, alignment: 'right' },
 };
 
 export const Dark: Story = {
-  args: { ...args, theme: 'dark' },
+  name: 'Dark — Image Left',
+  args: { ...sharedArgs, alignment: 'left', theme: 'dark' },
   parameters: { backgrounds: { default: 'dark' } },
 };

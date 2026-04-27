@@ -15,33 +15,32 @@ const meta: Meta<typeof SplitCallout> = {
 export default meta;
 type Story = StoryObj<typeof SplitCallout>;
 
-const mediaImg = (
-  <img
-    src="https://placehold.co/960x700/c1c8cc/3e4951?text=Media"
-    alt="Callout media"
-    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-  />
-);
+import heroImage from '../../assets/images/marketing/hero-banner.png';
 
-const args = {
-  media: mediaImg,
-  eyebrow: 'Limited edition',
-  headline: 'Explore the new season',
-  body: 'Thoughtfully designed for the way you live. Discover pieces that bring warmth and intention to every room.',
+const sharedArgs = {
+  image: heroImage,
+  eyebrow: 'Eyebrow',
+  headline: 'This is a Headline',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
   showEyebrow: true,
   showPrimaryButton: true,
   showSecondaryButton: true,
+  primaryButtonLabel: 'Learn More',
+  secondaryButtonLabel: 'Learn More',
 };
 
 export const MediaLeft: Story = {
-  args: { ...args, alignment: 'left' },
+  name: 'Media Left',
+  args: { ...sharedArgs, alignment: 'left' },
 };
 
 export const MediaRight: Story = {
-  args: { ...args, alignment: 'right' },
+  name: 'Media Right',
+  args: { ...sharedArgs, alignment: 'right' },
 };
 
 export const Dark: Story = {
-  args: { ...args, theme: 'dark' },
+  name: 'Dark — Media Left',
+  args: { ...sharedArgs, alignment: 'left', theme: 'dark' },
   parameters: { backgrounds: { default: 'dark' } },
 };
