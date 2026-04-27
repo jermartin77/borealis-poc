@@ -33,6 +33,7 @@ src/tokens/tokens.css         ← auto-generated, --ds-* custom properties (DO N
 src/tokens/tokens.ts          ← auto-generated TypeScript constants
 src/tokens/responsive.css     ← manually maintained; mobile-first defaults + @media (min-width: 1024px) overrides
 src/tokens/type-styles.css    ← auto-generated from scripts/generate-type-styles.mjs
+src/tokens/type-styles.ts     ← auto-generated TypeScript: TypeStyleName union + getTypeStyle() helper
 ```
 
 Style Dictionary processes `color.json`, `typography.json`, `spacing.json`, `dimensions.json` with the `ds` prefix. `type-styles.json` is excluded from SD and handled by a separate script. `responsive.css` is NOT generated — it must be edited manually when responsive token values change.
@@ -60,8 +61,15 @@ import { HeroBanner } from 'src/patterns';
 
 OS-level dark mode is handled by `@media (prefers-color-scheme: dark)` on `:root`.
 
+In Storybook, the theme decorator applies `data-theme` to `<html>` (not a story wrapper div) so the full CSS cascade works correctly. Stories use the global `theme` toolbar switcher — never hardcode backgrounds or wrap stories in their own `data-theme` element.
+
 ### Button variants
-`Button` is the standard labeled button. `ActionButton` (same folder, shares `Button.module.css`) is a square icon-only variant — requires `icon` and `aria-label`, no `label` prop. Both support `primary`/`secondary` variants; `Button` also has `tertiary` and `sm`/`md`/`lg` sizes.
+Three button components share `Button.module.css`:
+- `Button` — labeled button; `primary`/`secondary`/`tertiary` variants; `sm`/`md`/`lg` sizes
+- `ActionButton` — square icon-only; requires `icon` + `aria-label`; `primary`/`secondary` only
+- `TextButton` — inline text link style; no size prop
+
+`PlayButton` (in its own folder) renders a video play overlay using `PlayerIcon` — requires `aria-label`, not related to ActionButton.
 
 ### Form components
 `FormField` is a layout wrapper that composes a label, helper text, and error message around `Input`, `Select`, or `Textarea`. It does not manage state — the consumer controls value and error props. Import directly, no barrel file.
@@ -89,4 +97,6 @@ Components with `.figma.tsx` files map Figma variant props to React props via `f
 
 ## Current status
 
-Pattern layer is complete (14 patterns in `src/patterns/`). Remaining atomic components: NumberSpinner, RangeSlider. Token responsive infrastructure is ongoing — `responsive.css` requires manual updates when breakpoint token values change.
+Pattern layer is complete (13 patterns in `src/patterns/`). Remaining atomic component: RangeSlider. Token responsive infrastructure is ongoing — `responsive.css` requires manual updates when breakpoint token values change.
+
+**Vercel build:** `vercel.json` overrides the build command to `npm run tokens && npm run build` so tokens are always regenerated before the Vite build in CI.

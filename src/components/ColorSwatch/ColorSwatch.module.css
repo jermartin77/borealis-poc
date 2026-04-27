@@ -1,0 +1,79 @@
+/* ── ColorSwatch base ────────────────────────────────────────────────────── */
+
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: var(--ds-border-weight) solid transparent;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* ── Sizes ───────────────────────────────────────────────────────────────── */
+
+.lg {
+  padding: 4px;
+}
+
+.sm {
+  padding: 3px;
+}
+
+/* ── Color circle ────────────────────────────────────────────────────────── */
+
+.color {
+  display: block;
+  border-radius: 100px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.lg .color {
+  width: 34px;
+  height: 34px;
+}
+
+.sm .color {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Interactive states ──────────────────────────────────────────────────── */
+
+.base:not(.selected):not(.soldOut):hover {
+  border-color: var(--ds-border-secondary);
+}
+
+.selected {
+  border-color: var(--ds-border-interactive);
+}
+
+/* ── Sold Out ────────────────────────────────────────────────────────────── */
+
+.soldOut {
+  cursor: default;
+}
+
+/* OOS hover: dark ring when hovering a sold-out swatch */
+.soldOut:hover {
+  border-color: var(--ds-border-interactive);
+}
+
+/* Diagonal strikethrough line — centered in circle, clipped by overflow:hidden */
+.soldOut .color::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 1px;
+  height: 150%;
+  background-color: var(--ds-foreground-disabled);
+  border-left: 1px solid var(--ds-foreground-on-inverse);
+  border-right: 1px solid var(--ds-foreground-on-inverse);
+}

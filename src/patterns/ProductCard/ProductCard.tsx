@@ -2,6 +2,7 @@ import { useState, type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
 import { ProductCardBadge, type ProductCardBadgeStyle } from '../../components/ProductCardBadge/ProductCardBadge';
 import { StarIcon, type StarVariant } from '../../components/Icon/StarIcon';
+import { ColorSwatch } from '../../components/ColorSwatch/ColorSwatch';
 import styles from './ProductCard.module.css';
 
 export interface ProductCardSwatch {
@@ -79,16 +80,14 @@ export function ProductCard({
           {swatches && swatches.length > 0 && (
             <div className={styles.swatches}>
               {swatches.map((swatch, i) => (
-                <button
+                <ColorSwatch
                   key={i}
-                  type="button"
-                  className={[styles.swatch, i === activeIndex ? styles.swatchActive : ''].filter(Boolean).join(' ')}
+                  size="sm"
+                  color={swatch.color}
+                  selected={i === activeIndex}
                   onClick={(e) => { e.preventDefault(); e.stopPropagation(); setActiveIndex(i); }}
                   aria-label={`Select color ${i + 1}`}
-                  aria-pressed={i === activeIndex}
-                >
-                  <span className={styles.swatchColor} style={{ background: swatch.color }} />
-                </button>
+                />
               ))}
             </div>
           )}

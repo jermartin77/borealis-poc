@@ -5,6 +5,11 @@ import img1Alt from '../../assets/images/product/product-image-1-alt.jpg';
 import img2 from '../../assets/images/product/product-image-2.jpg';
 import img2Alt from '../../assets/images/product/product-image-2-alt.jpg';
 
+const COLORS = {
+  jetBlack:  '#111111',
+  blushPink: '#f2a8c2',
+};
+
 const meta: Meta<typeof ProductCard> = {
   title: 'Patterns/ProductCard',
   component: ProductCard,
@@ -27,8 +32,8 @@ export const Default: Story = {
     title: 'Men\'s Pro Team Aero Jersey IV',
     price: '$270.00',
     swatches: [
-      { color: '#dcb9d1', image: img1, altImage: img1Alt },
-      { color: '#262425', image: img2, altImage: img2Alt },
+      { color: COLORS.jetBlack, image: img1, altImage: img1Alt },
+      { color: COLORS.blushPink, image: img2, altImage: img2Alt },
     ],
   },
 };
@@ -61,8 +66,8 @@ export const WithSwatches: Story = {
     description: 'Our fastest jersey. Wind-tunnel tested fabrics, optimised seam placements and our most engaged fit',
     price: '$270.00',
     swatches: [
-      { color: '#dcb9d1', image: img1, altImage: img1Alt },
-      { color: '#262425', image: img2, altImage: img2Alt },
+      { color: COLORS.jetBlack, image: img1, altImage: img1Alt },
+      { color: COLORS.blushPink, image: img2, altImage: img2Alt },
     ],
   },
 };
@@ -88,8 +93,8 @@ export const Full: Story = {
     badge: 'Sale',
     badgeStyle: 'sale',
     swatches: [
-      { color: '#dcb9d1', image: img1, altImage: img1Alt },
-      { color: '#262425', image: img2, altImage: img2Alt },
+      { color: COLORS.jetBlack, image: img1, altImage: img1Alt },
+      { color: COLORS.blushPink, image: img2, altImage: img2Alt },
     ],
     rating: 4.5,
     reviewCount: 396,

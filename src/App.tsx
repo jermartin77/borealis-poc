@@ -4,11 +4,13 @@ import { HeroBanner } from './patterns/HeroBanner/HeroBanner';
 import { Masthead } from './patterns/Masthead/Masthead';
 import { Collection } from './patterns/Collection/Collection';
 import { ProductCard } from './patterns/ProductCard/ProductCard';
+import { SplitCallout } from './patterns/SplitCallout/SplitCallout';
 import heroVideo from './assets/video/hero-banner-animated.mp4';
 import img1 from './assets/images/product/product-image-1.jpg';
 import img1alt from './assets/images/product/product-image-1-alt.jpg';
 import img2 from './assets/images/product/product-image-2.jpg';
 import img2alt from './assets/images/product/product-image-2-alt.jpg';
+import fabricDetail from './assets/images/marketing/fabric-detail.jpg';
 
 const navItems = [
   { label: 'Category 1', href: '#' },
@@ -91,6 +93,30 @@ function App() {
       >
         {featuredProducts}
       </Collection>
+      <SplitCallout
+        alignment="left"
+        image={fabricDetail}
+        imageAlt="Close-up of performance fabric texture"
+        eyebrow="Engineered for Speed"
+        headline="The Jersey That Goes the Distance"
+        body="Wind-tunnel tested fabrics and an aerodynamic fit designed for riders who push every limit."
+        primaryButtonLabel="Shop Jerseys"
+        secondaryButtonLabel="Learn More"
+        showEyebrow
+        theme="light"
+      />
+      <SplitCallout
+        alignment="right"
+        image={fabricDetail}
+        imageAlt="Close-up of performance fabric texture"
+        eyebrow="New Arrivals"
+        headline="Color Meets Performance"
+        body="Bold seasonal colorways built on the same race-proven construction. Stand out on every climb."
+        primaryButtonLabel="Shop New Arrivals"
+        secondaryButtonLabel="View Lookbook"
+        showEyebrow
+        theme="dark"
+      />
       <Footer
         logo={<Logo variant="full-logo" />}
         columns={footerColumns}

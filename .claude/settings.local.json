@@ -51,7 +51,10 @@
       "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" diff --stat)",
       "Bash(xargs cat *)",
       "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" show HEAD --stat)",
-      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" ls-files -- \"src/patterns/FeaturedBlogPosts\" \"src/patterns/FeaturedProducts\")"
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" ls-files -- \"src/patterns/FeaturedBlogPosts\" \"src/patterns/FeaturedProducts\")",
+      "Bash(grep -E \"\\\\.\\(ts|js|json|rc\\)$\")",
+      "Bash(grep -E \"README|\\\\.md$\")",
+      "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" log --oneline)"
     ]
   }
 }

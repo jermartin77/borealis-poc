@@ -32,7 +32,7 @@ export function Masthead({
   onSearchClick,
   onAccountClick,
   onCartClick,
-  theme,
+  theme = 'dark',
   className,
   ...props
 }: MastheadProps) {
@@ -60,7 +60,7 @@ export function Masthead({
   const cls = [styles.root, open ? styles.open : '', hidden ? styles.hidden : '', className].filter(Boolean).join(' ');
 
   return (
-    <header className={cls} data-theme={theme ?? 'dark'} {...props}>
+    <header className={cls} data-theme={theme} {...props}>
 
       {/* ── Top bar ─────────────────────────────────────────────── */}
       <div className={styles.bar}>

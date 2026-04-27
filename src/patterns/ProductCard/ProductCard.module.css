@@ -83,28 +83,6 @@
   gap: 4px;
 }
 
-.swatch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
-  border-radius: 100px;
-  border: 1px solid transparent;
-  background: none;
-  cursor: pointer;
-  transition: border-color 0.15s ease;
-}
-
-.swatchActive {
-  border-color: var(--ds-border-interactive);
-}
-
-.swatchColor {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 100px;
-}
 
 /* Reviews */
 .reviews {
