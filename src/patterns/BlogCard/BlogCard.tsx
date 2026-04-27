@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
-import { Icon } from '../../components/Icon/Icon';
+import { TextButton } from '../../components/Button/TextButton';
 import styles from './BlogCard.module.css';
 
 export interface BlogCardProps extends HTMLAttributes<HTMLDivElement>, ThemeProps {
@@ -57,10 +57,7 @@ export function BlogCard({
               <p className={`ds-type-text-small-regular ${styles.excerpt}`}>{excerpt}</p>
             )}
           </div>
-          <div className={styles.readMore}>
-            <span className="ds-type-button-large">{readMoreLabel}</span>
-            <Icon name="arrow-right" size={16} />
-          </div>
+          <TextButton label={readMoreLabel} rightIcon="arrow-right" size="lg" tabIndex={-1} />
         </div>
       </a>
     </article>

@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import type { ThemeProps } from '../../lib/theme';
-import { Icon } from '../../components/Icon/Icon';
+import { TextButton } from '../../components/Button/TextButton';
 import styles from './CollectionCard.module.css';
 
 export interface CollectionCardProps extends HTMLAttributes<HTMLDivElement>, ThemeProps {
@@ -41,10 +41,7 @@ export function CollectionCard({
             )}
           </div>
           {linkLabel && (
-            <div className={styles.textButton}>
-              <span className="ds-type-button-large">{linkLabel}</span>
-              <Icon name="arrow-right" size={16} />
-            </div>
+            <TextButton label={linkLabel} rightIcon="arrow-right" size="lg" tabIndex={-1} />
           )}
         </div>
       </a>
