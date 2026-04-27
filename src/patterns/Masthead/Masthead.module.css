@@ -1,134 +1,196 @@
+/* ── Root: fixed overlay ─────────────────────────────────────── */
+
 .root {
-  position: relative;
-  background: var(--ds-background-solid);
-  border-bottom: var(--ds-border-weight) solid var(--ds-border-subtle);
-  color: var(--ds-foreground-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--ds-text-primary);
+  height: 56px;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: height 0.5s ease-out, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.inner {
+.open {
+  height: 100svh;
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+/* ── Top bar row ─────────────────────────────────────────────── */
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  padding: 0 var(--ds-container-padding);
+  flex-shrink: 0;
+}
+
+/* ── Mobile icons: hamburger + search ────────────────────────── */
+
+.mobileIcons {
   display: flex;
   align-items: center;
-  gap: var(--ds-grid-horizontal-spacing-md);
-  padding: 0 var(--ds-container-padding);
-  height: 64px;
+  gap: 16px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+/* ── Logo + nav group ────────────────────────────────────────── */
+
+.logoNav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .logoWrap {
-  flex: 0 0 auto;
+  flex-shrink: 0;
 }
 
-.desktopNav {
-  display: none;
-  flex: 1 1 auto;
-}
+/* ── Utility icons: account + cart ───────────────────────────── */
 
-@media (min-width: 1024px) {
-  .desktopNav {
-    display: block;
-  }
-}
-
-.navList {
-  display: flex;
-  gap: var(--ds-grid-horizontal-spacing-md);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navLink {
-  text-decoration: none;
-  color: var(--ds-foreground-primary);
-  padding: 4px 0;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.navLink:hover {
-  color: var(--ds-foreground-brand);
-  border-bottom-color: var(--ds-border-brand);
-}
-
-.navLink:focus-visible {
-  outline: 2px solid var(--ds-specialized-focus-ring, var(--ds-border-brand));
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-.actions {
+.utilityIcons {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-left: auto;
+  gap: 16px;
 }
 
-/* Hamburger — visible only below 1024px */
-.hamburger {
+/* ── Icon buttons ────────────────────────────────────────────── */
+
+.iconBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: none;
   border: none;
+  padding: 0;
   cursor: pointer;
-  color: var(--ds-foreground-primary);
-  padding: 4px;
-  border-radius: var(--ds-radius-sm);
-  transition: color 0.15s ease;
+  color: var(--ds-text-primary);
+  transition: opacity 0.15s ease;
 }
 
-.hamburger:hover {
-  color: var(--ds-foreground-brand);
+.iconBtn:hover {
+  opacity: 0.7;
 }
 
-.hamburger:focus-visible {
-  outline: 2px solid var(--ds-specialized-focus-ring, var(--ds-border-brand));
-  outline-offset: 2px;
+.iconBtn:focus-visible {
+  outline: 2px solid var(--ds-border-brand);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
-@media (min-width: 1024px) {
-  .hamburger {
-    display: none;
+/* ── Nav container: mobile drawer + desktop inline nav ───────── */
+
+.navContainer {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px var(--ds-container-padding) 32px;
+  overflow-y: auto;
+
+  @media (min-width: 1024px) {
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    gap: 4px;
+    overflow-y: visible;
   }
 }
 
-/* Mobile drawer */
-.mobileNav {
-  background: var(--ds-background-solid);
-  border-top: var(--ds-border-weight) solid var(--ds-border-subtle);
-  padding: 16px var(--ds-container-padding) 24px;
-}
+/* ── Nav list ────────────────────────────────────────────────── */
 
-@media (min-width: 1024px) {
-  .mobileNav {
-    display: none;
-  }
-}
-
-.mobileNavList {
+.navListMobile {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
-.mobileNavLink {
+  .navListDesktop {
+    display: none;
+    @media (min-width: 1024px) {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      align-items: center;
+      
+  }
+}
+
+/* ── Nav item rows (mobile only) ─────────────────────────────── */
+
+.navItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navItem:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navItemLink {
   display: block;
+  padding: 16px 0;
   text-decoration: none;
-  color: var(--ds-foreground-primary);
-  padding: 14px 0;
-  border-bottom: var(--ds-border-weight) solid var(--ds-border-subtle);
-  transition: color 0.15s ease;
+  color: var(--ds-text-primary);
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
-.mobileNavLink:hover {
-  color: var(--ds-foreground-brand);
+/* ── Search row (mobile only) ────────────────────────────────── */
+
+.drawerSearch {
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
-.mobileActions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+/* ── Slide-in animations when open ──────────────────────────── */
+
+@keyframes drawerSlide {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.open .drawerSearch {
+  animation: drawerSlide 0.3s ease-out both;
+}
+
+.open .navList li {
+  animation: drawerSlide 0.3s ease-out both;
+}
+
+/* ── Desktop: restore root to auto height ────────────────────── */
+
+@media (min-width: 1024px) {
+  .root {
+    height: auto;
+    overflow: visible;
+  }
 }

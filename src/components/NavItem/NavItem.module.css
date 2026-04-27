@@ -11,6 +11,7 @@
   text-decoration: none;
   white-space: nowrap;
   position: relative;
+  isolation: isolate;
 
   /* Fade-in background via pseudo-element so opacity doesn't affect text */
   --nav-item-bg-opacity: 0;
@@ -21,6 +22,7 @@
   content: '';
   position: absolute;
   inset: 0;
+  z-index: -1;
   border-radius: inherit;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(2px);

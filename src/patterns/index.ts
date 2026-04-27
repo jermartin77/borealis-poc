@@ -29,7 +29,7 @@ export { OptionButton, OptionSelect, ColorSwatchGroup } from './EcommerceElement
 export type { OptionButtonProps, OptionItem, OptionSelectProps, SwatchItem, ColorSwatchGroupProps } from './EcommerceElements/EcommerceElements';
 
 export { Masthead } from './Masthead/Masthead';
-export type { MastheadProps, NavItem } from './Masthead/Masthead';
+export type { MastheadProps, MastheadNavItem } from './Masthead/Masthead';
 
 export { Footer } from './Footer/Footer';
 export type { FooterProps, FooterColumn, FooterLinkItem } from './Footer/Footer';

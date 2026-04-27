@@ -46,7 +46,7 @@
   background: var(--ds-background-inverse);
   color: var(--ds-text-on-inverse);
   border-radius: var(--ds-radius-sm);
-  font-family: var(--ds-font-family-body);
+  font-family: var(--ds-font-family-text);
   font-size: var(--ds-text-paragraph-x-small);
   font-weight: var(--ds-font-weight-bold);
   line-height: 1.5;

@@ -3,7 +3,7 @@
   align-items: center;
   padding: 4px 6px;
   border-radius: var(--ds-radius-sm);
-  font-family: var(--ds-font-family-body);
+  font-family: var(--ds-font-family-text);
   font-size: 12px;
   font-weight: var(--ds-font-weight-medium);
   line-height: 1;

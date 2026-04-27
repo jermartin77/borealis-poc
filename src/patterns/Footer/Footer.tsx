@@ -1,4 +1,4 @@
-import React, { type HTMLAttributes, useState } from 'react';
+import { type FormEvent, type HTMLAttributes, useState } from 'react';
 import type { ThemeProps } from '../../lib/theme';
 import { Accordion } from '../../components/Accordion/Accordion';
 import { Icon } from '../../components/Icon/Icon';
@@ -48,7 +48,7 @@ export function Footer({
   const [email, setEmail] = useState('');
   const cls = [styles.root, className].filter(Boolean).join(' ');
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (email) onNewsletterSubmit?.(email);
   }

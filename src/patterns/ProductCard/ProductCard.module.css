@@ -120,7 +120,7 @@
 }
 
 .reviewCount {
-  font-family: var(--ds-font-family-body);
+  font-family: var(--ds-font-family-text);
   font-size: 12px;
   line-height: 1;
   color: var(--ds-text-primary);

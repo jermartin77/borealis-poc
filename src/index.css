@@ -9,6 +9,11 @@
 /* Type style classes generated from Figma text styles */
 @import "./tokens/type-styles.css";
 
+/* ── Global base ─────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--ds-font-family-text);
+}
+
 /* ── Input focus tokens (rgba — not processable by Style Dictionary) ──────── */
 :root {
   --ds-input-focus:       rgba(128, 145, 156, 0.3);
