@@ -29,14 +29,14 @@ const featuredProducts = [
   <ProductCard key={5} image={img1} altImage={img1alt} title="Merino Wool Blanket" description="Wool · Oatmeal" price="$145.00" badge="New" badgeStyle="feature" swatches={[{ color: '#e8ddd0', image: img1, altImage: img1alt }, { color: '#c4a882', image: img2, altImage: img2alt }]} />,
   <ProductCard key={6} image={img2} altImage={img2alt} title="Rattan Floor Lamp" description="Rattan · Natural" price="$210.00" swatches={[{ color: '#d4b87a', image: img2, altImage: img2alt }, { color: '#5e4e36', image: img1, altImage: img1alt }]} />,
   <ProductCard key={7} image={img1} altImage={img1alt} title="Linen Throw Pillow" description="Linen · Natural" price="$48.00" badge="New" badgeStyle="feature" swatches={[{ color: '#d4c5a9', image: img1, altImage: img1alt }, { color: '#8b7355', image: img2, altImage: img2alt }]} />,
-  <ProductCard key={8} image={img2} altImage={img2alt} title="Ceramic Vase" description="Ceramic · Matte" price="$60.00" swatches={[{ color: '#e8e0d5', image: img2, altImage: img2alt }, { color: '#3e4951', image: img1, altImage: img1alt }]} />,
+  <ProductCard key={8} image={img2} altImage={img2alt} title="Ceramic Vase" description="Ceramic · Matte" price="$60.00" swatches={[{ color: '#e8e0d5', image: img2, altImage: img2alt }, { color: '#3e4951', image: img1, altImage: img1alt }]} />
 ];
 
 const footerColumns = [
   {
     heading: 'Support',
     links: [
-      { label: 'My Account', href: '#'` },
+      { label: 'My Account', href: '#' },
       { label: 'Shipping Info', href: '#' },
       { label: 'Return Policy', href: '#' },
       { label: 'FAQs', href: '#' },
