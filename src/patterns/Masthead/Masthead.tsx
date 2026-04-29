@@ -38,13 +38,16 @@ export function Masthead({
 }: MastheadProps) {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [sticky, setSticky] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     const THRESHOLD = 8;
+    const STICKY_PX = 80;
     const onScroll = () => {
       const y = window.scrollY;
-      if (open || y < 80) {
+      setSticky(y > STICKY_PX);
+      if (open || y < STICKY_PX) {
         setHidden(false);
       } else if (y - lastScrollY.current > THRESHOLD) {
         setHidden(true);
@@ -57,10 +60,13 @@ export function Masthead({
     return () => window.removeEventListener('scroll', onScroll);
   }, [open]);
 
+  // Mobile-open and sticky states always render dark regardless of page theme
+  const effectiveTheme = (open || sticky) ? 'dark' : (theme ?? 'dark');
+
   const cls = [styles.root, open ? styles.open : '', hidden ? styles.hidden : '', className].filter(Boolean).join(' ');
 
   return (
-    <header className={cls} data-theme={theme} {...props}>
+    <header className={cls} data-theme={effectiveTheme} {...props}>
 
       {/* ── Top bar ─────────────────────────────────────────────── */}
       <div className={styles.bar}>

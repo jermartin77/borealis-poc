@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PlayButton } from './PlayButton';
 
 const meta: Meta<typeof PlayButton> = {
-  title: 'Components/Play Button',
+  title: 'Components/Buttons/Play Button',
   component: PlayButton,
   tags: ['autodocs'],
   parameters: {

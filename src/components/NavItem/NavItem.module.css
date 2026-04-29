@@ -24,7 +24,7 @@
   inset: 0;
   z-index: -1;
   border-radius: inherit;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--ds-navigation-item-bg);
   backdrop-filter: blur(2px);
   opacity: var(--nav-item-bg-opacity);
   transition: opacity 0.3s ease-out;
@@ -32,6 +32,10 @@
 
 .root:hover::before {
   opacity: 1;
+}
+
+.root:hover {
+  color: var(--ds-foreground-on-inverse);
 }
 
 .root:focus-visible {

@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Icon } from '../Icon/Icon';
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: 'Components/Buttons/Button',
   component: Button,
   tags: ['autodocs'],
   parameters: {

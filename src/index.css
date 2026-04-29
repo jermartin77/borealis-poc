@@ -14,15 +14,20 @@ body {
   font-family: var(--ds-font-family-text);
 }
 
-/* ── Input focus tokens (rgba — not processable by Style Dictionary) ──────── */
+/* ── Navigation + input tokens (rgba — not processable by Style Dictionary) ── */
 :root {
-  --ds-input-focus:       rgba(128, 145, 156, 0.3);
-  --ds-input-focus-error: rgba(179, 34, 40, 0.3);
+  --ds-navigation-bg:      rgba(0, 0, 0, 0.2);   /* light default */
+  --ds-navigation-item-bg: rgba(0, 0, 0, 0.6);   /* nav item hover pill — always dark */
+  --ds-input-focus:        rgba(128, 145, 156, 0.3);
+  --ds-input-focus-error:  rgba(179, 34, 40, 0.3);
 }
 
 /* ── Dark mode token overrides (Color Mode / Dark) ─────────────────────────── */
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Navigation */
+    --ds-navigation-bg: rgba(0, 0, 0, 0.6);
+
     /* Background */
     --ds-background-primary:        #181b1d;
     --ds-background-secondary:      #2b3239;
@@ -163,6 +168,9 @@ body {
   --ds-specialized-shadow-color:     #000000;
   --ds-specialized-bg-overlay:       #161515;
 
+  /* Navigation */
+  --ds-navigation-bg: rgba(0, 0, 0, 0.6);
+
   /* Input */
   --ds-input-focus: rgba(62, 73, 81, 0.3);
 }
@@ -170,6 +178,9 @@ body {
 /* ── Explicit light mode (overrides dark OS preference when set) ─────────── */
 /* Matches <html data-theme="light"> OR any component with theme="light"       */
 [data-theme="light"] {
+  /* Navigation */
+  --ds-navigation-bg: rgba(0, 0, 0, 0.2);
+
   /* Background */
   --ds-background-primary:        #f6f6f6;
   --ds-background-secondary:      #dfe3e4;

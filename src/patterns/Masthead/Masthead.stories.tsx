@@ -39,12 +39,16 @@ export const Default: Story = {
 };
 
 export const Light: Story = {
-  name: 'Light',
+  name: 'Light (scroll to see sticky dark)',
   args: { ...sharedArgs, theme: 'light' },
   decorators: [
     (Story) => (
-      <div style={{ height: 400, background: '#f5f5f5' }}>
+      <div style={{ height: 600, overflowY: 'auto', background: '#f0eeeb' }}>
         <Story />
+        <div style={{ padding: '80px 40px', color: '#181b1d', fontSize: 14, opacity: 0.5 }}>
+          Scroll down past 80px to see the nav transition to dark mode (3s ease-in-out).
+        </div>
+        <div style={{ height: 800 }} />
       </div>
     ),
   ],

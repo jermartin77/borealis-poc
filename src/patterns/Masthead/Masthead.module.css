@@ -6,14 +6,18 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--ds-navigation-bg);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: var(--ds-text-primary);
   height: 56px;
   overflow: hidden;
   transform: translateY(0);
-  transition: height 0.5s ease-out, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    background-color 3s ease-in-out,
+    color 3s ease-in-out,
+    height 0.5s ease-out,
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .open {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { VideoControls } from './VideoControls';
 
 const meta: Meta<typeof VideoControls> = {
-  title: 'Components/VideoControls',
+  title: 'Components/Buttons/Video Controls',
   component: VideoControls,
   tags: ['autodocs'],
 };
