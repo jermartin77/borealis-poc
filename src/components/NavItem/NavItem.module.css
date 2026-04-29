@@ -34,10 +34,6 @@
   opacity: 1;
 }
 
-.root:hover {
-  color: var(--ds-foreground-on-inverse);
-}
-
 .root:focus-visible {
   outline: 2px solid var(--ds-border-brand);
   outline-offset: 2px;
