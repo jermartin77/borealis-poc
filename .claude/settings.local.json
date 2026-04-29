@@ -55,7 +55,8 @@
       "Bash(grep -E \"\\\\.\\(ts|js|json|rc\\)$\")",
       "Bash(grep -E \"README|\\\\.md$\")",
       "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" log --oneline)",
-      "mcp__plugin_figma_figma__get_screenshot"
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(grep -n '`' \"/Users/jeremiah/Sites/Borealis POC/src/App.tsx\")"
     ]
   }
 }
