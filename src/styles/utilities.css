@@ -1,0 +1,21 @@
+/* ── Scrollbar ───────────────────────────────────────────────── */
+
+.ds-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ds-background-inverse) var(--ds-background-secondary);
+}
+
+.ds-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.ds-scrollbar::-webkit-scrollbar-track {
+  background: var(--ds-background-secondary);
+  border-radius: var(--ds-radius-md);
+}
+
+.ds-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--ds-background-inverse);
+  border-radius: var(--ds-radius-md);
+}

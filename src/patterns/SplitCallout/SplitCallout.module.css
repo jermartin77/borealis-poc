@@ -1,9 +1,12 @@
 .root {
   display: flex;
   flex-direction: column;
-  background: var(--ds-background-primary);
   overflow: hidden;
 }
+
+.primary  { background: var(--ds-background-primary); }
+.secondary  { background: var(--ds-background-secondary); }
+.tertiary { background: var(--ds-background-tertiary); }
 
 /* ── Desktop: side by side ──────────────────────────────────── */
 

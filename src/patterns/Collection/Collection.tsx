@@ -50,7 +50,8 @@ export function Collection({
   const trackCls = [
     layout === 'scroll' ? styles.track : styles.grid,
     cardSize === 'lg' ? styles.large : styles.small,
-  ].join(' ');
+    layout === 'scroll' ? 'ds-scrollbar' : null,
+  ].filter(Boolean).join(' ');
 
   return (
     <section className={rootCls} data-theme={theme} {...props}>

@@ -81,7 +81,7 @@ export function Masthead({
         </div>
 
         <div className={styles.logoNav}>
-          <div className={styles.logoWrap}>{logo}</div>
+          <a href="/" className={styles.logoWrap} aria-label="Home">{logo}</a>
           <nav aria-label="Main navigation">
             <ul className={styles.navListDesktop}>
               {navItems.map((item) => (

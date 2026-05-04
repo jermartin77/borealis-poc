@@ -1,0 +1,64 @@
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 42px;
+  padding: 10px 20px;
+  border-radius: var(--ds-radius-md);
+  border: var(--ds-border-weight) solid var(--ds-border-secondary);
+  background: none;
+  cursor: pointer;
+  font-family: var(--ds-font-family-display);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ds-text-secondary);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+/* ── Hover ────────────────────────────────────────────────────────────────── */
+
+.base:not(.selected):not(.soldOut):hover {
+  border-color: var(--ds-border-interactive);
+  color: var(--ds-text-primary);
+}
+
+/* ── Selected / Active ────────────────────────────────────────────────────── */
+
+.selected {
+  background: var(--ds-background-brand);
+  border-color: var(--ds-border-primary);
+  color: var(--ds-text-on-brand);
+}
+
+/* ── Sold Out ─────────────────────────────────────────────────────────────── */
+
+.soldOut {
+  background: var(--ds-background-disabled);
+  border-color: var(--ds-border-disabled);
+  color: var(--ds-text-disabled);
+  cursor: default;
+}
+
+.soldOut:hover {
+  border-color: var(--ds-border-interactive);
+}
+
+/* Diagonal strikethrough — spans the full tile, clipped by overflow: hidden */
+.soldOut::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(148deg);
+  width: 200%;
+  height: var(--ds-border-weight);
+  background: var(--ds-foreground-disabled);
+}

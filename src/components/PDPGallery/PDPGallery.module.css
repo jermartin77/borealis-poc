@@ -1,0 +1,60 @@
+.root {
+  width: 100%;
+}
+
+/* ── Mobile: horizontal scroll strip ─────────────────────────────────────── */
+
+.mobileScroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.mobileCell {
+  flex: 0 0 87%;
+  scroll-snap-align: start;
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+/* ── Desktop: 2-column stacked grid ─────────────────────────────────────── */
+
+.grid {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .mobileScroll {
+    display: none;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .hero {
+    grid-column: 1 / span 2;
+    aspect-ratio: 1;
+    border-radius: var(--ds-radius-lg);
+    overflow: hidden;
+  }
+
+  .cell {
+    aspect-ratio: 1;
+    border-radius: var(--ds-radius-lg);
+    overflow: hidden;
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

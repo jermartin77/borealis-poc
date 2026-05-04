@@ -9,6 +9,9 @@
 /* Type style classes generated from Figma text styles */
 @import "./tokens/type-styles.css";
 
+/* Shared utility classes */
+@import "./styles/utilities.css";
+
 /* ── Global base ─────────────────────────────────────────────────────────── */
 body {
   font-family: var(--ds-font-family-text);

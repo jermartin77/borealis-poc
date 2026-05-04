@@ -56,7 +56,8 @@
       "Bash(grep -E \"README|\\\\.md$\")",
       "Bash(git -C \"/Users/jeremiah/Sites/Borealis POC\" log --oneline)",
       "mcp__plugin_figma_figma__get_screenshot",
-      "Bash(grep -n '`' \"/Users/jeremiah/Sites/Borealis POC/src/App.tsx\")"
+      "Bash(grep -n '`' \"/Users/jeremiah/Sites/Borealis POC/src/App.tsx\")",
+      "Bash(curl -s -o /tmp/figma-pdp.png \"https://www.figma.com/api/mcp/asset/e5c602f9-7cca-4685-a6f9-99cab9d7adc1\")"
     ]
   }
 }

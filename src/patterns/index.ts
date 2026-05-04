@@ -25,9 +25,6 @@ export type { HeroBannerProps, HeroAlign } from './HeroBanner/HeroBanner';
 export { VideoPlayer } from './VideoPlayer/VideoPlayer';
 export type { VideoPlayerProps } from './VideoPlayer/VideoPlayer';
 
-export { OptionButton, OptionSelect, ColorSwatchGroup } from './EcommerceElements/EcommerceElements';
-export type { OptionButtonProps, OptionItem, OptionSelectProps, SwatchItem, ColorSwatchGroupProps } from './EcommerceElements/EcommerceElements';
-
 export { Masthead } from './Masthead/Masthead';
 export type { MastheadProps, MastheadNavItem } from './Masthead/Masthead';
 

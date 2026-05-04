@@ -3,8 +3,11 @@ import type { ThemeProps } from '../../lib/theme';
 import { Blurb } from '../Blurb/Blurb';
 import styles from './SplitCallout.module.css';
 
+export type SplitCalloutBackground = 'primary' | 'secondary' | 'tertiary';
+
 export interface SplitCalloutProps extends HTMLAttributes<HTMLElement>, ThemeProps {
   alignment?: 'left' | 'right';
+  background?: SplitCalloutBackground;
   image: string;
   imageAlt?: string;
   eyebrow?: string;
@@ -21,6 +24,7 @@ export interface SplitCalloutProps extends HTMLAttributes<HTMLElement>, ThemePro
 
 export function SplitCallout({
   alignment = 'left',
+  background = 'primary',
   image,
   imageAlt = '',
   eyebrow,
@@ -37,7 +41,7 @@ export function SplitCallout({
   className,
   ...props
 }: SplitCalloutProps) {
-  const cls = [styles.root, styles[alignment], className].filter(Boolean).join(' ');
+  const cls = [styles.root, styles[alignment], styles[background], className].filter(Boolean).join(' ');
 
   return (
     <section className={cls} data-theme={theme} {...props}>

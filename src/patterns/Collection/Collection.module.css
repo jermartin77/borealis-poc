@@ -92,31 +92,12 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--ds-background-inverse) var(--ds-background-secondary);
   padding-bottom: var(--ds-text-spacing-lg);
   margin-inline: calc(-1 * var(--ds-container-padding));
   padding-inline: var(--ds-container-padding);
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scroll-padding-inline: var(--ds-container-padding);
-  -webkit-overflow-scrolling: touch;
-  /* scrollbar-width: thin; */
-}
-
-.track::-webkit-scrollbar {
-  height: 6px;
-}
-
-.track::-webkit-scrollbar-track {
-  background: var(--ds-background-secondary);
-  border-radius: var(--ds-radius-md);
-  margin: 0 var(--ds-container-padding);
-}
-
-.track::-webkit-scrollbar-thumb {
-  background: var(--ds-background-inverse);
-  border-radius: var(--ds-radius-md);
 }
 
 /* Small card scroll widths — ~2 visible at mobile, ~4 at desktop */

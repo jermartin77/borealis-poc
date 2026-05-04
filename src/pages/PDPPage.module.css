@@ -1,0 +1,34 @@
+/* ── PDP main product section ─────────────────────────────────────────────── */
+
+.productSection {
+  padding-block: var(--ds-stacked-component-md);
+  padding-inline: var(--ds-container-padding);
+}
+
+.productWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+/* ── Desktop two-column layout ───────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .productWrap {
+    flex-direction: row;
+    gap: 64px;
+    align-items: flex-start;
+  }
+
+  .gallery {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .buyGrid {
+    flex: 0 0 420px;
+    width: 420px;
+  }
+}

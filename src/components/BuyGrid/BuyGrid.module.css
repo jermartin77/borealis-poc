@@ -1,0 +1,91 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-lg);
+}
+
+/* ── Sticky on desktop: floats alongside the tall gallery ─────────────────── */
+
+@media (min-width: 1024px) {
+  .root {
+    position: sticky;
+    top: calc(65px + var(--ds-text-spacing-lg));
+  }
+}
+
+/* ── Product info block ──────────────────────────────────────────────────── */
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-xxs);
+}
+
+.title {
+  color: var(--ds-text-primary);
+  margin: 0;
+}
+
+.ratingRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--ds-text-primary);
+}
+
+.reviewCount {
+  color: var(--ds-text-secondary);
+}
+
+.description {
+  color: var(--ds-text-secondary);
+  margin: 0;
+}
+
+/* ── Color / Size selectors ──────────────────────────────────────────────── */
+
+.selectorGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-text-spacing-xxs);
+}
+
+.selectorLabel {
+  color: var(--ds-text-primary);
+  margin: 0;
+}
+
+.swatches {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sizeOptions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ── Price ───────────────────────────────────────────────────────────────── */
+
+.price {
+  color: var(--ds-text-primary);
+  margin: 0;
+}
+
+/* ── Add to Cart button ──────────────────────────────────────────────────── */
+
+.addToCart {
+  width: 100%;
+  justify-content: space-between;
+}
+

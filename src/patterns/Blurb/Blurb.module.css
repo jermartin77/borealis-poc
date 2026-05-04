@@ -21,7 +21,10 @@
 
 .eyebrow { margin: 0; }
 .heading { margin: 0; }
-.body    { margin: 0; }
+.body    { margin: 0; 
+  max-width: 60ch;
+text-wrap-style: balance; /* Balance text across multiple lines for better readability */
+}
 
 .default .heading { max-width: 720px; }
 .small   .heading { max-width: 480px; }
