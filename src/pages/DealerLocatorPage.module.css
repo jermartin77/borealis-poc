@@ -1,0 +1,144 @@
+.root {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+  background: #07090f;
+}
+
+.globeWrap {
+  position: absolute;
+  inset: 0;
+}
+
+/* ── Floating search bar ─────────────────────────────────────────── */
+
+.searchBar {
+  position: fixed;
+  top: calc(72px + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(480px, calc(100% - 32px));
+  z-index: 50;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  list-style: none;
+  padding: 0;
+  background: var(--ds-background-primary);
+  border: 1px solid var(--ds-border-primary);
+  border-radius: var(--ds-border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: 10px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.suggestion:hover {
+  background: var(--ds-background-secondary);
+}
+
+.suggestionName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ds-text-primary);
+}
+
+.suggestionAddress {
+  font-size: 0.75rem;
+  color: var(--ds-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Dealer info panel ───────────────────────────────────────────── */
+
+.dealerPanel {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 50;
+  background: var(--ds-background-primary);
+  border: 1px solid var(--ds-border-primary);
+  border-radius: var(--ds-border-radius-lg);
+  padding: 24px;
+  min-width: 260px;
+  max-width: 320px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dealerPanelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.dealerName {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ds-text-primary);
+  line-height: 1.3;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dealerName:hover {
+  text-decoration: underline;
+}
+
+.closeButton {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  color: var(--ds-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.closeButton:hover {
+  color: var(--ds-text-primary);
+}
+
+.dealerAddress {
+  margin: 0 0 16px;
+  font-size: 0.875rem;
+  color: var(--ds-text-secondary);
+  line-height: 1.5;
+}
+
+.directionsLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ds-foreground-brand);
+  text-decoration: none;
+}
+
+.directionsLink:hover {
+  text-decoration: underline;
+}

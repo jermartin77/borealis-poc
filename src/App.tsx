@@ -7,6 +7,7 @@ import { Collection } from './patterns/Collection/Collection';
 import { ProductCard } from './patterns/ProductCard/ProductCard';
 import { SplitCallout } from './patterns/SplitCallout/SplitCallout';
 import { PDPPage } from './pages/PDPPage';
+import { DealerLocatorPage } from './pages/DealerLocatorPage';
 import heroVideo from './assets/video/hero-banner-animated.mp4';
 import img1 from './assets/images/product/product-image-1.jpg';
 import img1alt from './assets/images/product/product-image-1-alt.jpg';
@@ -146,6 +147,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/pdp" element={<PDPPage />} />
+        <Route path="/dealer-locator" element={<DealerLocatorPage />} />
       </Routes>
     </BrowserRouter>
   );

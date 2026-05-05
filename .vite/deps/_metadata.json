@@ -1,37 +1,43 @@
 {
-  "hash": "8e7d851e",
+  "hash": "743757c4",
   "configHash": "f6dff371",
-  "lockfileHash": "c2450b25",
-  "browserHash": "2cdc637e",
+  "lockfileHash": "259392eb",
+  "browserHash": "d9ee9fc8",
   "optimized": {
     "lucide-react": {
       "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
       "file": "lucide-react.js",
-      "fileHash": "2b273041",
+      "fileHash": "d85c3843",
       "needsInterop": false
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "15cd5fd3",
+      "fileHash": "0099b453",
       "needsInterop": true
+    },
+    "react-globe.gl": {
+      "src": "../../node_modules/react-globe.gl/dist/react-globe.gl.mjs",
+      "file": "react-globe__gl.js",
+      "fileHash": "ce1bb155",
+      "needsInterop": false
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.mjs",
       "file": "react-router-dom.js",
-      "fileHash": "375d76ef",
+      "fileHash": "b61a7fee",
       "needsInterop": false
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "b45d026e",
+      "fileHash": "36820bfb",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "242876ef",
+      "fileHash": "d6f512ba",
       "needsInterop": true
     }
   },
