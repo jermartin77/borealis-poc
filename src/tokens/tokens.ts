@@ -69,7 +69,7 @@ export const SpecializedFocusRing = "#dfa7ab"; // Specialized/focus-ring
 export const SpecializedShadowColor = "#80919c"; // Specialized/shadow-color
 export const SpecializedBgOverlay = "#80919c"; // Specialized/bg-overlay
 export const FontFamilyDisplay =
-  '"neue-haas-grotesk-display", system-ui, sans-serif'; // Font/family/display
+  '"Neue Haas Grotesk Display Pro", system-ui, sans-serif'; // Font/family/display
 export const FontFamilyText = '"neue-haas-grotesk-text", system-ui, sans-serif'; // Font/family/text — body copy
 export const FontWeightMedium = "500"; // Font/weight/medium
 export const RadiusMd = "4px"; // radius/md

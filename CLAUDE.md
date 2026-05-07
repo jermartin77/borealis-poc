@@ -15,6 +15,7 @@ npm run tokens:watch           # Watch mode for token regeneration during active
 npm run figma:connect          # Publish Code Connect mappings to Figma
 npm run figma:connect:parse    # Parse and validate Code Connect files without publishing
 npm run figma:connect:unpublish # Remove published Code Connect mappings from Figma
+npm run preview                # Preview the Vite production build locally
 npx vitest                     # Run Storybook-integrated browser tests (Playwright/Chromium) — requires Storybook running
 npx tsc --noEmit               # Type-check without building
 ```
@@ -56,6 +57,10 @@ import { Button } from '../Button/Button';
 import { HeroBanner } from 'src/patterns';
 ```
 
+**`src/pages/`** — Full page compositions used by React Router. Not patterns; they do not extend `ThemeProps` and have no barrel export. Import directly in App.tsx routes. Currently: `PDPPage` and `DealerLocatorPage` (uses `react-globe.gl` for the globe visualization).
+
+The app uses `BrowserRouter` with three routes defined in `App.tsx`: `/` (home), `/pdp`, and `/dealer-locator`.
+
 ### Theming
 `src/index.css` defines `[data-theme="dark"]` overrides for all color tokens. Wrapping any element with `data-theme="dark"` flips the entire token set for that subtree — this is how pattern components implement per-section dark mode without JavaScript.
 
@@ -75,6 +80,8 @@ Three button components share `Button.module.css`:
 `FormField` is a layout wrapper that composes a label, helper text, and error message around `Input`, `Select`, or `Textarea`. It does not manage state — the consumer controls value and error props. Import directly, no barrel file.
 
 `OptionSelect` is a toggle button for product option selectors (size, color, etc.). Props: `label`, `selected`, `soldOut`. Uses `aria-pressed` and `aria-disabled` — not a form input.
+
+`NumberSpinner` is a quantity stepper (increment/decrement buttons around a numeric display). Not built on `<input type="number">` — it manages count state via buttons.
 
 ### Icon system
 Five distinct icon components, all in `src/components/Icon/`:
@@ -100,8 +107,10 @@ All icons use `currentColor` — tint by setting `color` on a parent element.
 ### Figma Code Connect
 Components with `.figma.tsx` files map Figma variant props to React props via `figma.enum()`. The Figma file key is `I6QFi7hLxmg1bRuA9VXAJv`. Publish with `npm run figma:connect`.
 
+Nine components currently have Code Connect mappings: `Button`, `BuyGrid`, `Icon`, `PlayerIcon`, `SocialIcon`, `StarIcon`, `StatusIcon`, `Logo`, `PDPGallery`.
+
 ## Current status
 
-Pattern layer is complete (13 patterns in `src/patterns/`). Remaining atomic component: RangeSlider. `OptionSelect` was recently added to `src/components/`. Token responsive infrastructure is ongoing — `responsive.css` requires manual updates when breakpoint token values change.
+Pattern layer is complete (13 patterns in `src/patterns/`). Remaining atomic component: `RangeSlider`. Token responsive infrastructure is ongoing — `responsive.css` requires manual updates when breakpoint token values change.
 
 **Vercel build:** `vercel.json` overrides the build command to `npm run tokens && npm run build` so tokens are always regenerated before the Vite build in CI.

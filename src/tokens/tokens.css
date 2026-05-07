@@ -69,7 +69,7 @@
   --ds-specialized-focus-ring: #dfa7ab; /** Specialized/focus-ring */
   --ds-specialized-shadow-color: #80919c; /** Specialized/shadow-color */
   --ds-specialized-bg-overlay: #80919c; /** Specialized/bg-overlay */
-  --ds-font-family-display: "neue-haas-grotesk-display", system-ui, sans-serif; /** Font/family/display */
+  --ds-font-family-display: "Neue Haas Grotesk Display Pro", system-ui, sans-serif; /** Font/family/display */
   --ds-font-family-text: "neue-haas-grotesk-text", system-ui, sans-serif; /** Font/family/text — body copy */
   --ds-font-weight-medium: 500; /** Font/weight/medium */
   --ds-radius-md: 4px; /** radius/md */
