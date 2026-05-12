@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Globe from 'react-globe.gl';
 import type { GlobeMethods } from 'react-globe.gl';
-import { Logo } from '../components/Logo/Logo';
 import { Masthead } from '../patterns/Masthead/Masthead';
 import { SearchInput } from '../components/Input/Input';
 import styles from './DealerLocatorPage.module.css';
@@ -27,18 +26,18 @@ const dealers: Dealer[] = [
   { id: 9, name: 'Borealis Stockholm', address: 'Biblioteksgatan 11, 114 35 Stockholm, Sweden', lat: 59.3293, lng: 18.0686, dir: 'https://maps.google.com/?q=Biblioteksgatan+11+114+35+Stockholm+Sweden' },
   { id: 10, name: 'Borealis Lima', address: 'Av. Larco 1035, Miraflores 15074, Lima, Peru', lat: -12.0464, lng: -77.0428, dir: 'https://maps.google.com/?q=Av+Larco+1035+Miraflores+Lima+Peru' },
   { id: 11, name: 'Borealis Buenos Aires', address: 'Av. Álvarez Thomas 1391, C1427 Buenos Aires, Argentina', lat: -34.6037, lng: -58.3816, dir: 'https://maps.google.com/?q=Av+Alvarez+Thomas+1391+Buenos+Aires+Argentina' },
+  { id: 12, name: 'Borealis Portland', address: '1000 SW Broadway, Portland, OR 97205', lat: 45.5051, lng: -122.6750, dir: 'https://maps.google.com/?q=1000+SW+Broadway+Portland+OR' },
+  { id: 13, name: 'Borealis San Diego', address: '865 Fifth Ave, San Diego, CA 92101', lat: 32.7157, lng: -117.1611, dir: 'https://maps.google.com/?q=865+Fifth+Ave+San+Diego+CA' },
+  { id: 14, name: 'Borealis Mexico City', address: 'Presidente Masaryk 393, Polanco, 11560 Ciudad de México, Mexico', lat: 19.4326, lng: -99.1332, dir: 'https://maps.google.com/?q=Presidente+Masaryk+393+Polanco+Mexico+City' },
+  { id: 15, name: 'Borealis Madrid', address: 'Calle de Serrano 47, 28001 Madrid, Spain', lat: 40.4168, lng: -3.7038, dir: 'https://maps.google.com/?q=Calle+de+Serrano+47+28001+Madrid+Spain' },
+  { id: 16, name: 'Borealis Barcelona', address: 'Passeig de Gràcia 43, 08007 Barcelona, Spain', lat: 41.3851, lng: 2.1734, dir: 'https://maps.google.com/?q=Passeig+de+Gracia+43+08007+Barcelona+Spain' },
+  { id: 17, name: 'Borealis Milan', address: 'Via Montenapoleone 8, 20121 Milano, Italy', lat: 45.4642, lng: 9.1900, dir: 'https://maps.google.com/?q=Via+Montenapoleone+8+20121+Milan+Italy' },
 ];
 
 // altitude ≈ 0.01 corresponds to ~20-mile visible radius
 const CITY_ALTITUDE = 0.01;
 
-const navItems = [
-  { label: 'Apparel', href: '#' },
-  { label: 'Accessories', href: '#' },
-  { label: 'Sale', href: '#' },
-  { label: 'About', href: '#' },
-  { label: 'Blog', href: '#' },
-];
+
 
 export function DealerLocatorPage() {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
@@ -196,7 +195,7 @@ export function DealerLocatorPage() {
 
   return (
     <div data-theme="dark" className={styles.root}>
-      <Masthead logo={<Logo variant="full-logo" />} navItems={navItems} theme="dark" />
+      <Masthead theme="dark" />
 
       <div className={styles.globeWrap} ref={containerRef}>
         <Globe

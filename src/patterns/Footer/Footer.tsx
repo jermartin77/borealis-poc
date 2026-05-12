@@ -4,7 +4,54 @@ import { Accordion } from '../../components/Accordion/Accordion';
 import { Icon } from '../../components/Icon/Icon';
 import { Input } from '../../components/Input/Input';
 import { SocialIcon, type SocialIconName } from '../../components/Icon/SocialIcon';
+import { Logo } from '../../components/Logo/Logo';
 import styles from './Footer.module.css';
+
+const DEFAULT_COLUMNS: FooterColumn[] = [
+  {
+    heading: 'Support',
+    links: [
+      { label: 'My Account', href: '#' },
+      { label: 'Shipping Info', href: '#' },
+      { label: 'Return Policy', href: '#' },
+      { label: 'FAQs', href: '#' },
+      { label: 'Warranty', href: '#' },
+      { label: 'Contact Us', href: '#' },
+    ],
+  },
+  {
+    heading: 'About',
+    links: [
+      { label: 'Our Story', href: '#' },
+      { label: 'Blog', href: '#' },
+      { label: 'Dealer Locator', href: '/dealer-locator' },
+      { label: 'Partnerships', href: '#' },
+      { label: 'Careers', href: '#' },
+    ],
+  },
+  {
+    heading: 'Programs',
+    links: [
+      { label: 'Rewards', href: '#' },
+      { label: 'Wholesale Login', href: '#' },
+      { label: 'Pro Program', href: '#' },
+      { label: 'Partnerships', href: '#' },
+    ],
+  },
+];
+
+const DEFAULT_SOCIAL_LINKS: FooterSocialLink[] = [
+  { name: 'Instagram', href: '#' },
+  { name: 'Facebook', href: '#' },
+  { name: 'X Twitter', href: '#' },
+  { name: 'Youtube', href: '#' },
+];
+
+const DEFAULT_LEGAL_LINKS: FooterLinkItem[] = [
+  { label: 'Terms of Service', href: '#' },
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Accessibility', href: '#' },
+];
 
 export interface FooterLinkItem {
   label: string;
@@ -33,14 +80,14 @@ export interface FooterProps extends HTMLAttributes<HTMLElement>, ThemeProps {
 }
 
 export function Footer({
-  logo,
-  columns = [],
+  logo = <Logo variant="full-logo" />,
+  columns = DEFAULT_COLUMNS,
   newsletterTitle = 'Newsletter Signup',
   newsletterDescription = 'Sign up to be the first to learn about new product launches, news, and promotions.',
   onNewsletterSubmit,
-  socialLinks = [],
+  socialLinks = DEFAULT_SOCIAL_LINKS,
   legalText,
-  legalLinks = [],
+  legalLinks = DEFAULT_LEGAL_LINKS,
   theme = 'dark',
   className,
   ...props

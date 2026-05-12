@@ -1,4 +1,3 @@
-import { Logo } from '../components/Logo/Logo';
 import { Masthead } from '../patterns/Masthead/Masthead';
 import { SplitCallout } from '../patterns/SplitCallout/SplitCallout';
 import { Collection } from '../patterns/Collection/Collection';
@@ -68,51 +67,11 @@ const relatedProducts = [
   <ProductCard href="/pdp" key={5} image={relatedImg1} altImage={relatedImg1alt} title="Bib Tights" description="Thermal · Forest" price="$265.00" badge="New" badgeStyle="feature" swatches={[{ color: '#1a3a28', image: relatedImg1, altImage: relatedImg1alt }, { color: '#1e2d5a', image: relatedImg2, altImage: relatedImg2alt }]} />,
 ];
 
-const navItems = [
-  { label: 'Apparel', href: '#' },
-  { label: 'Accessories', href: '#' },
-  { label: 'Sale', href: '#' },
-  { label: 'About', href: '#' },
-  { label: 'Blog', href: '#' },
-];
-
-const footerColumns = [
-  {
-    heading: 'Support',
-    links: [
-      { label: 'My Account', href: '#' },
-      { label: 'Shipping Info', href: '#' },
-      { label: 'Return Policy', href: '#' },
-      { label: 'FAQs', href: '#' },
-      { label: 'Warranty', href: '#' },
-      { label: 'Contact Us', href: '#' },
-    ],
-  },
-  {
-    heading: 'About',
-    links: [
-      { label: 'Our Story', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Dealer Locator', href: '#' },
-      { label: 'Partnerships', href: '#' },
-      { label: 'Careers', href: '#' },
-    ],
-  },
-  {
-    heading: 'Programs',
-    links: [
-      { label: 'Rewards', href: '#' },
-      { label: 'Wholesale Login', href: '#' },
-      { label: 'Pro Program', href: '#' },
-      { label: 'Partnerships', href: '#' },
-    ],
-  },
-];
 
 export function PDPPage() {
   return (
     <div data-theme="light">
-      <Masthead logo={<Logo variant="full-logo" />} navItems={navItems} />
+      <Masthead />
 
       <section className={styles.productSection}>
         <div className={styles.productWrap}>
@@ -176,22 +135,7 @@ export function PDPPage() {
         {relatedProducts}
       </Collection>
 
-      <Footer
-        logo={<Logo variant="full-logo" />}
-        columns={footerColumns}
-        socialLinks={[
-          { name: 'Instagram', href: '#' },
-          { name: 'Facebook', href: '#' },
-          { name: 'X Twitter', href: '#' },
-          { name: 'Youtube', href: '#' },
-        ]}
-        legalText="©2025 The ZaneRay Group"
-        legalLinks={[
-          { label: 'Terms of Service', href: '#' },
-          { label: 'Privacy Policy', href: '#' },
-          { label: 'Accessibility', href: '#' },
-        ]}
-      />
+      <Footer />
     </div>
   );
 }

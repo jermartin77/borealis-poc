@@ -3,6 +3,7 @@ import type { ThemeProps } from '../../lib/theme';
 import { NavItem } from '../../components/NavItem/NavItem';
 import { Icon } from '../../components/Icon/Icon';
 import { SearchInput } from '../../components/Input/Input';
+import { Logo } from '../../components/Logo/Logo';
 import styles from './Masthead.module.css';
 
 export interface MastheadNavItem {
@@ -11,12 +12,20 @@ export interface MastheadNavItem {
 }
 
 export interface MastheadProps extends HTMLAttributes<HTMLElement>, ThemeProps {
-  logo: React.ReactNode;
+  logo?: React.ReactNode;
   navItems?: MastheadNavItem[];
   onSearchClick?: () => void;
   onAccountClick?: () => void;
   onCartClick?: () => void;
 }
+
+const DEFAULT_NAV_ITEMS: MastheadNavItem[] = [
+  { label: 'Apparel', href: '#' },
+  { label: 'Accessories', href: '#' },
+  { label: 'Sale', href: '#' },
+  { label: 'About', href: '#' },
+  { label: 'Blog', href: '#' },
+];
 
 function IconBtn({ onClick, label, children }: { onClick?: () => void; label: string; children: React.ReactNode }) {
   return (
@@ -27,8 +36,8 @@ function IconBtn({ onClick, label, children }: { onClick?: () => void; label: st
 }
 
 export function Masthead({
-  logo,
-  navItems = [],
+  logo = <Logo variant="full-logo" />,
+  navItems = DEFAULT_NAV_ITEMS,
   onSearchClick,
   onAccountClick,
   onCartClick,
