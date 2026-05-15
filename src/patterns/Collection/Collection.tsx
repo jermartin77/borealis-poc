@@ -60,18 +60,9 @@ export function Collection({
           <div className={styles.headerText}>
             {title && <p className={styles.title}>{title}</p>}
             {description && <p className={styles.description}>{description}</p>}
-            {ctaLabel && (
-              <a href={ctaHref ?? '#'} className={`${styles.cta} ${styles.ctaMobile}`}>
-                <Button
-                  variant={ctaVariant}
-                  label={ctaLabel}
-                  rightIcon={<Icon name="arrow-right" size={16} />}
-                />
-              </a>
-            )}
           </div>
           {ctaLabel && (
-            <a href={ctaHref ?? '#'} className={`${styles.cta} ${styles.ctaDesktop}`}>
+            <a href={ctaHref ?? '#'} className={styles.cta}>
               <Button
                 variant={ctaVariant}
                 label={ctaLabel}

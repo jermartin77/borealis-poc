@@ -55,27 +55,10 @@
 }
 
 .cta {
-  text-decoration: none;
-}
-
-/* Mobile: CTA stacks below description inside headerText */
-.ctaMobile {
   display: flex;
-}
-
-.ctaDesktop {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .ctaMobile {
-    display: none;
-  }
-
-  .ctaDesktop {
-    display: flex;
-    flex-shrink: 0;
-  }
+  align-self: flex-start;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
 /* ── Content wrapper ─────────────────────────────────────────────────────── */
@@ -149,6 +132,18 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--ds-grid-vertical-spacing-md) var(--ds-grid-horizontal-spacing-md);
   }
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+
+.track::-webkit-scrollbar-track {
+  background: linear-gradient(
+    to right,
+    transparent var(--ds-container-padding),
+    var(--ds-background-secondary) var(--ds-container-padding),
+    var(--ds-background-secondary) calc(100% - var(--ds-container-padding)),
+    transparent calc(100% - var(--ds-container-padding))
+  );
 }
 
 /* ── Prev / Next arrow buttons ───────────────────────────────────────────── */

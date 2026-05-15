@@ -11,7 +11,13 @@
 }
 
 .ds-scrollbar::-webkit-scrollbar-track {
-  background: var(--ds-background-secondary);
+  background: linear-gradient(
+    to right,
+    transparent var(--ds-container-padding),
+    var(--ds-background-secondary) var(--ds-container-padding),
+    var(--ds-background-secondary) calc(100% - var(--ds-container-padding)),
+    transparent calc(100% - var(--ds-container-padding))
+  );
   border-radius: var(--ds-radius-md);
 }
 
