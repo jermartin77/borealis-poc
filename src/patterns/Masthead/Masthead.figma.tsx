@@ -21,8 +21,6 @@ figma.connect(
           { label: 'Collections', href: '#' },
           { label: 'About', href: '#' },
         ]}
-        cartCount={2}
-        cartHref="#"
       />
     ),
   },

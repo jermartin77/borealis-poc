@@ -20,7 +20,7 @@ figma.connect(
         heading="Section headline goes here"
         body="Supporting body copy that describes this section in more detail."
         primaryButtonLabel="Shop now"
-        primaryButtonHref="#"
+        showPrimaryButton
       />
     ),
   },

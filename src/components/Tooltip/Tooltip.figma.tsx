@@ -15,7 +15,7 @@ figma.connect(
   'https://www.figma.com/design/I6QFi7hLxmg1bRuA9VXAJv/Design-System-AI-POC?node-id=1408-23786',
   {
     example: () => (
-      <Tooltip content="Helpful tooltip text" arrowH="middle" arrowV="bottom">
+      <Tooltip content="Helpful tooltip text" arrowHorizontal="middle" arrowVertical="bottom">
         <button type="button">Hover me</button>
       </Tooltip>
     ),

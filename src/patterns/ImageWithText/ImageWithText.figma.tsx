@@ -21,7 +21,7 @@ figma.connect(
         headline="Crafted for the everyday"
         body="Timeless design meets modern performance. Explore the collection."
         primaryButtonLabel="Shop now"
-        primaryButtonHref="#"
+        showPrimaryButton
       />
     ),
   },

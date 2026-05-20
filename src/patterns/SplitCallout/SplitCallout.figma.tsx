@@ -21,7 +21,7 @@ figma.connect(
         headline="Bold statement headline"
         body="A short compelling description that supports the headline and drives action."
         primaryButtonLabel="Discover more"
-        primaryButtonHref="#"
+        showPrimaryButton
       />
     ),
   },

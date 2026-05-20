@@ -35,14 +35,14 @@ figma.connect(
           },
         ]}
         socialLinks={[
-          { platform: 'instagram', href: '#' },
-          { platform: 'facebook', href: '#' },
+          { name: 'Instagram', href: '#' },
+          { name: 'Facebook', href: '#' },
         ]}
         legalLinks={[
           { label: 'Privacy Policy', href: '#' },
           { label: 'Terms of Service', href: '#' },
         ]}
-        copyrightText="© 2025 Borealis. All rights reserved."
+        legalText="© 2025 Borealis. All rights reserved."
       />
     ),
   },

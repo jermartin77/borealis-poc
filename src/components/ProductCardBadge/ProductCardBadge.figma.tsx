@@ -15,11 +15,11 @@ figma.connect(
   'https://www.figma.com/design/I6QFi7hLxmg1bRuA9VXAJv/Design-System-AI-POC?node-id=13758-12506',
   {
     props: {
-      style: figma.enum('Style', {
+      badgeStyle: figma.enum('Style', {
         Feature: 'feature',
         Sale: 'sale',
       }),
     },
-    example: ({ style }) => <ProductCardBadge style={style}>New Arrival</ProductCardBadge>,
+    example: ({ badgeStyle }) => <ProductCardBadge badgeStyle={badgeStyle} value="New Arrival" />,
   },
 );

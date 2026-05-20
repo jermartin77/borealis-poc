@@ -23,10 +23,10 @@ figma.connect(
         subheadline="Engineered for performance. Designed for life."
         showEyebrow
         showSubheadline
-        primaryButtonLabel="Shop now"
-        primaryButtonHref="#"
-        secondaryButtonLabel="Learn more"
-        secondaryButtonHref="#"
+        showCta
+        showSecondaryCta
+        ctaLabel="Shop now"
+        ctaSecondaryLabel="Learn more"
       />
     ),
   },
