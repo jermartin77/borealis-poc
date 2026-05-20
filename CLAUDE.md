@@ -107,7 +107,7 @@ All icons use `currentColor` — tint by setting `color` on a parent element.
 ### Figma Code Connect
 Components with `.figma.tsx` files map Figma variant props to React props via `figma.enum()`. The Figma file key is `I6QFi7hLxmg1bRuA9VXAJv`. Publish with `npm run figma:connect`.
 
-Nine components currently have Code Connect mappings: `Button`, `BuyGrid`, `Icon`, `PlayerIcon`, `SocialIcon`, `StarIcon`, `StatusIcon`, `Logo`, `PDPGallery`.
+All 25 components have Code Connect mappings: `Accordion`, `ActionButton`, `Alert`, `Badge`, `Button`, `BuyGrid`, `Checkbox`, `ColorSwatch`, `Icon`, `Input`, `Logo`, `NumberSpinner`, `OptionSelect`, `PDPGallery`, `PlayButton`, `PlayerIcon`, `ProductCardBadge`, `Radio`, `Select`, `SocialIcon`, `StarIcon`, `StatusIcon`, `TextButton`, `Tooltip`, `VideoControls`.
 
 ## Current status
 

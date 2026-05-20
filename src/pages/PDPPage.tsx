@@ -72,7 +72,6 @@ export function PDPPage() {
   return (
     <div data-theme="light">
       <Masthead />
-
       <section className={styles.productSection}>
         <div className={styles.productWrap}>
           <PDPGallery images={galleryImages} className={styles.gallery} />
@@ -94,7 +93,6 @@ export function PDPPage() {
           />
         </div>
       </section>
-
       <SplitCallout
         alignment="right"
         image={featureImg1}
@@ -108,7 +106,6 @@ export function PDPPage() {
         theme="light"
         background="secondary"
       />
-
       <SplitCallout
         alignment="left"
         background="secondary"
@@ -122,7 +119,6 @@ export function PDPPage() {
         showEyebrow
         theme="light"
       />
-
       <Collection
         layout="scroll"
         cardSize="sm"
@@ -134,7 +130,6 @@ export function PDPPage() {
       >
         {relatedProducts}
       </Collection>
-
       <Footer />
     </div>
   );
